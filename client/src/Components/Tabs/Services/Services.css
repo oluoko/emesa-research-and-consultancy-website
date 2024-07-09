@@ -1,0 +1,23 @@
+#services {
+  margin: 0 5%;
+  width: 90%;
+  height: calc(200vh - 180px);
+
+  background-color: black;
+  color: white;
+}
+
+.service-div {
+  height: 50%;
+}
+
+#service-form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #898989;
+  border-radius: 10px;
+}

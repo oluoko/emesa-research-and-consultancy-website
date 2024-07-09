@@ -8,7 +8,6 @@
 .screen-container {
   position: relative;
 
-  height: calc(100vh - 90px);
   width: 100%;
   margin-top: 68px;
 
@@ -22,8 +21,9 @@
   border-radius: 7px;
   background-color: #898989;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-x: hidden;
-  padding: 20px;
+  padding: 40px;
+
+  height: auto;
 }
 
 .section-container {
@@ -34,12 +34,11 @@
 }
 
 .section-container section {
-  width: 40%;
+  width: 46%;
   margin: 30px 15px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: right;
 }

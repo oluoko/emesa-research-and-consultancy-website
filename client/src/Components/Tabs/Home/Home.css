@@ -1,6 +1,6 @@
 #home {
   margin: 0 5%;
   margin-right: 17%;
-  height: 100%;
+  height: calc(100vh - 90px);
   width: calc(100% - 22%);
 }

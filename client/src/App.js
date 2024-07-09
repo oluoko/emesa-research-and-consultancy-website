@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar/Navbar.jsx";
 import Home from "./Components/Tabs/Home/Home.jsx";
 
 import About from "./Components/Tabs/About/About.jsx";
+import Services from "./Components/Tabs/Services/Services.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Services />
     </Router>
   );
 }
