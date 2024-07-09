@@ -1,7 +1,35 @@
 #about {
   margin: 0 5%;
   width: 90%;
-
   height: calc(100vh - 100px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 95%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.gallery-item {
+  flex: 1 0 50%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-item {
+    flex: 1 0 100%;
+  }
 }

@@ -19,6 +19,28 @@
   box-sizing: border-box;
   user-select: none;
   font-family: var(--patrick-hand);
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: var(--orange);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #383838;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+}
+
+img {
+  user-select: none;
 }
 
 body {
@@ -83,22 +105,4 @@ html {
   .section-container section {
     width: 90%;
   }
-}
-
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background: var(--orange);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #383838;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
 }
