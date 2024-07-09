@@ -1,10 +1,11 @@
 import React from "react";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <section id="home">
-      <h1>Welcome to My Website</h1>
-    </section>
+    <div id="home">
+      <h1>Welcome to Emesa Research and consultancy</h1>
+    </div>
   );
 };
 
