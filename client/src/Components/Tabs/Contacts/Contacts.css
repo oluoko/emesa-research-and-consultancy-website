@@ -7,7 +7,7 @@
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   height: 24%;
   width: 100%;
