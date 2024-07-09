@@ -7,7 +7,9 @@ const Home = () => {
     <div className="screen-container">
       <div id="home" className="screen section-container">
         <section className="left">
-          <div className="image-shuffler"></div>
+          <div className="image-shuffler">
+            image shuffler will be contained here
+          </div>
         </section>
         <section className="right">
           <h1>Welcome to Emesa Research and consultancy</h1>

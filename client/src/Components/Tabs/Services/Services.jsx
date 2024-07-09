@@ -48,7 +48,7 @@ const Services = () => {
         </div>
         <div className="section-container service-div">
           <section className="left">
-            <div id="service-form">
+            <div className="service-form form">
               <h3>Request a service</h3>
               <form>
                 <input type="text" placeholder="Name" />

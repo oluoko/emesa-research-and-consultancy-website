@@ -7,6 +7,7 @@ import Home from "./Components/Tabs/Home/Home.jsx";
 
 import About from "./Components/Tabs/About/About.jsx";
 import Services from "./Components/Tabs/Services/Services.jsx";
+import Contacts from "./Components/Tabs/Contacts/Contacts.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Home />
       <About />
       <Services />
+      <Contacts />
     </Router>
   );
 }
