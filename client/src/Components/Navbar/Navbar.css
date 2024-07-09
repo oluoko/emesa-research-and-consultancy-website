@@ -19,6 +19,10 @@ nav {
   justify-content: space-between;
 }
 
+nav * {
+  font-family: var(--poppins);
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
