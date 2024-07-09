@@ -1,0 +1,11 @@
+#ads {
+  position: fixed;
+  top: 80px;
+  left: 86%;
+  height: calc(100% - 90px);
+  right: 1%;
+
+  background-color: black;
+  border-radius: 7px;
+  color: #fff;
+}
