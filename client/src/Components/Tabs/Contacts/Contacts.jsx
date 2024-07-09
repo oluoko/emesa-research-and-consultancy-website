@@ -34,26 +34,11 @@ const Contacts = () => {
         <div className="footer-content">
           <div className="section-container">
             <section className="left">
-              <div className="section-container">
-                <section className="left">
-                  <p>&copy; 2024 Emesa Research and Consultancy</p>
-                </section>
-                <section className="right">
-                  <p>Terms and conditions</p>
-                  <p>Privacy policy</p>
-                </section>
-              </div>
+              <p>&copy; 2024 Emesa Research and Consultancy</p>
             </section>
             <section className="right">
-              <div className="section-container">
-                <section className="left">
-                  <p>&copy; 2024 Emesa Research and Consultancy</p>
-                </section>
-                <section className="right">
-                  <p>Terms and conditions</p>
-                  <p>Privacy policy</p>
-                </section>
-              </div>
+              <p>Terms and conditions</p>
+              <p>Privacy policy</p>
             </section>
           </div>
         </div>
