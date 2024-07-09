@@ -13,8 +13,8 @@ const Navbar = () => {
         <p id="logo">
           <Link
             to="/"
-            className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
-            style={{ "--tw-text-opacity": "1", "--orange": "var(--orange)" }}
+            className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+            style={{ "--orange": "var(--orange)" }}
           >
             Home
           </Link>
@@ -23,8 +23,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
-              style={{ "--tw-text-opacity": "1", "--orange": "var(--orange)" }}
+              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
+              style={{ "--orange": "var(--orange)" }}
             >
               About
             </Link>
@@ -32,8 +32,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/services"
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
-              style={{ "--tw-text-opacity": "1", "--orange": "var(--orange)" }}
+              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+              style={{ "--orange": "var(--orange)" }}
             >
               Services
             </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
           <li>
             <button
               onClick={() => handleExternalLink("http://blog.localhost:3000")}
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
+              className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
               style={{
                 "--tw-text-opacity": "1",
                 "--orange": "var(--orange)",
@@ -59,9 +59,8 @@ const Navbar = () => {
               onClick={() =>
                 handleExternalLink("http://careers.localhost:3000")
               }
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
+              className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
               style={{
-                "--tw-text-opacity": "1",
                 "--orange": "var(--orange)",
                 background: "none",
                 border: "none",
@@ -75,8 +74,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/contacts"
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-105"
-              style={{ "--tw-text-opacity": "1", "--orange": "var(--orange)" }}
+              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+              style={{ "--orange": "var(--orange)" }}
             >
               Contacts
             </Link>
