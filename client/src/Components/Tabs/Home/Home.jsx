@@ -18,7 +18,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
             magni voluptatem aut facilis minus, nam aliquam cupiditate, ullam
             culpa, error in soluta earum?
-            <Link to=""> Dr. Emelda Nafula Nyongesa</Link>
+            <Link to="/Dr-Emelda"> Dr. Emelda Nafula Nyongesa</Link>
             <br />
             Sapiente mollitia ullam facilis, modi cumque facere, ex est dolor
             dicta adipisci maiores consectetur culpa molestiae voluptatem quasi

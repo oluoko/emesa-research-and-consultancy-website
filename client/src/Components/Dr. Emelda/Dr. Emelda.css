@@ -1,6 +1,6 @@
-#home {
+#emelda-portfolio {
   margin: 0 5%;
-  margin-right: 17%;
   height: calc(100vh - 100px);
   width: calc(100% - 22%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

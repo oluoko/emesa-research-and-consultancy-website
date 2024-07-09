@@ -10,6 +10,7 @@ import Services from "./Components/Tabs/Services/Services.jsx";
 import Contacts from "./Components/Tabs/Contacts/Contacts.jsx";
 import Blog from "./Components/Tabs/Blog/Blog.jsx";
 import Careers from "./Components/Tabs/Careers/Careers.jsx";
+import DrEmelda from "./Components/Dr. Emelda/DrEmelda.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/Dr-Emelda" element={<DrEmelda />} />
       </Routes>
     </Router>
   );
