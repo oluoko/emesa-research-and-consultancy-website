@@ -1,12 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+:root {
+  --patrick-hand: "Patrick Hand", cursive;
+  --indie-flower: "Indie Flower", cursive;
+  --shadows-into-light: "Shadows Into Light", cursive;
+  --amatic-sc: "Amatic SC", cursive;
+  --inconsolata: "Inconsolata", monospace;
+  --poppins: "Poppins", sans-serif;
+
+  --orange: rgb(255, 115, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  font-family: var(--patrick-hand);
 }
 
 body {
   height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .screen-container {
@@ -63,4 +82,21 @@ body {
   .section-container section {
     width: 90%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
 }

@@ -8,15 +8,21 @@ import Home from "./Components/Tabs/Home/Home.jsx";
 import About from "./Components/Tabs/About/About.jsx";
 import Services from "./Components/Tabs/Services/Services.jsx";
 import Contacts from "./Components/Tabs/Contacts/Contacts.jsx";
+import Blog from "./Components/Tabs/Blog/Blog.jsx";
+import Careers from "./Components/Tabs/Careers/Careers.jsx";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Contacts />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Routes>
     </Router>
   );
 }
