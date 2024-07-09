@@ -20,33 +20,28 @@ const About = () => {
     setImages(images);
   }, []);
 
-  useEffect(() => {
-    if (location.pathname === "/about" && galleryRef.current) {
-      const scrollToBottomAndTop = () => {
-        galleryRef.current.scrollTop = galleryRef.current.scrollHeight;
-        setTimeout(() => {
-          galleryRef.current.scrollTop = 0;
-        }, 2000);
-      };
-      scrollToBottomAndTop();
-    }
-  }, [location]);
+  // Auto-scroll removed
 
   return (
     <div className="screen-container">
       <div id="about" className="screen section-container">
         <section className="left">
-          <h2>About Emesa Research and Consultancy</h2>
+          <h3>About Emesa Research and Consultancy</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ab
             quibusdam sint omnis eius ea distinctio nesciunt facilis nostrum
             sapiente corporis quisquam perferendis perspiciatis magni,
             asperiores sit debitis beatae dolorum placeat, animi ullam error
-            deleniti. Aspernatur ipsa iure harum obcaecati ab est esse
-            necessitatibus repellat consequatur fuga nemo consectetur rem
-            provident sapiente beatae voluptatum eligendi inventore eum minima
-            assumenda, dignissimos laboriosam, animi exercitationem.
-            Exercitationem molestias quidem impedit eos, in expedita?
+            deleniti.
+          </p>
+          <br />
+          <br />
+          <p>
+            Aspernatur ipsa iure harum obcaecati ab est esse necessitatibus
+            repellat consequatur fuga nemo consectetur rem provident sapiente
+            beatae voluptatum eligendi inventore eum minima assumenda,
+            dignissimos laboriosam, animi exercitationem. Exercitationem
+            molestias quidem impedit eos, in expedita?
           </p>
         </section>
         <section className="right">

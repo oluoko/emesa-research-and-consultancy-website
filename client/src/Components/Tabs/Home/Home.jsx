@@ -60,12 +60,27 @@ const Home = () => {
           </div>
         </section>
         <section className="right">
-          <h1>Welcome to Emesa Research and consultancy</h1>
+          <h1>Emesa Research and consultancy</h1>
+          <br />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
             magni voluptatem aut facilis minus, nam aliquam cupiditate, ullam
             culpa, error in soluta earum?
-            <Link to="/Dr-Emelda"> Dr. Emelda Nafula Nyongesa</Link>
+            <Link
+              to="/Dr-Emelda"
+              className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+              style={{
+                "--tw-text-opacity": "1",
+                "--orange": "var(--orange)",
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              Dr. Emelda Nafula Nyongesa
+            </Link>
             <br />
             Sapiente mollitia ullam facilis, modi cumque facere, ex est dolor
             dicta adipisci maiores consectetur culpa molestiae voluptatem quasi
@@ -73,7 +88,8 @@ const Home = () => {
             tempore minus, reiciendis corrupti laborum dolorem eligendi
             laboriosam?
           </p>
-          <button>Learn more</button>
+          <br />
+          <button className="width-100%">Learn more</button>
         </section>
       </div>
       <Ads />
