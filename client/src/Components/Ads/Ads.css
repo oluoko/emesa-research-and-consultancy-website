@@ -1,9 +1,9 @@
 #ads {
-  position: fixed;
-  top: 80px;
-  left: 86%;
-  height: calc(100% - 90px);
-  right: 1%;
+  position: absolute;
+  top: 0;
+  left: 84%;
+  right: 2%;
+  bottom: 0;
 
   background-color: black;
   border-radius: 7px;
