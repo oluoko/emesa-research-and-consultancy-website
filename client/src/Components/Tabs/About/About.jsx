@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./About.css";
 
 const About = () => {
@@ -28,6 +28,26 @@ const About = () => {
         <section className="left">
           <h2>About Emesa Research and Consultancy</h2>
           <br />
+          <p>
+            Emesa Research and Consultancy was founded by{" "}
+            <button>
+              <Link
+                to="/Dr-Emelda"
+                className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+                style={{
+                  "--tw-text-opacity": "1",
+                  "--orange": "var(--orange)",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+              >
+                {" "}
+                Dr. Emelda Nafula Nyongesa
+              </Link>
+            </button>
+          </p>
           <br />
           <h3>Research Excellence</h3>
           <p>

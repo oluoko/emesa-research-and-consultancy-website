@@ -55,7 +55,7 @@ const Services = () => {
                 <input type="email" placeholder="Email" />
                 <input type="text" placeholder="Service" />
                 <textarea placeholder="Message"></textarea>
-                <button>Submit</button>
+                <button className="button">Submit</button>
               </form>
             </div>
           </section>

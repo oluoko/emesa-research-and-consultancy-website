@@ -11,13 +11,13 @@ const Navbar = () => {
     <div id="nav-container">
       <nav>
         <p id="logo">
-          <Link
-            to="/"
+          <a
+            href="#home"
             className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
             style={{ "--orange": "var(--orange)" }}
           >
             Home
-          </Link>
+          </a>
         </p>
         <ul>
           <li>

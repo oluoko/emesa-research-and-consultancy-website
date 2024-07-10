@@ -66,7 +66,7 @@ const Home = () => {
             At Emesa research and consultancy, we are the architects of
             innovation, dedicated to unraveling the mysteries of today&#39;s
             dynamic business landscape through cutting-edge research and
-            strategic consultancy. Established in 2023, by our propreiator{" "}
+            strategic consultancy. Established in 2023, by our propreitor{" "}
             <Link
               to="/Dr-Emelda"
               className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
