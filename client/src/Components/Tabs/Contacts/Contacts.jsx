@@ -6,48 +6,38 @@ const Contacts = () => {
 
   return (
     <div className="screen-container">
-      <div id="contacts" className="screen section-container">
-        <section className="left">
-          <div className="contacts-text">
-            <h3>Where are we located?</h3>
-            <br />
-            <br />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-              impedit neque maxime quisquam dicta atque corrupti suscipit minima
-              voluptatibus quo incidunt quas corporis repellendus ut eveniet
-              aliquid, quia aspernatur dolorem.
-            </p>
-          </div>
-          <div id="map-container">
-            <h2>Visit us today</h2>
-            <br />
-            <br />
-            <iframe
-              title="Location Map"
-              width="100%"
-              height="400"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
-              src={mapUrl}
-            ></iframe>
-          </div>
-        </section>
-        <section className="right">
-          <div className="contacts-form form">
-            <h3>Contact us</h3>
-            <form>
-              <input type="text" placeholder="Name" />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Subject" />
-              <textarea placeholder="Message"></textarea>
-              <button>Submit</button>
-            </form>
-          </div>
-        </section>
+      <div id="contacts" className="screen">
+        <div className="section-container">
+          <section className="left">
+            <div className="contacts-text">
+              <h3>Where are we located?</h3>
+              <br />
+              <p>KAHAWA WEST KWARE PHASE TWO ICPAK</p>
+              <p>
+                P.O BOX 2613 - 00100 GPO NAIROBI || +254 729 682 573 || +254 742
+                967 422
+              </p>
+            </div>
+          </section>
+          <section className="right">
+            <div className="contacts-form form">
+              <h3>Contact us</h3>
+              <form>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="text" placeholder="Subject" />
+                <textarea placeholder="Message"></textarea>
+                <button>Submit</button>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div id="map-container">
+          <h2>Visit us today</h2>
+          <iframe title="Location Map" src={mapUrl}></iframe>
+        </div>
       </div>
+
       <footer>
         <div className="footer-content">
           <div className="section-container">

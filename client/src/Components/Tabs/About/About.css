@@ -10,27 +10,8 @@
   flex-wrap: wrap;
   width: 100%;
   max-height: 95%;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-width: thin; /* For Firefox */
-}
-
-.gallery-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.gallery-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.gallery-container::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
-  border-radius: 10px;
-}
-
-.gallery-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--orange);
 }
 
 .gallery-item {
