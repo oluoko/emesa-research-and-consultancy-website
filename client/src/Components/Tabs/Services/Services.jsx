@@ -61,17 +61,34 @@ const Services = () => {
           </section>
           <section className="right">
             <h3>Services Overview</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              cumque repellat nostrum est vitae assumenda fugiat, cum suscipit
-              sint adipisci vel molestiae quidem ipsa! Quasi ad praesentium sed
-              autem distinctio.
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-              numquam dolorum! Dicta magni possimus odit reiciendis assumenda
-              libero fuga ullam. Nam, illum. Minima in numquam pariatur voluptas
-              voluptatem, nulla iusto!
-            </p>
+            <ol>
+              <li>
+                Consultancy services (Accounts, Finance, Auditing, Tax services)
+              </li>
+              <li>Computer services.</li>
+              <li>Economic empowerment services.</li>
+              <li>Cyber services (Photocopying, printing and typing)</li>
+              <li>
+                Supporting welfare and Saccos in record keeping and compliance
+                with statutory requirements.
+              </li>
+              <li>Identifying youth and knowledge gaps.</li>
+              <li>
+                Guiding universities and college students in project, concepts
+                per proposal, presentations, etc.
+              </li>
+              <li>Home crafts services.</li>
+              <li>
+                Hostels services for college and university students (Ladies
+                only).
+              </li>
+              <li>
+                Research in water-related fields and environmental activities,
+                financial services, accounting, and economic empowerment.
+              </li>
+              <li>Offer industrial services for colleges and universities.</li>
+            </ol>
+            <ul></ul>
           </section>
         </div>
       </div>

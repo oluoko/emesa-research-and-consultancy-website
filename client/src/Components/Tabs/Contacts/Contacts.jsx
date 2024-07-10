@@ -17,6 +17,13 @@ const Contacts = () => {
                 P.O BOX 2613 - 00100 GPO NAIROBI || +254 729 682 573 || +254 742
                 967 422
               </p>
+              <br />
+              <br />
+              <p className="text-xl">
+                Embark on a journey of discovery and growth with Emesa Research
+                &amp; Consultancy. Let&#39;s build a future of possibilities
+                together.
+              </p>
             </div>
           </section>
           <section className="right">

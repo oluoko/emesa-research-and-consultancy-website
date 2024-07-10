@@ -31,7 +31,7 @@ nav ul {
   margin-left: auto;
 }
 
-nav li,
+nav ul li,
 #logo {
   list-style: none;
   text-decoration: none;

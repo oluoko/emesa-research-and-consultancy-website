@@ -21,22 +21,22 @@ const Navbar = () => {
         </p>
         <ul>
           <li>
-            <Link
-              to="/about"
+            <a
+              href="#about"
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
               style={{ "--orange": "var(--orange)" }}
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              to="/services"
+            <a
+              href="#services"
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
               style={{ "--orange": "var(--orange)" }}
             >
               Services
-            </Link>
+            </a>
           </li>
           <li>
             <button
@@ -72,13 +72,13 @@ const Navbar = () => {
             </button>
           </li>
           <li>
-            <Link
-              to="/contacts"
+            <a
+              href="#contacts"
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
               style={{ "--orange": "var(--orange)" }}
             >
               Contacts
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>

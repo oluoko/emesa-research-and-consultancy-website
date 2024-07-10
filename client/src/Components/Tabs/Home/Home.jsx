@@ -63,9 +63,10 @@ const Home = () => {
           <h1>Emesa Research and consultancy</h1>
           <br />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            magni voluptatem aut facilis minus, nam aliquam cupiditate, ullam
-            culpa, error in soluta earum?
+            At Emesa research and consultancy, we are the architects of
+            innovation, dedicated to unraveling the mysteries of today&#39;s
+            dynamic business landscape through cutting-edge research and
+            strategic consultancy. Established in 2023, by our propreiator{" "}
             <Link
               to="/Dr-Emelda"
               className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
@@ -81,15 +82,22 @@ const Home = () => {
               {" "}
               Dr. Emelda Nafula Nyongesa
             </Link>
-            <br />
-            Sapiente mollitia ullam facilis, modi cumque facere, ex est dolor
-            dicta adipisci maiores consectetur culpa molestiae voluptatem quasi
-            nobis ea deleniti vel quos temporibus sed nesciunt quaerat! Vitae
-            tempore minus, reiciendis corrupti laborum dolorem eligendi
-            laboriosam?
+            , we have emerged as a trusted partner for organizations seeking a
+            profound understanding of their industries, competitors, and
+            potential pathways to success.
           </p>
-          <br />
-          <button className="width-100%">Learn more</button>
+          <h2>Vision:</h2>
+          <p>
+            Empowering Innovation skills, To be the leading ICT, Accountancy and
+            Research consultancy services both locally and Internationally.
+          </p>
+
+          <h2>Mission:</h2>
+          <p>
+            The research institution has a responsibility to provide research
+            services in a cost effective ways to both international and external
+            stakeholders.
+          </p>
         </section>
       </div>
       <Ads />

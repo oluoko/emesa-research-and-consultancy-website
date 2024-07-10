@@ -26,26 +26,43 @@ const About = () => {
     <div className="screen-container">
       <div id="about" className="screen section-container">
         <section className="left">
-          <h3>About Emesa Research and Consultancy</h3>
+          <h2>About Emesa Research and Consultancy</h2>
+          <br />
+          <br />
+          <h3>Research Excellence</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ab
-            quibusdam sint omnis eius ea distinctio nesciunt facilis nostrum
-            sapiente corporis quisquam perferendis perspiciatis magni,
-            asperiores sit debitis beatae dolorum placeat, animi ullam error
-            deleniti.
+            We specialize in delving deep into market trends, consumer
+            behaviors, and emerging technologies. Our team of seasoned
+            researchers, armed with a wealth of expertise, employs a holistic
+            approach to gather, analyze, and interpret data. From comprehensive
+            market reports to bespoke studies tailored to your specific needs,
+            we empower our clients with the insights needed to make informed
+            decisions in an ever-evolving marketplace.
           </p>
           <br />
-          <br />
+          <h3>Consultancy Mastery</h3>
           <p>
-            Aspernatur ipsa iure harum obcaecati ab est esse necessitatibus
-            repellat consequatur fuga nemo consectetur rem provident sapiente
-            beatae voluptatum eligendi inventore eum minima assumenda,
-            dignissimos laboriosam, animi exercitationem. Exercitationem
-            molestias quidem impedit eos, in expedita?
+            In the realm of consultancy, we are not just advisors; we are
+            strategic partners invested in the success of your business. Our
+            consultancy services are designed to provide actionable strategies
+            that drive growth, enhance efficiency, and foster resilience.
+            Whether you are navigating a market entry, optimizing operations, or
+            reimagining your business model, our consultancy team brings a
+            wealth of experience and a forward-thinking perspective to the
+            table.
+          </p>
+          <br />
+          <h3>Shaping Futures</h3>
+          <p>
+            At Emesa research and consultancy, we see ourselves not just as
+            consultants but as architects of a future where businesses thrive
+            and evolve. By pioneering research and offering strategic guidance,
+            we aim to empower organizations to navigate complexity and unlock
+            their full potential.
           </p>
         </section>
         <section className="right">
-          <h3>Here are some of our staff members.</h3>
+          <h4 className="text-xl">Here are some of our staff members.</h4>
           <div className="gallery-container" ref={galleryRef}>
             {images.map((image, index) => (
               <div key={index} className="gallery-item">

@@ -1,10 +1,12 @@
 import React from "react";
 import DrEmelda1 from "../../Assets/Images/Dr. Emelda Nafula/1.jpeg";
 import "./Dr. Emelda.css";
+import Navbar from "../Navbar/Navbar";
 
 const DrEmelda = () => {
   return (
     <div className="screen-container">
+      <Navbar />
       <div id="emelda-portfolio" className="screen">
         <div className="section-container">
           <section className="left">
