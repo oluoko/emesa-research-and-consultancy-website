@@ -4,6 +4,7 @@ import "./About.css";
 
 const About = () => {
   const [images, setImages] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const galleryRef = useRef(null);
   const location = useLocation();
 
@@ -20,7 +21,8 @@ const About = () => {
     setImages(images);
   }, []);
 
-  // Auto-scroll removed
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="screen-container">
@@ -90,6 +92,23 @@ const About = () => {
             ))}
           </div>
         </section>
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          <button onClick={closeModal} className="close-button">
+            Close
+          </button>
+          <div className="fullscreen-gallery">
+            {images.map((image, index) => (
+              <div key={index} className="fullscreen-gallery-item">
+                <img src={image} alt={`Image ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+        </Modal>
       </div>
     </div>
   );

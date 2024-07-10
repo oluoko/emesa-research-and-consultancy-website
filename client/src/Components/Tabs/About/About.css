@@ -16,7 +16,7 @@
 
 .gallery-item {
   flex: 1 0 50%;
-  box-sizing: border-box;
+
   padding: 5px;
 }
 
