@@ -2,7 +2,7 @@
   margin: 0 5%;
   width: 90%;
 
-  height: calc(200vh - 180px);
+  height: calc(200vh - 120px);
   margin-bottom: 24%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
