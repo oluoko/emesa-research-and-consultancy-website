@@ -22,3 +22,42 @@
   background-color: #898989;
   border-radius: 10px;
 }
+
+.cards {
+  height: 50%;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  width: 32%;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 40px); /* Adjust based on your layout */
+  box-sizing: border-box;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* Adjust for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%; /* Full width for very small screens */
+  }
+}

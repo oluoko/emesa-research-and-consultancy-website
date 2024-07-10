@@ -9,40 +9,52 @@ const Services = () => {
           <h2>Our Services</h2>
           <div className="cards">
             <div className="card">
-              <h3>Research</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                ab quibusdam sint omnis eius ea distinctio nesciunt facilis
-                nostrum sapiente corporis quisquam perferendis perspiciatis
-                magni, asperiores sit debitis beatae dolorum placeat, animi
-                ullam error deleniti. Aspernatur ipsa iure harum obcaecati ab
-                est esse
-                <button>Learn more</button>
-              </p>
-            </div>
-            <div className="card">
               <h3>Consultancy</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                ab quibusdam sint omnis eius ea distinctio nesciunt facilis
-                nostrum sapiente corporis quisquam perferendis perspiciatis
-                magni, asperiores sit debitis beatae dolorum placeat, animi
-                ullam error deleniti. Aspernatur ipsa iure harum obcaecati ab
-                est esse
-                <button>Learn more</button>
+                Consultancy services (Accounts, Finance, Auditing, Tax services)
+                <br />
+                Supporting welfare and Saccos in record keeping and compliance
+                with statutory requirements
+                <br />
+                Identifying youth and knowledge gaps
               </p>
             </div>
             <div className="card">
-              <h3>Accounting</h3>
+              <h3>Computer Services</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                ab quibusdam sint omnis eius ea distinctio nesciunt facilis
-                nostrum sapiente corporis quisquam perferendis perspiciatis
-                magni, asperiores sit debitis beatae dolorum placeat, animi
-                ullam error deleniti. Aspernatur ipsa iure harum obcaecati ab
-                est esse
-                <button>Learn more</button>
+                Computer services
+                <br />
+                Cyber services (Photocopying, printing, and typing)
               </p>
+            </div>
+            <div className="card">
+              <h3>Economic Empowerment</h3>
+              <p>
+                Economic empowerment services
+                <br />
+                Research in water-related fields and environmental activities,
+                Financial services, accounting, and economic empowerment
+              </p>
+            </div>
+            <div className="card">
+              <h3>Student Guidance</h3>
+              <p>
+                Guiding universities and college students in project, concepts
+                per proposal, presentations, etc.
+              </p>
+            </div>
+            <div className="card">
+              <h3>Home & Hostel Services</h3>
+              <p>
+                Home crafts services
+                <br />
+                Hostel services for college and university students (Ladies
+                only)
+              </p>
+            </div>
+            <div className="card">
+              <h3>Industrial Services</h3>
+              <p>Offer Industrial services for colleges and universities</p>
             </div>
           </div>
         </div>
@@ -55,8 +67,8 @@ const Services = () => {
                 <input type="email" placeholder="Email" />
                 <input type="text" placeholder="Service" />
                 <textarea placeholder="Message"></textarea>
-                <button className="button">Submit</button>
               </form>
+              <button className="button">Submit</button>
             </div>
           </section>
           <section className="right">

@@ -30,23 +30,22 @@ const About = () => {
           <br />
           <p>
             Emesa Research and Consultancy was founded by{" "}
-            <button>
-              <Link
-                to="/Dr-Emelda"
-                className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
-                style={{
-                  "--tw-text-opacity": "1",
-                  "--orange": "var(--orange)",
-                  background: "none",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                }}
-              >
-                {" "}
-                Dr. Emelda Nafula Nyongesa
-              </Link>
-            </button>
+            <Link
+              to="/Dr-Emelda"
+              className="
+                text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+              style={{
+                "--tw-text-opacity": "1",
+                "--orange": "var(--orange)",
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              Dr. Emelda Nafula Nyongesa
+            </Link>
           </p>
           <br />
           <h3>Research Excellence</h3>
