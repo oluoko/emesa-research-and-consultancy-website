@@ -24,9 +24,7 @@ const Home = () => {
     setImages(
       images.map((image, index) => ({
         original: image,
-        thumbnail: image,
         originalAlt: `Image ${index + 1}`,
-        thumbnailAlt: `Thumbnail ${index + 1}`,
       }))
     );
   }, []);
@@ -36,9 +34,7 @@ const Home = () => {
     onDrop: (acceptedFiles) => {
       const newImages = acceptedFiles.map((file) => ({
         original: URL.createObjectURL(file),
-        thumbnail: URL.createObjectURL(file),
         originalAlt: file.name,
-        thumbnailAlt: file.name,
       }));
       setUploadedImages([...uploadedImages, ...newImages]);
     },
@@ -51,12 +47,7 @@ const Home = () => {
       <div id="home" className="screen section-container">
         <section className="left">
           <div className="carousel-container">
-            <ImageGallery
-              items={combinedImages}
-              infinite
-              autoPlay
-              showThumbnails
-            />
+            <ImageGallery items={combinedImages} infinite autoPlay />
           </div>
         </section>
         <section className="right">

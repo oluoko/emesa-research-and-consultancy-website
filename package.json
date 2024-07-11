@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run blog\" \"npm run careers\"",
     "server": "node server.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "blog": "npm start --prefix blog",
+    "careers": "npm start --prefix careers"
   },
   "keywords": [],
   "author": "Brian Otieno",

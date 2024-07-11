@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Modal from "react-modal";
+import "react-image-gallery/styles/css/image-gallery.css";
 import "./About.css";
 
 const About = () => {
