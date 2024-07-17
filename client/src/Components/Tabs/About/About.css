@@ -4,13 +4,23 @@
   height: calc(150vh - 150px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom right,
     white 50%,
     white 51%,
     black 50%,
     black 0%
+  ); */
+  background: linear-gradient(
+    133deg,
+    rgba(255, 255, 255, 1) 24%,
+    rgba(0, 0, 0, 1) 100%
   );
+}
+
+#about p {
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
 }
 
 .gallery-container {
