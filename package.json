@@ -1,4 +1,17 @@
 {
+  "name": "emesa-research-and-consultancy-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emesa-research-and-consultancy-website.git"
+  },
+  "author": "Brian Otieno",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
