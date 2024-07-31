@@ -1,0 +1,26 @@
+.div-background {
+  background: linear-gradient(
+    to bottom right,
+    white 50%,
+    white 51%,
+    black 51%,
+    black 100%
+  );
+  height: 100vh; /* Adjust the height as needed */
+  width: 100%;
+  position: relative;
+}
+
+.text-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color, black); /* Default color */
+}
+
+.white-text {
+  --text-color: white;
+}
