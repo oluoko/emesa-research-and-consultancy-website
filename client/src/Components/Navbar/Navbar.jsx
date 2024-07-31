@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
             className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
             style={{ "--orange": "var(--orange)" }}
           >
-            Home
+            <img src={logo} alt="" />
           </a>
         </p>
         <ul>
