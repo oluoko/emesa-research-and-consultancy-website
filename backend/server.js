@@ -1,9 +1,9 @@
-import express from "express";
-import cors from "cors";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import colors from "colors";
-import postRoutes from "./routes/posts.js";
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const colors = require("colors");
+const postRoutes = require("./routes/posts");
 
 const app = express();
 dotenv.config();
