@@ -1,6 +1,8 @@
-import Post from "../models/posts.js";
+const Post = require("../models/posts.js");
+const asyncHandler = require("express-async-handler");
+const mongoose = require("mongoose");
 
-export const getPosts = async (req, res) => {
+const getPosts = asyncHandler(async (req, res) => {
   try {
     const posts = await Post.find();
     res.status(200).json(posts);
@@ -9,9 +11,9 @@ export const getPosts = async (req, res) => {
       message: error.message,
     });
   }
-};
+});
 
-export const getSinglePost = async (req, res) => {
+const getSinglePost = asyncHandler(async (req, res) => {
   try {
     const { id: _id } = req.params;
     const post = await Post.findById(_id);
@@ -21,9 +23,9 @@ export const getSinglePost = async (req, res) => {
       message: error.message,
     });
   }
-};
+});
 
-export const createPost = async (req, res) => {
+const createPost = asyncHandler(async (req, res) => {
   const newPost = new Post(req.body);
   try {
     await newPost.save();
@@ -33,9 +35,9 @@ export const createPost = async (req, res) => {
       message: error.message,
     });
   }
-};
+});
 
-export const updatePost = async (req, res) => {
+const updatePost = asyncHandler(async (req, res) => {
   const { id: _id } = req.params;
   const post = req.body;
   try {
@@ -46,9 +48,9 @@ export const updatePost = async (req, res) => {
       message: error.message,
     });
   }
-};
+});
 
-export const deletePost = async (req, res) => {
+const deletePost = asyncHandler(async (req, res) => {
   const { id: _id } = req.params;
   try {
     const deletedPost = await Post.findByIdAndRemove(_id);
@@ -58,4 +60,12 @@ export const deletePost = async (req, res) => {
       message: error.message,
     });
   }
+});
+
+module.exports = {
+  getPosts,
+  getSinglePost,
+  createPost,
+  updatePost,
+  deletePost,
 };
