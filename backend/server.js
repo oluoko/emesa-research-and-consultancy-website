@@ -9,7 +9,7 @@ const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const blogRoutes = require("./routes/blogRoutes.js");
 const careerRoutes = require("./routes/careerRoutes.js");
-const uploadRoutes = require("./routes/uploadRouters.js");
+const uploadRoutes = require("./routes/uploadRoutes.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 
 const port = process.env.PORT || 5000;
