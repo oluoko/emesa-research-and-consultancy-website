@@ -1,30 +1,44 @@
-// Environmental variables
-require("dotenv").config();
-
-const { dbConnect } = require("./config/connect");
-dbConnect();
-
 const express = require("express");
-const app = express();
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require("path");
+const fs = require("fs");
+dotenv.config();
+const connectDB = require("./config/db.js");
+const userRoutes = require("./routes/userRoutes.js");
+const blogRoutes = require("./routes/blogRoutes.js");
+const careerRoutes = require("./routes/careerRoutes.js");
+const uploadRoutes = require("./routes/uploadRouters.js");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 
-const errHandler = require('./middleware/errHandler');
+const port = process.env.PORT || 5000;
+
+connectDB();
+
+const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cookieParser());
 
-// Routes
-app.use('/', require('./routes/auth'));
-app.use('/', require('./routes/profile'));
-app.use('/', require('./routes/category'));
-app.use('/', require('./routes/blog'));
-app.use('/admin', require('./routes/admin'));
+// Ensure the uploads folder exists
+const uploadsDir = path.join(__dirname, "/uploads");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
-app.use(errHandler)
+app.use("/api/users", userRoutes);
+app.use("/api/blogs", blogRoutes);
+app.use("/api/careers", careerRoutes);
+app.use("/api/upload", uploadRoutes);
 
-// Server Runner
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+// Serve uploaded files
+app.use("/uploads", express.static(uploadsDir));
+
+app.use(notFound);
+app.use(errorHandler);
+
+app.listen(port, () => {
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
+});

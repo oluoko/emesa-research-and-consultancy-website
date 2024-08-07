@@ -6,27 +6,14 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import "./Home.css";
 import Ads from "../../Ads/Ads.jsx";
 import { Link } from "react-router-dom";
+import importedImages from "../../Utils/imageImports.js"; // Import the images
 
 const Home = () => {
   const [images, setImages] = useState([]);
   const [uploadedImages, setUploadedImages] = useState([]);
 
   useEffect(() => {
-    // Import all images from the folder
-    const importAll = (r) => r.keys().map(r);
-    const images = importAll(
-      require.context(
-        "../../../Assets/Images/Staff",
-        false,
-        /\.(png|jpe?g|svg)$/
-      )
-    );
-    setImages(
-      images.map((image, index) => ({
-        original: image,
-        originalAlt: `Image ${index + 1}`,
-      }))
-    );
+    setImages(importedImages); // Set the imported images
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -57,7 +44,7 @@ const Home = () => {
             At Emesa research and consultancy, we are the architects of
             innovation, dedicated to unraveling the mysteries of today&#39;s
             dynamic business landscape through cutting-edge research and
-            strategic consultancy. Established in 2023, by our propreitor{" "}
+            strategic consultancy. Established in 2023, by our proprietor{" "}
             <Link
               to="/Dr-Emelda"
               className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
