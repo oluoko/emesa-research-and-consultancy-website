@@ -183,10 +183,10 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Update blogger application status
-// @route   PUT /api/users/:id/blogger-application
-// @access  Private/Admin
-const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
+// @desc    Apply for blogger status
+// @route   POST /api/users/:id/apply-blogger
+// @access  Private
+const applyForBloggerStatus = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -194,19 +194,71 @@ const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
-  const { status } = req.body;
+  if (user.bloggerApplicationStatus.applicationStatus === "pending") {
+    res.status(400);
+    throw new Error("You have already applied for blogger status");
+  }
 
-  const updatedBloggerStatus = {
-    applicationStatus: status,
-    updatedAt: new Date(),
+  user.bloggerApplicationStatus = {
+    applicationStatus: "pending",
+    appliedAt: new Date(),
   };
-
-  user.bloggerApplicationStatus.push(updatedBloggerStatus);
-  user.isBlogger = status === "approved";
 
   await user.save();
 
-  res.json({ message: `Blogger application status updated to ${status}` });
+  res.json({ message: "Applied for blogger status" });
+});
+
+// @desc    Apply for employee status
+// @route   POST /api/users/:id/apply-employee
+// @access  Private
+const applyForEmployeeStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  if (user.employeeApplicationStatus.applicationStatus === "pending") {
+    res.status(400);
+    throw new Error("You have already applied for employee status");
+  }
+
+  user.employeeApplicationStatus = {
+    applicationStatus: "pending",
+    appliedAt: new Date(),
+  };
+
+  await user.save();
+
+  res.json({ message: "Applied for employee status" });
+});
+
+// @desc    Apply for attachee status
+// @route   POST /api/users/:id/apply-attachee
+// @access  Private
+const applyForAttacheeStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  if (user.attacheeApplicationStatus.applicationStatus === "pending") {
+    res.status(400);
+    throw new Error("You have already applied for attachee status");
+  }
+
+  user.attacheeApplicationStatus = {
+    applicationStatus: "pending",
+    appliedAt: new Date(),
+  };
+
+  await user.save();
+
+  res.json({ message: "Applied for attachee status" });
 });
 
 // @desc    Update employee application status
@@ -222,12 +274,11 @@ const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
 
   const { status } = req.body;
 
-  const updatedEmployeeStatus = {
+  user.employeeApplicationStatus = {
     applicationStatus: status,
-    updatedAt: new Date(),
+    appliedAt: user.employeeApplicationStatus.appliedAt,
+    reviewedAt: new Date(),
   };
-
-  user.employeeApplicationStatus.push(updatedEmployeeStatus);
   user.isEmployee = status === "approved";
 
   await user.save();
@@ -248,12 +299,11 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
 
   const { status } = req.body;
 
-  const updatedAttacheeStatus = {
+  user.attacheeApplicationStatus = {
     applicationStatus: status,
-    updatedAt: new Date(),
+    appliedAt: user.attacheeApplicationStatus.appliedAt,
+    reviewedAt: new Date(),
   };
-
-  user.attacheeApplicationStatus.push(updatedAttacheeStatus);
   user.isAttachee = status === "approved";
 
   await user.save();
@@ -261,10 +311,10 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
   res.json({ message: `Attachee application status updated to ${status}` });
 });
 
-// @desc    Apply for blogger status
-// @route   POST /api/users/:id/apply-blogger
-// @access  Private
-const applyForBloggerStatus = asyncHandler(async (req, res) => {
+// @desc    Update blogger application status
+// @route   PUT /api/users/:id/blogger-application
+// @access  Private/Admin
+const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -272,92 +322,18 @@ const applyForBloggerStatus = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
-  // Check if there is a pending blogger application
-  const pendingApplication = user.bloggerApplicationStatus.find(
-    (app) => app.applicationStatus === "pending"
-  );
+  const { status } = req.body;
 
-  if (pendingApplication) {
-    res.status(400);
-    throw new Error("You have already applied for blogger status");
-  }
-
-  const bloggerApplication = {
-    applicationStatus: "pending",
-    updatedAt: new Date(),
+  user.bloggerApplicationStatus = {
+    applicationStatus: status,
+    appliedAt: user.bloggerApplicationStatus.appliedAt,
+    reviewedAt: new Date(),
   };
-
-  user.bloggerApplicationStatus.push(bloggerApplication);
+  user.isBlogger = status === "approved";
 
   await user.save();
 
-  res.json({ message: "Applied for blogger status" });
-});
-
-// @desc    Apply for employee status
-// @route   POST /api/users/:id/apply-employee
-// @access  Private
-const applyForEmployeeStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  // Check if there is a pending employee application
-  const pendingApplication = user.employeeApplicationStatus.find(
-    (app) => app.applicationStatus === "pending"
-  );
-
-  if (pendingApplication) {
-    res.status(400);
-    throw new Error("You have already applied for employee status");
-  }
-
-  const employeeApplication = {
-    applicationStatus: "pending",
-    updatedAt: new Date(),
-  };
-
-  user.employeeApplicationStatus.push(employeeApplication);
-
-  await user.save();
-
-  res.json({ message: "Applied for employee status" });
-});
-
-// @desc    Apply for attachee status
-// @route   POST /api/users/:id/apply-attachee
-// @access  Private
-const applyForAttacheeStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  // Check if there is a pending attachee application
-  const pendingApplication = user.attacheeApplicationStatus.find(
-    (app) => app.applicationStatus === "pending"
-  );
-
-  if (pendingApplication) {
-    res.status(400);
-    throw new Error("You have already applied for attachee status");
-  }
-
-  const attacheeApplication = {
-    applicationStatus: "pending",
-    updatedAt: new Date(),
-  };
-
-  user.attacheeApplicationStatus.push(attacheeApplication);
-
-  await user.save();
-
-  res.json({ message: "Applied for attachee status" });
+  res.json({ message: `Blogger application status updated to ${status}` });
 });
 
 module.exports = {
