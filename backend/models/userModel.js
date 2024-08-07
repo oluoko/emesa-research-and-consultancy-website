@@ -33,13 +33,13 @@ const userSchema = mongoose.Schema(
     },
     bloggerApplicationStatus: {
       type: String,
-      enum: ["approved", "pending", "rejected"],
-      default: "pending",
+      enum: ["not-applied", "approved", "pending", "rejected"],
+      default: "not-applied",
     },
     employeeApplicationStatus: {
       type: String,
-      enum: ["approved", "pending", "rejected"],
-      default: "pending",
+      enum: ["not-applied", "approved", "pending", "rejected"],
+      default: "not-applied",
     },
     bio: {
       type: String,
