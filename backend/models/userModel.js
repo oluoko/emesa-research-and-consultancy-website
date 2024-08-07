@@ -31,16 +31,22 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    bloggerApplicationStatus: {
-      type: String,
-      enum: ["not-applied", "approved", "pending", "rejected"],
-      default: "not-applied",
-    },
-    employeeApplicationStatus: {
-      type: String,
-      enum: ["not-applied", "approved", "pending", "rejected"],
-      default: "not-applied",
-    },
+    bloggerApplicationStatus: [
+      {
+        applicationStatus: {
+          type: String,
+          enum: ["not-applied", "approved", "pending", "rejected"],
+          default: "not-applied",
+        },
+      },
+    ],
+    employeeApplicationStatus: [
+      {
+        type: String,
+        enum: ["not-applied", "approved", "pending", "rejected"],
+        default: "not-applied",
+      },
+    ],
     bio: {
       type: String,
       default: "",

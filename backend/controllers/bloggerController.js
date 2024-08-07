@@ -8,6 +8,15 @@ const User = require("../models/userModel.js");
 const applyBlogger = asyncHandler(async (req, res) => {
   const user = req.user;
 
+  const existingApplication = await BloggerApplication.findOne({
+    user: user._id,
+  });
+
+  if (existingApplication) {
+    res.status(400);
+    throw new Error("Blogger application already submitted");
+  }
+
   const application = new BloggerApplication({
     user: user._id,
   });

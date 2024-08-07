@@ -9,6 +9,15 @@ const applyEmployee = asyncHandler(async (req, res) => {
   const { resume, coverLetter, recommendationLetters } = req.body;
   const user = req.user;
 
+  const existingApplication = await EmployeeApplication.findOne({
+    user: user._id,
+  });
+
+  if (existingApplication) {
+    res.status(400);
+    throw new Error("Employee application already submitted");
+  }
+
   const application = new EmployeeApplication({
     user: user._id,
     resume,
