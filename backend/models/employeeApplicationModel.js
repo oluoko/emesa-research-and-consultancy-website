@@ -9,8 +9,8 @@ const employeeApplicationSchema = mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["approved", "pending", "rejected"],
-      default: "pending",
+      enum: ["not-applied", "approved", "pending", "rejected"],
+      default: "not-applied",
     },
     resume: {
       type: String,
