@@ -31,6 +31,11 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    isAttachee: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
     bloggerApplicationStatus: [
       {
         applicationStatus: {
@@ -38,13 +43,33 @@ const userSchema = mongoose.Schema(
           enum: ["not-applied", "approved", "pending", "rejected"],
           default: "not-applied",
         },
+        updatedAt: {
+          type: Date,
+        },
       },
     ],
     employeeApplicationStatus: [
       {
-        type: String,
-        enum: ["not-applied", "approved", "pending", "rejected"],
-        default: "not-applied",
+        applicationStatus: {
+          type: String,
+          enum: ["not-applied", "approved", "pending", "rejected"],
+          default: "not-applied",
+        },
+        updatedAt: {
+          type: Date,
+        },
+      },
+    ],
+    attacheeApplicationStatus: [
+      {
+        applicationStatus: {
+          type: String,
+          enum: ["not-applied", "approved", "pending", "rejected"],
+          default: "not-applied",
+        },
+        updatedAt: {
+          type: Date,
+        },
       },
     ],
     bio: {
