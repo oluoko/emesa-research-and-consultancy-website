@@ -10,8 +10,7 @@ const userRoutes = require("./routes/userRoutes.js");
 const blogRoutes = require("./routes/blogRoutes.js");
 const careerRoutes = require("./routes/careerRoutes.js");
 const uploadRoutes = require("./routes/uploadRoutes.js");
-const bloggerRoutes = require("./routes/bloggerRoutes.js");
-const employeeRoutes = require("./routes/employeeRoutes.js");
+
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 
 const port = process.env.PORT || 5000;
@@ -34,8 +33,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/careers", careerRoutes);
 app.use("/api/upload", uploadRoutes);
-app.use("/api/applications/blogger", bloggerRoutes);
-app.use("/api/applications/employee", employeeRoutes);
 
 // Serve uploaded files
 app.use("/uploads", express.static(uploadsDir));

@@ -182,6 +182,84 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc    Update blogger application status
+// @route   PUT /api/users/:id/blogger-application
+// @access  Private/Admin
+const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const { status } = req.body;
+
+  const updatedBloggerStatus = {
+    applicationStatus: status,
+    updatedAt: new Date(),
+  };
+
+  user.bloggerApplicationStatus.push(updatedBloggerStatus);
+  user.isBlogger = status === "approved";
+
+  await user.save();
+
+  res.json({ message: `Blogger application status updated to ${status}` });
+});
+
+// @desc    Update employee application status
+// @route   PUT /api/users/:id/employee-application
+// @access  Private/Admin
+const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const { status } = req.body;
+
+  const updatedEmployeeStatus = {
+    applicationStatus: status,
+    updatedAt: new Date(),
+  };
+
+  user.employeeApplicationStatus.push(updatedEmployeeStatus);
+  user.isEmployee = status === "approved";
+
+  await user.save();
+
+  res.json({ message: `Employee application status updated to ${status}` });
+});
+
+// @desc    Update attachee application status
+// @route   PUT /api/users/:id/attachee-application
+// @access  Private/Admin
+const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const { status } = req.body;
+
+  const updatedAttacheeStatus = {
+    applicationStatus: status,
+    updatedAt: new Date(),
+  };
+
+  user.attacheeApplicationStatus.push(updatedAttacheeStatus);
+  user.isAttachee = status === "approved";
+
+  await user.save();
+
+  res.json({ message: `Attachee application status updated to ${status}` });
+});
+
 module.exports = {
   authUser,
   registerUser,
@@ -192,4 +270,7 @@ module.exports = {
   deleteUser,
   getUserById,
   updateUser,
+  updateBloggerApplicationStatus,
+  updateEmployeeApplicationStatus,
+  updateAttacheeApplicationStatus,
 };
