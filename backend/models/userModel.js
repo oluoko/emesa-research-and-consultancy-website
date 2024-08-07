@@ -1,6 +1,20 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+const statusSchema = mongoose.Schema({
+  applicationStatus: {
+    type: String,
+    enum: ["not-applied", "approved", "pending", "rejected"],
+    default: "not-applied",
+  },
+  appliedAt: {
+    type: Date,
+  },
+  reviewedAt: {
+    type: Date,
+  },
+});
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -36,42 +50,9 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    bloggerApplicationStatus: [
-      {
-        applicationStatus: {
-          type: String,
-          enum: ["not-applied", "approved", "pending", "rejected"],
-          default: "not-applied",
-        },
-        updatedAt: {
-          type: Date,
-        },
-      },
-    ],
-    employeeApplicationStatus: [
-      {
-        applicationStatus: {
-          type: String,
-          enum: ["not-applied", "approved", "pending", "rejected"],
-          default: "not-applied",
-        },
-        updatedAt: {
-          type: Date,
-        },
-      },
-    ],
-    attacheeApplicationStatus: [
-      {
-        applicationStatus: {
-          type: String,
-          enum: ["not-applied", "approved", "pending", "rejected"],
-          default: "not-applied",
-        },
-        updatedAt: {
-          type: Date,
-        },
-      },
-    ],
+    bloggerApplicationStatus: statusSchema,
+    employeeApplicationStatus: statusSchema,
+    attacheeApplicationStatus: statusSchema,
     bio: {
       type: String,
       default: "",
