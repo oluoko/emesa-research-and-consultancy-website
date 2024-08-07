@@ -272,6 +272,16 @@ const applyForBloggerStatus = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
+  // Check if there is a pending blogger application
+  const pendingApplication = user.bloggerApplicationStatus.find(
+    (app) => app.applicationStatus === "pending"
+  );
+
+  if (pendingApplication) {
+    res.status(400);
+    throw new Error("You have already applied for blogger status");
+  }
+
   const bloggerApplication = {
     applicationStatus: "pending",
     updatedAt: new Date(),
@@ -295,6 +305,16 @@ const applyForEmployeeStatus = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
+  // Check if there is a pending employee application
+  const pendingApplication = user.employeeApplicationStatus.find(
+    (app) => app.applicationStatus === "pending"
+  );
+
+  if (pendingApplication) {
+    res.status(400);
+    throw new Error("You have already applied for employee status");
+  }
+
   const employeeApplication = {
     applicationStatus: "pending",
     updatedAt: new Date(),
@@ -316,6 +336,16 @@ const applyForAttacheeStatus = asyncHandler(async (req, res) => {
   if (!user) {
     res.status(404);
     throw new Error("User not found");
+  }
+
+  // Check if there is a pending attachee application
+  const pendingApplication = user.attacheeApplicationStatus.find(
+    (app) => app.applicationStatus === "pending"
+  );
+
+  if (pendingApplication) {
+    res.status(400);
+    throw new Error("You have already applied for attachee status");
   }
 
   const attacheeApplication = {
