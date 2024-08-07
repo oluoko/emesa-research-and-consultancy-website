@@ -1,26 +1,21 @@
 {
   "name": "emesa-research-and-consultancy-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "The Official website for Emesa Research and Consultancy. It contains a blog and a careers section.",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix client",
-    "blog": "npm start --prefix blog",
-    "careers": "npm start --prefix careers",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run blog\" \"npm run careers\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "generate-toc": "markdown-toc -i readme.md"
+    "server": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/emesa-research-and-consultancy-website.git"
+    "url": "git+https://github.com/oluoko/emesa-research-and-consultancy-website.git"
   },
-  "author": "Brian Otieno",
-  "license": "ISC",
+  "author": "Brian Otieno Oluoko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oluoko/emesa-research-and-consultancy-website/issues"
+  },
+  "homepage": "https://github.com/oluoko/emesa-research-and-consultancy-website#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
@@ -31,12 +26,13 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
-    "markdown-toc": "^1.2.0",
-    "moment-timezone": "^0.5.45",
+    "mongodb": "^6.8.0",
     "mongoose": "^8.5.2",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.4",
-    "socket.io": "^4.7.5",
-    "socket.io-client": "^4.7.5"
+    "react-dropzone": "^14.2.3",
+    "react-image-gallery": "^1.3.0",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.26.0"
   }
 }
