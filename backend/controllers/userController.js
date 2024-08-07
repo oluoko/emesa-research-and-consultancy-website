@@ -157,6 +157,7 @@ const getUserById = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 });
+
 // @desc    Update user
 // @route   PUT /api/users/:id
 // @access  Private/Admin
@@ -260,6 +261,75 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
   res.json({ message: `Attachee application status updated to ${status}` });
 });
 
+// @desc    Apply for blogger status
+// @route   POST /api/users/:id/apply-blogger
+// @access  Private
+const applyForBloggerStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const bloggerApplication = {
+    applicationStatus: "pending",
+    updatedAt: new Date(),
+  };
+
+  user.bloggerApplicationStatus.push(bloggerApplication);
+
+  await user.save();
+
+  res.json({ message: "Applied for blogger status" });
+});
+
+// @desc    Apply for employee status
+// @route   POST /api/users/:id/apply-employee
+// @access  Private
+const applyForEmployeeStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const employeeApplication = {
+    applicationStatus: "pending",
+    updatedAt: new Date(),
+  };
+
+  user.employeeApplicationStatus.push(employeeApplication);
+
+  await user.save();
+
+  res.json({ message: "Applied for employee status" });
+});
+
+// @desc    Apply for attachee status
+// @route   POST /api/users/:id/apply-attachee
+// @access  Private
+const applyForAttacheeStatus = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const attacheeApplication = {
+    applicationStatus: "pending",
+    updatedAt: new Date(),
+  };
+
+  user.attacheeApplicationStatus.push(attacheeApplication);
+
+  await user.save();
+
+  res.json({ message: "Applied for attachee status" });
+});
+
 module.exports = {
   authUser,
   registerUser,
@@ -273,4 +343,7 @@ module.exports = {
   updateBloggerApplicationStatus,
   updateEmployeeApplicationStatus,
   updateAttacheeApplicationStatus,
+  applyForBloggerStatus,
+  applyForEmployeeStatus,
+  applyForAttacheeStatus,
 };

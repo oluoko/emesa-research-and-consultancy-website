@@ -12,6 +12,9 @@ const {
   updateBloggerApplicationStatus,
   updateEmployeeApplicationStatus,
   updateAttacheeApplicationStatus,
+  applyForBloggerStatus,
+  applyForEmployeeStatus,
+  applyForAttacheeStatus,
 } = require("../controllers/userController.js");
 const { protect, admin } = require("../middleware/authMiddleware.js");
 
@@ -48,5 +51,9 @@ router.put(
   admin,
   updateAttacheeApplicationStatus
 );
+
+router.post("/:id/apply-blogger", protect, applyForBloggerStatus);
+router.post("/:id/apply-employee", protect, applyForEmployeeStatus);
+router.post("/:id/apply-attachee", protect, applyForAttacheeStatus);
 
 module.exports = router;
