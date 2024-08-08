@@ -50,9 +50,18 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    bloggerApplicationStatus: statusSchema,
-    employeeApplicationStatus: statusSchema,
-    attacheeApplicationStatus: statusSchema,
+    bloggerApplicationStatus: {
+      type: statusSchema,
+      default: () => ({}),
+    },
+    employeeApplicationStatus: {
+      type: statusSchema,
+      default: () => ({}),
+    },
+    attacheeApplicationStatus: {
+      type: statusSchema,
+      default: () => ({}),
+    },
     bio: {
       type: String,
       default: "",
