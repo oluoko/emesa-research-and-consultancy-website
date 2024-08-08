@@ -167,7 +167,20 @@ const updateUser = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    user.isAdmin = Boolean(req.body.isAdmin);
+    user.isAdmin =
+      req.body.isAdmin !== undefined ? Boolean(req.body.isAdmin) : user.isAdmin;
+    user.isEmployee =
+      req.body.isEmployee !== undefined
+        ? Boolean(req.body.isEmployee)
+        : user.isEmployee;
+    user.isBlogger =
+      req.body.isBlogger !== undefined
+        ? Boolean(req.body.isBlogger)
+        : user.isBlogger;
+    user.isAttachee =
+      req.body.isAttachee !== undefined
+        ? Boolean(req.body.isAttachee)
+        : user.isAttachee;
 
     const updatedUser = await user.save();
 
@@ -176,6 +189,9 @@ const updateUser = asyncHandler(async (req, res) => {
       name: updatedUser.name,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
+      isEmployee: updatedUser.isEmployee,
+      isBlogger: updatedUser.isBlogger,
+      isAttachee: updatedUser.isAttachee,
     });
   } else {
     res.status(404);
