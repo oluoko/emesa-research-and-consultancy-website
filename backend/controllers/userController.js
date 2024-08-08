@@ -296,7 +296,7 @@ const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
   if (user.employeeApplicationStatus.reviewedAt) {
     res.status(400);
     throw new Error(
-      `This user's application has already been reviewed to \"${user.employeeApplicationStatus.applicationStatus}\"`
+      `This user's application has already been reviewed to '${user.employeeApplicationStatus.applicationStatus}'`
     );
   }
 
@@ -316,7 +316,7 @@ const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
 
   await user.save();
 
-  res.json({ message: `Employee application status updated to "${status}"` });
+  res.json({ message: `Employee application status updated to '${status}'` });
 });
 
 // @desc    Update attachee application status
@@ -328,6 +328,23 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
   if (!user) {
     res.status(404);
     throw new Error("User not found");
+  }
+
+  if (!user.attacheeApplicationStatus.appliedAt) {
+    res.status(400);
+    throw new Error("This user has never applied");
+  }
+
+  if (user.attacheeApplicationStatus.reviewedAt) {
+    res.status(400);
+    throw new Error(
+      `This user's application has already been reviewed to '${user.attacheeApplicationStatus.applicationStatus}'`
+    );
+  }
+
+  if (user.attacheeApplicationStatus.applicationStatus !== "pending") {
+    res.status(400);
+    throw new Error("Application must be in pending status to be reviewed");
   }
 
   const { status } = req.body;
@@ -353,6 +370,23 @@ const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
   if (!user) {
     res.status(404);
     throw new Error("User not found");
+  }
+
+  if (!user.bloggerApplicationStatus.appliedAt) {
+    res.status(400);
+    throw new Error("This user has never applied");
+  }
+
+  if (user.bloggerApplicationStatus.reviewedAt) {
+    res.status(400);
+    throw new Error(
+      `This user's application has already been reviewed to '${user.bloggerApplicationStatus.applicationStatus}'`
+    );
+  }
+
+  if (user.bloggerApplicationStatus.applicationStatus !== "pending") {
+    res.status(400);
+    throw new Error("Application must be in pending status to be reviewed");
   }
 
   const { status } = req.body;
