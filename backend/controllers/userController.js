@@ -288,6 +288,23 @@ const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
+  if (!user.employeeApplicationStatus.appliedAt) {
+    res.status(400);
+    throw new Error("This user has never applied");
+  }
+
+  if (user.employeeApplicationStatus.reviewedAt) {
+    res.status(400);
+    throw new Error(
+      `This user's application has already been reviewed to \"${user.employeeApplicationStatus.applicationStatus}\"`
+    );
+  }
+
+  if (user.employeeApplicationStatus.applicationStatus !== "pending") {
+    res.status(400);
+    throw new Error("Application must be in pending status to be reviewed");
+  }
+
   const { status } = req.body;
 
   user.employeeApplicationStatus = {
@@ -299,7 +316,7 @@ const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
 
   await user.save();
 
-  res.json({ message: `Employee application status updated to ${status}` });
+  res.json({ message: `Employee application status updated to "${status}"` });
 });
 
 // @desc    Update attachee application status
