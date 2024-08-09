@@ -41,8 +41,8 @@ const Navbar = ({ screen }) => {
               </a>
             </li>
             <li>
-              <button
-                onClick={() => handleExternalLink("http://blog.localhost:3000")}
+              <Link
+                to="/blog"
                 className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
                 style={{
                   "--tw-text-opacity": "1",
@@ -54,13 +54,11 @@ const Navbar = ({ screen }) => {
                 }}
               >
                 Blog
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() =>
-                  handleExternalLink("http://careers.localhost:3000")
-                }
+              <Link
+                to="/careers"
                 className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
                 style={{
                   "--orange": "var(--orange)",
@@ -71,7 +69,7 @@ const Navbar = ({ screen }) => {
                 }}
               >
                 Careers
-              </button>
+              </Link>
             </li>
             <li>
               <a
