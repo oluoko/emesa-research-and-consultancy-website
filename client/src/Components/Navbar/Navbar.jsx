@@ -138,10 +138,10 @@ const Navbar = ({ screen }) => {
               </li>
               <li>
                 <Link
-                  to="/employee-application"
-                  className="employee-application-link"
+                  to="/careers"
+                  className="employee-application-link text-gray-500 no-underline"
                 >
-                  Employee Application
+                  Employee Form
                 </Link>
               </li>
               <li>
@@ -149,7 +149,7 @@ const Navbar = ({ screen }) => {
                   to="/attachee-application"
                   className="attachee-application-link"
                 >
-                  Attachee Application
+                  Attachee Form
                 </Link>
               </li>
               <li>
