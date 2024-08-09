@@ -9,7 +9,7 @@ import Contacts from "./Components/Tabs/Contacts/Contacts";
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar screen="home" />
       <Home />
       {/* <About /> */}
       <Services />
