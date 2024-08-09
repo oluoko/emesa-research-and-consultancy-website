@@ -27,6 +27,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.get("/api/config", (req, res) => {
+  res.json({ port: process.env.PORT });
+});
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -38,11 +42,11 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", (req, res) => {
   const { name, email, budget, services, description, formType } = req.body;
 
-  let subject = "New Submission";
+  let subject = "FROM WEBSITE: " + name;
   if (formType === "service") {
-    subject += " - From Service Request Form";
+    subject += ` has a service request(${services})`;
   } else if (formType === "contacts") {
-    subject += " - From Contacts Form";
+    subject += ` has a question`;
   }
 
   const mailOptions = {

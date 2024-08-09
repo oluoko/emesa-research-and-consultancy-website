@@ -1,8 +1,35 @@
-import React from "react";
 import "./Contacts.css";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contacts = () => {
   const mapUrl = `https://www.google.com/maps?q=-1.1848195937575883,36.8957236708013&output=embed`;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    budget: "",
+    services: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/send-email", {
+        ...formData,
+        formType: "service",
+      })
+      .then((response) => {
+        alert("Email sent successfully");
+      })
+      .catch((error) => {
+        alert("Failed to send email");
+      });
+  };
 
   return (
     <div className="screen-container">
