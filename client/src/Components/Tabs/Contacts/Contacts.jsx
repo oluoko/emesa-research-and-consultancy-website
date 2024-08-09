@@ -9,14 +9,17 @@ const Contacts = () => {
       <div id="contacts" className="screen">
         <div className="section-container">
           <section className="left">
-            <div className="contacts-text">
-              <h3>Where are we located?</h3>
+            <div className="contacts-text ">
+              <h3 className="text-3xl">Where are we located?</h3>
               <br />
-              <p>KAHAWA WEST KWARE PHASE TWO ICPAK</p>
-              <p>
-                P.O BOX 2613 - 00100 GPO NAIROBI || +254 729 682 573 || +254 742
-                967 422
-              </p>
+              <div className=" font-extrabold text-2xl">
+                {" "}
+                <p>KAHAWA WEST KWARE PHASE TWO ICPAK</p>
+                <p>
+                  P.O BOX 2613 - 00100 GPO NAIROBI
+                  <br /> || +254 729 682 573 || +254 742 967 422
+                </p>
+              </div>
               <br />
               <br />
               <p className="text-xl">
@@ -27,13 +30,13 @@ const Contacts = () => {
             </div>
           </section>
           <section className="right">
-            <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-white">
+            <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-blackborder-4">
               <h3>Contacts Form</h3>
               <form>
                 <div className="flex justify-around">
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-white text-sm font-bold mb-2 text-xl"
                       htmlFor="name"
                     >
                       Name
@@ -41,13 +44,13 @@ const Contacts = () => {
                     <input
                       type="text"
                       id="name"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-white text-xl text-sm font-bold mb-2"
                       htmlFor="email"
                     >
                       E-Mail
@@ -55,7 +58,7 @@ const Contacts = () => {
                     <input
                       type="email"
                       id="email"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="j.doe@company.com"
                     />
                   </div>
@@ -63,14 +66,14 @@ const Contacts = () => {
 
                 <div className="m-2">
                   <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
+                    className="block text-white text-xl font-bold mb-2"
                     htmlFor="description"
                   >
                     What is this about?
                   </label>
                   <textarea
                     id="description"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Hello there,
 
 There is a bug in... How can I apply to be an employee... At what time are your offices open..."
