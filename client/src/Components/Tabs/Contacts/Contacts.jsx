@@ -30,7 +30,7 @@ const Contacts = () => {
             </div>
           </section>
           <section className="right">
-            <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-blackborder-4">
+            <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
               <h3>Contacts Form</h3>
               <form>
                 <div className="flex justify-around">
@@ -95,7 +95,7 @@ There is a bug in... How can I apply to be an employee... At what time are your 
                   >
                     Submit
                   </button>
-                  <div className="text-center mt-4 text-black flex flex-col justify-center items-center">
+                  <div className="text-center mt-4 text-white flex flex-col justify-center items-center">
                     <p>Hate Contact forms?</p>
                     <p>
                       <a
