@@ -31,41 +31,6 @@ app.get("/api/config", (req, res) => {
   res.json({ port: process.env.PORT });
 });
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
-
-app.post("/send-email", (req, res) => {
-  const { name, email, budget, services, description, formType } = req.body;
-
-  let subject = "FROM WEBSITE: " + name;
-  if (formType === "service") {
-    subject += ` has a service request(${services})`;
-  } else if (formType === "contacts") {
-    subject += ` has a question`;
-  }
-
-  const mailOptions = {
-    from: email,
-    to: process.env.EMAIL,
-    subject: subject,
-    text: `Name: ${name}\nEmail: ${email}\n${
-      budget ? `Budget: ${budget}\n` : ""
-    }${services ? `Service: ${services}\n` : ""}Description:\n${description}`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).send({ message: "Error sending email", error });
-    }
-    res.status(200).send({ message: "Email sent successfully", info });
-  });
-});
-
 const uploadsDir = path.join(__dirname, "/uploads");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
