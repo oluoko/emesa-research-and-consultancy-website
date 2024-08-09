@@ -99,13 +99,13 @@ const Services = () => {
                       className="block text-gray-700 text-sm font-bold mb-2"
                       htmlFor="budget"
                     >
-                      Budget Range in $
+                      Budget Range in Ksh
                     </label>
                     <input
                       type="text"
                       id="budget"
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="5.00 - 10.00 $"
+                      placeholder="500.00 Ksh - 1000.00 Ksh"
                     />
                   </div>
                   <div className="m-2">
