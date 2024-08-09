@@ -4,10 +4,6 @@ import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ screen }) => {
-  const handleExternalLink = (url) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <div id="nav-container">
       {screen === "home" ? (
@@ -90,7 +86,7 @@ const Navbar = ({ screen }) => {
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
               style={{ "--orange": "var(--orange)" }}
             >
-              Back
+              <img src={logo} alt="" />
             </Link>
           </p>
           <ul>
@@ -98,7 +94,15 @@ const Navbar = ({ screen }) => {
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
+            <li>
+              <Link
+                to="/"
+                className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+                style={{ "--orange": "var(--orange)" }}
+              >
+                Back
+              </Link>
+            </li>
           </ul>
         </nav>
       )}
