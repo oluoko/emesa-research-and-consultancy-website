@@ -126,6 +126,56 @@ There is a bug in... How can I apply to be an employee... At what time are your 
             <section className="right">
               <p>Terms and conditions</p>
               <p>Privacy policy</p>
+              <div className="my-2 flex flex-col justify-center items-center">
+                <p className="text-xl">The Creator, Brian Otieno</p>
+                <ul className="grid grid-cols-2 gap-2">
+                  <li>
+                    <a
+                      className="hover:text-orange-500"
+                      href="https://instagram.com/that_guy.brian"
+                      target="_blank"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="hover:text-orange-500"
+                      href="https://x.com/oluoko_"
+                      target="_blank"
+                    >
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="hover:text-orange-500"
+                      href="https://www.linkedin.com/in/brian-otieno-64a902213/"
+                      target="_blank"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="hover:text-orange-500"
+                      href="https://www.facebook.com/profile.php?id=100070284942061"
+                      target="_blank"
+                    >
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="hover:text-orange-500"
+                      href="https://github.com/oluoko"
+                      target="_blank"
+                    >
+                      GitHub
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </section>
           </div>
         </div>
