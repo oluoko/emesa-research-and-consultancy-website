@@ -99,36 +99,42 @@ h3 {
   flex-direction: column;
 }
 
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 90%;
-  height: 100%;
-  background-color: #898989;
-  border-radius: 10px;
-  padding: 10px 20px;
-}
-
-.form form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .form input,
 .form textarea {
-  background-color: transparent;
-  border-radius: 7px;
   border: white 2px solid;
-  margin: 5px;
-  text-align: center;
-  height: 40px;
-  width: 30%;
   font-size: large;
 }
 
+.form button {
+  height: 60px;
+  background-color: var(--orange);
+}
+
+.form button:hover {
+  background-color: #000;
+}
+
+.form a:hover {
+  color: var(--orange);
+}
+
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
   .section-container {
     flex-direction: column-reverse;
   }

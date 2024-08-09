@@ -6,35 +6,35 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import "./Home.css";
 import Ads from "../../Ads/Ads.jsx";
 import { Link } from "react-router-dom";
-import importedImages from "../../Utils/imageImports.js"; // Import the images
+// import importedImages from "../../Utils/imageImports.js"; // Import the images
 
 const Home = () => {
   const [images, setImages] = useState([]);
   const [uploadedImages, setUploadedImages] = useState([]);
 
-  useEffect(() => {
-    setImages(importedImages); // Set the imported images
-  }, []);
+  // useEffect(() => {
+  //   setImages(importedImages); // Set the imported images
+  // }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
-    onDrop: (acceptedFiles) => {
-      const newImages = acceptedFiles.map((file) => ({
-        original: URL.createObjectURL(file),
-        originalAlt: file.name,
-      }));
-      setUploadedImages([...uploadedImages, ...newImages]);
-    },
-  });
+  // const { getRootProps, getInputProps } = useDropzone({
+  //   accept: "image/*",
+  //   onDrop: (acceptedFiles) => {
+  //     const newImages = acceptedFiles.map((file) => ({
+  //       original: URL.createObjectURL(file),
+  //       originalAlt: file.name,
+  //     }));
+  //     setUploadedImages([...uploadedImages, ...newImages]);
+  //   },
+  // });
 
-  const combinedImages = [...images, ...uploadedImages];
+  // const combinedImages = [...images, ...uploadedImages];
 
   return (
     <div className="screen-container">
       <div id="home" className="screen section-container">
         <section className="left">
           <div className="carousel-container">
-            <ImageGallery items={combinedImages} infinite autoPlay />
+            {/* <ImageGallery items={combinedImages} infinite autoPlay /> */}
           </div>
         </section>
         <section className="right">

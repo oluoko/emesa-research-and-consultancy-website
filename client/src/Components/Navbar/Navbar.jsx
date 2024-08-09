@@ -3,86 +3,107 @@ import "./Navbar.css";
 import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ screen }) => {
   const handleExternalLink = (url) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
     <div id="nav-container">
-      <nav>
-        <p id="logo">
-          <a
-            href="#home"
-            className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
-            style={{ "--orange": "var(--orange)" }}
-          >
-            <img src={logo} alt="" />
-          </a>
-        </p>
-        <ul>
-          <li>
+      {screen === "home" ? (
+        <nav>
+          <p id="logo">
             <a
-              href="#about"
-              className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
-              style={{ "--orange": "var(--orange)" }}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#services"
+              href="#home"
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
               style={{ "--orange": "var(--orange)" }}
             >
-              Services
+              <img src={logo} alt="" />
             </a>
-          </li>
-          <li>
-            <button
-              onClick={() => handleExternalLink("http://blog.localhost:3000")}
-              className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
-              style={{
-                "--tw-text-opacity": "1",
-                "--orange": "var(--orange)",
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-              }}
-            >
-              Blog
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() =>
-                handleExternalLink("http://careers.localhost:3000")
-              }
-              className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
-              style={{
-                "--orange": "var(--orange)",
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-              }}
-            >
-              Careers
-            </button>
-          </li>
-          <li>
-            <a
-              href="#contacts"
+          </p>
+          <ul>
+            <li>
+              <a
+                href="#about"
+                className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
+                style={{ "--orange": "var(--orange)" }}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+                style={{ "--orange": "var(--orange)" }}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={() => handleExternalLink("http://blog.localhost:3000")}
+                className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+                style={{
+                  "--tw-text-opacity": "1",
+                  "--orange": "var(--orange)",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+              >
+                Blog
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() =>
+                  handleExternalLink("http://careers.localhost:3000")
+                }
+                className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+                style={{
+                  "--orange": "var(--orange)",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+              >
+                Careers
+              </button>
+            </li>
+            <li>
+              <a
+                href="#contacts"
+                className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
+                style={{ "--orange": "var(--orange)" }}
+              >
+                Contacts
+              </a>
+            </li>
+          </ul>
+        </nav>
+      ) : (
+        <nav>
+          <p id="logo">
+            <Link
+              to="/"
               className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 "
               style={{ "--orange": "var(--orange)" }}
             >
-              Contacts
-            </a>
-          </li>
-        </ul>
-      </nav>
+              Back
+            </Link>
+          </p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </nav>
+      )}
     </div>
   );
 };
