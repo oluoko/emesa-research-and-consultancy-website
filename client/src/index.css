@@ -33,25 +33,6 @@ html {
   scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3 {
-  color: var(--orange);
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
 .button {
   width: 100%;
   height: 50px;
@@ -82,23 +63,6 @@ h3 {
   padding: 40px 25px;
 }
 
-.section-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.section-container section {
-  width: 48%;
-  margin: 30px 15px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .form input,
 .form textarea {
   border: white 2px solid;
@@ -116,6 +80,59 @@ h3 {
 
 .form a:hover {
   color: var(--orange);
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: var(--orange);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+}
+h1,
+h2,
+h3 {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.section-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.section-container section {
+  width: 48%;
+  margin: 30px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -142,22 +159,4 @@ h3 {
   .section-container section {
     width: 90%;
   }
-}
-
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background: var(--orange);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #383838;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
 }
