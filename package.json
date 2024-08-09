@@ -4,7 +4,9 @@
   "description": "The Official website for Emesa Research and Consultancy. It contains a blog and a careers section.",
   "main": "backend/server.js",
   "scripts": {
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "client":"cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
