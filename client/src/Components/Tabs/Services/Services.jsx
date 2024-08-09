@@ -61,6 +61,7 @@ const Services = () => {
         <div className="section-container service-div">
           <section className="left">
             <div className="service-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-white">
+              <h3>Service Request Form</h3>
               <form>
                 <div className="flex justify-around">
                   <div className="m-2">
