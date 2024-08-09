@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Services.css";
 
 const Services = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    budget: "",
+    services: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    console.log(formData);
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/send-email", {
+        ...formData,
+        formType: "service",
+      })
+      .then((response) => {
+        alert("Email sent successfully");
+      })
+      .catch((error) => {
+        alert("Failed to send email");
+      });
+  };
   return (
     <div className="screen-container">
       <div id="services" className="screen ">
@@ -62,7 +90,8 @@ const Services = () => {
           <section className="left">
             <div className="service-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-white">
               <h3>Service Request Form</h3>
-              <form>
+              <form onSubmit={handleSubmit}>
+                {/* Form Inputs */}
                 <div className="flex justify-around">
                   <div className="m-2">
                     <label
@@ -74,6 +103,8 @@ const Services = () => {
                     <input
                       type="text"
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="John Doe"
                     />
@@ -88,6 +119,8 @@ const Services = () => {
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="j.doe@company.com"
                     />
@@ -105,6 +138,8 @@ const Services = () => {
                     <input
                       type="text"
                       id="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="500.00 Ksh - 1000.00 Ksh"
                     />
@@ -118,6 +153,8 @@ const Services = () => {
                     </label>
                     <select
                       id="services"
+                      value={formData.services}
+                      onChange={handleChange}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     >
                       <option>Consultancy Services</option>
@@ -138,25 +175,18 @@ const Services = () => {
                   </label>
                   <textarea
                     id="description"
+                    value={formData.description}
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Hello there,
-
-I need assistance with... Here are my goals and timeline: ... Additionally, you can find my design link here: ..."
+                    placeholder="Hello there,\n\nI need assistance with... Here are my goals and timeline: ... Additionally, you can find my design link here: ..."
                     rows="5"
                   ></textarea>
                 </div>
-                <div className="m-2">
-                  {/* <label className="inline-flex items-center">
-            <input type="checkbox" className="form-checkbox" />
-            <span className="ml-2">
-              By submitting this form, you agree to the Privacy Policy
-            </span>
-          </label> */}
-                </div>
+
                 <div className="m-2 flex justify-between">
                   <button
                     type="submit"
-                    className=" text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   >
                     Submit
                   </button>
