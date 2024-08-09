@@ -11,11 +11,6 @@
     black 50%,
     black 0%
   ); */
-  background: linear-gradient(
-    133deg,
-    rgba(255, 255, 255, 1) 24%,
-    rgba(0, 0, 0, 1) 100%
-  );
 }
 
 #about p {

@@ -5,26 +5,26 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import "./About.css";
 
 const About = () => {
-  const [images, setImages] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const galleryRef = useRef(null);
-  const location = useLocation();
+  // const [images, setImages] = useState([]);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const galleryRef = useRef(null);
+  // const location = useLocation();
 
-  useEffect(() => {
-    // Import all images from the folder
-    const importAll = (r) => r.keys().map(r);
-    const images = importAll(
-      require.context(
-        "../../../Assets/Images/Staff",
-        false,
-        /\.(png|jpe?g|svg)$/
-      )
-    );
-    setImages(images);
-  }, []);
+  // useEffect(() => {
+  //   // Import all images from the folder
+  //   const importAll = (r) => r.keys().map(r);
+  //   const images = importAll(
+  //     require.context(
+  //       "../../../Assets/Images/Staff",
+  //       false,
+  //       /\.(png|jpe?g|svg)$/
+  //     )
+  //   );
+  //   setImages(images);
+  // }, []);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // const openModal = () => setIsModalOpen(true);
+  // const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="screen-container">
@@ -86,31 +86,22 @@ const About = () => {
         </section>
         <section className="right">
           <h4 className="text-xl">Here are some of our staff members.</h4>
-          <div className="gallery-container" ref={galleryRef}>
+          {/* <div className="gallery-container" ref={galleryRef}>
             {images.map((image, index) => (
               <div key={index} className="gallery-item">
                 <img src={image} alt={`Image ${index + 1}`} />
               </div>
             ))}
-          </div>
+          </div> */}
         </section>
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          <button onClick={closeModal} className="close-button">
-            Close
-          </button>
-          <div className="fullscreen-gallery">
-            {images.map((image, index) => (
-              <div key={index} className="fullscreen-gallery-item">
-                <img src={image} alt={`Image ${index + 1}`} />
-              </div>
-            ))}
-          </div>
-        </Modal>
+
+        {/* <div className="fullscreen-gallery">
+          {images.map((image, index) => (
+            <div key={index} className="fullscreen-gallery-item">
+              <img src={image} alt={`Image ${index + 1}`} />
+            </div>
+          ))}
+        </div> */}
       </div>
     </div>
   );
