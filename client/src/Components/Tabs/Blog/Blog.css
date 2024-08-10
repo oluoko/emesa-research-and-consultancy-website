@@ -1,6 +1,72 @@
 #blog {
   margin: 0 5%;
+
   height: calc(100vh - 100px);
   width: calc(100% - 22%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen-container .blog .left-div,
+.screen-container .blog .right-div {
+  height: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px 15px;
+  margin: 2%;
+}
+
+.screen-container .blog .left-div {
+  width: 70%;
+}
+
+.screen-container .blog .right-div {
+  background-color: blueviolet;
+  width: 30%;
+}
+
+.categories-bar {
+  list-style: none;
+  width: 100%;
+  height: 70px;
+  overflow-x: scroll;
+}
+
+.categories-bar li {
+  margin-bottom: 10px;
+  height: 40px;
+  color: white;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.categories-bar li:hover {
+  background-color: var(--orange);
+  color: black;
+}
+
+.categories-bar::-webkit-scrollbar {
+  margin-top: 10px;
+  height: 0px;
+  width: 10%;
+}
+
+.contet-text {
+  height: 20px;
+  font-size: 17px;
+  overflow-y: hidden;
+}
+
+.blog-container {
+  padding: 10px 5px;
+  border-top: solid 1px rgba(9, 9, 9, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+  .categories-bar {
+    display: none;
+  }
 }
