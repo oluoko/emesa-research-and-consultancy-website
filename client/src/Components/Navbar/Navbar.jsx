@@ -106,7 +106,11 @@ const Navbar = ({ screen }) => {
                 <button className="write-button">Write</button>
               </li>
               <li>
-                <span className="notifications-icon">🔔</span>
+                <div>
+                  <span className="notifications-icon  absolute top-1/2 translate-y-1/2 animate-swing">
+                    🔔
+                  </span>
+                </div>
               </li>
               <li>
                 <Link to="/profile">
