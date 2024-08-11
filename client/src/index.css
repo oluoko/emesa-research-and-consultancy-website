@@ -19,6 +19,7 @@
   box-sizing: border-box;
   user-select: none;
   font-family: var(--indie-flower);
+  scroll-behavior: smooth;
 }
 
 img {

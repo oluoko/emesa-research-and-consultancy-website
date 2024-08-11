@@ -9,7 +9,7 @@ const Blog = () => {
     <div className="screen-container ">
       <Navbar screen="blog" />
 
-      <div className="flex blog">
+      <div className="blog flex items-start ">
         <div className="left-div  w-4/5 rounded-xl flex flex-col justify-center items-left">
           <h3 className="categories-bar flex  flex-nowrap gap-4">
             <li className="bg-gray-500 radius-xl">Technology</li>
@@ -83,22 +83,141 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div mr w-1/5 bg-blue-400 rounded-3xl 0">
+        <div className="right-div mr w-1/5">
           <h3>Most Viewed blogs and</h3>
-          <div className="flex flex-col my-2 bg-fuchsia-300">
-            <div className="">
-              <div className="flex  justify-start gap-2  items-center bg-yellow-200 w-full">
+          <div className="flex flex-col my-2  h-80 overflow-y-scroll">
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
                 <img
                   src={userProfile}
                   className="w-4 h-4 rounded-full"
                   alt=""
                 />
-                <span className=" font-extrabold">Daisy Okoti</span>
+                <span className=" font-bold">Daisy Okoti</span>
                 <span>in</span>
-                <span className="font-extrabold">Mindfulness</span>
+                <span className="font-bold">Mindfulness</span>
               </div>
-              <div className="text-lg font-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+
+            <div className="blog-container">
+              <div className="flex  justify-start gap-2  items-center">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-bold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-bold">Mindfulness</span>
+              </div>
+              <div className="text-xl my-2 font-black">
+                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
                 Voluptatibus
               </div>
             </div>
