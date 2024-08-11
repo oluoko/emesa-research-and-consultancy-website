@@ -9,6 +9,7 @@ import "./index.css";
 import LoginScreen from "./Components/Screens/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from "./Components/Screens/RegisterScreen/RegisterScreen.jsx";
 import AttacheeApplicationScreen from "./Components/Screens/AttacheeApplication/AttacheeApplicationScreen.jsx";
+import ProfileScreen from "./Components/Screens/ProfileScreen/ProfileScreen.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           path="/attachee-application"
           element={<AttacheeApplicationScreen />}
         />
+        <Route path="/profile" element={<ProfileScreen />} />
       </Routes>
     </Router>
   </React.StrictMode>
