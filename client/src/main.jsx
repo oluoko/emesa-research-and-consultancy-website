@@ -8,6 +8,7 @@ import DrEmelda from "./Components/Dr. Emelda/DrEmelda.jsx";
 import "./index.css";
 import LoginScreen from "./Components/Screens/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from "./Components/Screens/RegisterScreen/RegisterScreen.jsx";
+import AttacheeApplicationScreen from "./Components/Screens/AttacheeApplication/AttacheeApplicationScreen.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,6 +20,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Dr-Emelda" element={<DrEmelda />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
+        <Route
+          path="/attachee-application"
+          element={<AttacheeApplicationScreen />}
+        />
       </Routes>
     </Router>
   </React.StrictMode>
