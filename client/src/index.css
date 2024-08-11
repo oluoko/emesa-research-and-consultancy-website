@@ -85,6 +85,11 @@ html {
   color: var(--orange);
 }
 
+.form input:hover .form input:focus {
+  border: solid 2px var(--orange);
+  scale: 0.97;
+}
+
 *::-webkit-scrollbar {
   width: 9px;
 }

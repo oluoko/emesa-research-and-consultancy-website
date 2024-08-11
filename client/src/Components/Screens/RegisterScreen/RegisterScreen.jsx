@@ -59,14 +59,14 @@ const RegisterScreen = () => {
 
           <button
             type="submit"
-            className=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            className=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-xl"
           >
             Register
           </button>
 
-          <p className="mt-5">
+          <p className="mt-5 text-xl">
             Already have and account?{" "}
-            <Link className="text-blue-500 hover:text-orange-500" to="/login">
+            <Link className="text-blue-500 hover:text-orange-500 " to="/login">
               Log in
             </Link>
           </p>
