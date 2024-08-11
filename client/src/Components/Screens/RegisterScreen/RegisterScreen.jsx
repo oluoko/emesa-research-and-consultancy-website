@@ -2,111 +2,81 @@ import React from "react";
 
 const RegisterScreen = () => {
   return (
-    <section
-      className="vh-100 bg-image"
-      style={{
-        backgroundImage:
-          "url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');",
-      }}
+    <div
+      className="
+"
     >
-      <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-        <div className="container h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-              <div className="card" style={{ borderRadius: "15px;" }}>
-                <div className="card-body p-5">
-                  <h2 className="text-uppercase text-center mb-5">
-                    Create an account
-                  </h2>
+      <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
+        <h3>Contacts Form</h3>
+        <form>
+          <input
+            type="text"
+            id="name"
+            className=" text-white text-sm font-bold mb-2 text-xl shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Your Name"
+          />
 
-                  <form>
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example1cg"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example1cg">
-                        Your Name
-                      </label>
-                    </div>
+          <div className="m-2">
+            <label
+              className="block text-white text-xl text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              E-Mail
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="j.doe@company.com"
+            />
+          </div>
 
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input
-                        type="email"
-                        id="form3Example3cg"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example3cg">
-                        Your Email
-                      </label>
-                    </div>
+          <div className="m-2">
+            <label
+              className="block text-white text-xl font-bold mb-2"
+              htmlFor="description"
+            >
+              What is this about?
+            </label>
+            <textarea
+              id="description"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Hello there,
 
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input
-                        type="password"
-                        id="form3Example4cg"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example4cg">
-                        Password
-                      </label>
-                    </div>
-
-                    <div data-mdb-input-init className="form-outline mb-4">
-                      <input
-                        type="password"
-                        id="form3Example4cdg"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example4cdg">
-                        Repeat your password
-                      </label>
-                    </div>
-
-                    <div className="form-check d-flex justify-content-center mb-5">
-                      <input
-                        className="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form2Example3cg"
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="form2Example3g"
-                      >
-                        I agree all statements in{" "}
-                        <a href="#!" className="text-body">
-                          <u>Terms of service</u>
-                        </a>
-                      </label>
-                    </div>
-
-                    <div className="d-flex justify-content-center">
-                      <button
-                        type="button"
-                        data-mdb-button-init
-                        data-mdb-ripple-init
-                        className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                      >
-                        Register
-                      </button>
-                    </div>
-
-                    <p className="text-center text-muted mt-5 mb-0">
-                      Have already an account?{" "}
-                      <a href="#!" className="fw-bold text-body">
-                        <u>Login here</u>
-                      </a>
-                    </p>
-                  </form>
-                </div>
-              </div>
+There is a bug in... How can I apply to be an employee... At what time are your offices open..."
+              rows="5"
+            ></textarea>
+          </div>
+          <div className="m-2">
+            {/* <label className="inline-flex items-center">
+            <input type="checkbox" className="form-checkbox" />
+            <span className="ml-2">
+              By submitting this form, you agree to the Privacy Policy
+            </span>
+          </label> */}
+          </div>
+          <div className="m-2 flex justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Submit
+            </button>
+            <div className="text-center mt-4 text-white flex flex-col justify-center items-center">
+              <p>Hate Contact forms?</p>
+              <p>
+                <a
+                  href="mailto:researchemesa@gmail.com"
+                  className="text-sm text-blue-500 hover:underline"
+                >
+                  Our email
+                </a>
+              </p>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-    </section>
+    </div>
   );
 };
 

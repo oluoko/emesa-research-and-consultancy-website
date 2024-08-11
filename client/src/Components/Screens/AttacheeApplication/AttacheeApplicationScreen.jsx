@@ -2,93 +2,90 @@ import React from "react";
 
 const AttacheeApplicationScreen = () => {
   return (
-    <section className="vh-100" style={{ backgroundColor: "#2779e2" }}>
-      <div className="container h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-xl-9">
-            <h1 className="text-white mb-4">Apply for a job</h1>
-
-            <div className="card" style={{ borderRadius: "15px" }}>
-              <div className="card-body">
-                <div className="row align-items-center pt-4 pb-3">
-                  <div className="col-md-3 ps-5">
-                    <h6 className="mb-0">Full name</h6>
-                  </div>
-                  <div className="col-md-9 pe-5">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                    />
-                  </div>
-                </div>
-
-                <hr className="mx-n3" />
-
-                <div className="row align-items-center py-3">
-                  <div className="col-md-3 ps-5">
-                    <h6 className="mb-0">Email address</h6>
-                  </div>
-                  <div className="col-md-9 pe-5">
-                    <input
-                      type="email"
-                      className="form-control form-control-lg"
-                      placeholder="example@example.com"
-                    />
-                  </div>
-                </div>
-
-                <hr className="mx-n3" />
-
-                <div className="row align-items-center py-3">
-                  <div className="col-md-3 ps-5">
-                    <h6 className="mb-0">Full name</h6>
-                  </div>
-                  <div className="col-md-9 pe-5">
-                    <textarea
-                      className="form-control"
-                      rows="3"
-                      placeholder="Message sent to the employer"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <hr className="mx-n3" />
-
-                <div className="row align-items-center py-3">
-                  <div className="col-md-3 ps-5">
-                    <h6 className="mb-0">Upload CV</h6>
-                  </div>
-                  <div className="col-md-9 pe-5">
-                    <input
-                      className="form-control form-control-lg"
-                      id="formFileLg"
-                      type="file"
-                    />
-                    <div className="small text-muted mt-2">
-                      Upload your CV/Resume or any other relevant file. Max file
-                      size 50 MB
-                    </div>
-                  </div>
-                </div>
-
-                <hr className="mx-n3" />
-
-                <div className="px-5 py-4">
-                  <button
-                    type="submit"
-                    data-mdb-button-init
-                    data-mdb-ripple-init
-                    className="btn btn-primary btn-lg"
-                  >
-                    Send application
-                  </button>
-                </div>
-              </div>
+    <div
+      className="
+"
+    >
+      <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
+        <h3>Contacts Form</h3>
+        <form>
+          <div className="flex justify-around">
+            <div className="m-2">
+              <label
+                className="block text-white text-sm font-bold mb-2 text-xl"
+                htmlFor="name"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="John Doe"
+              />
+            </div>
+            <div className="m-2">
+              <label
+                className="block text-white text-xl text-sm font-bold mb-2"
+                htmlFor="email"
+              >
+                E-Mail
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="j.doe@company.com"
+              />
             </div>
           </div>
-        </div>
+
+          <div className="m-2">
+            <label
+              className="block text-white text-xl font-bold mb-2"
+              htmlFor="description"
+            >
+              What is this about?
+            </label>
+            <textarea
+              id="description"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Hello there,
+
+There is a bug in... How can I apply to be an employee... At what time are your offices open..."
+              rows="5"
+            ></textarea>
+          </div>
+          <div className="m-2">
+            {/* <label className="inline-flex items-center">
+            <input type="checkbox" className="form-checkbox" />
+            <span className="ml-2">
+              By submitting this form, you agree to the Privacy Policy
+            </span>
+          </label> */}
+          </div>
+          <div className="m-2 flex justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Submit
+            </button>
+            <div className="text-center mt-4 text-white flex flex-col justify-center items-center">
+              <p>Hate Contact forms?</p>
+              <p>
+                <a
+                  href="mailto:researchemesa@gmail.com"
+                  className="text-sm text-blue-500 hover:underline"
+                >
+                  Our email
+                </a>
+              </p>
+            </div>
+          </div>
+        </form>
       </div>
-    </section>
+    </div>
   );
 };
 
