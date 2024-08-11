@@ -7,7 +7,7 @@ const AttacheeApplicationScreen = () => {
       <h className="m-6 text-2xl text-orange-500">APPLY FOR ATTACHMENT</h>
       <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-gray-800 flex flex-col   text-white w-full">
         <form className=" flex flex-col items-center  ">
-          <div className="row align-items-center pt-4 pb-3  border-y-2 border-y-gray-400 w-full">
+          <div className="row align-items-center pt-4 pb-3  w-full">
             <label htmlFor="name" className="col-md-3 ps-5">
               FULL NAME
             </label>
@@ -19,6 +19,7 @@ const AttacheeApplicationScreen = () => {
             />
           </div>
 
+          <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
           <button
             type="submit"
             className=" font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
