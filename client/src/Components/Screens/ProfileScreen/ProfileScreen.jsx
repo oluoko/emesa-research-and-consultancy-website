@@ -10,11 +10,14 @@ const ProfileScreen = () => {
           Back
         </Link>
       </button>
-      <div className="w-11/12 mx-8 flex justify-around h-4/5 mt-28 bg-blue-400">
-        <div className="w-1/4 bg-yellow-300 p-20">
-          <img src={profileImage} className="w-full" />
+      <div className="w-11/12 mx-8 flex justify-around h-4/5 mt-28">
+        <div className="w-1/4 p-4 bg-slate-300 rounded-xl">
+          <img
+            src={profileImage}
+            className="w-full rounded-full border-8 hover:border-orange-500"
+          />
         </div>
-        <div className="w-3/4 bg-orange-500"></div>
+        <div className="w-3/4  flex flex-col justify-center items-center"></div>
       </div>
     </div>
   );

@@ -6,11 +6,11 @@ import blogImage from "../../../Assets/blogImage.png";
 
 const Blog = () => {
   return (
-    <div className="screen-container">
+    <div className="screen-container ">
       <Navbar screen="blog" />
 
       <div className="flex blog">
-        <div className="left-div  rounded-xl flex flex-col justify-center items-left">
+        <div className="left-div  w-4/5 rounded-xl flex flex-col justify-center items-left">
           <h3 className="categories-bar flex  flex-nowrap gap-4">
             <li className="bg-gray-500 radius-xl">Technology</li>
             <li className="bg-gray-500 radius-xl">History</li>
@@ -245,7 +245,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div  rounded-3xl 0">
+        <div className="right-div w-1/5  rounded-3xl 0">
           <h3>Most Viewed blogs and</h3>
           <p>lorem70</p>
         </div>
