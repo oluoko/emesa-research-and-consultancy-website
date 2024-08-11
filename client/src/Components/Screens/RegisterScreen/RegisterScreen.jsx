@@ -16,51 +16,28 @@ const RegisterScreen = () => {
             placeholder="Your Name"
           />
 
-          <div className="m-2">
-            <label
-              className="block text-white text-xl text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              E-Mail
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="j.doe@company.com"
-            />
-          </div>
+          <input
+            type="email"
+            id="email"
+            className="shadow appearance-none border rounded w-full  text-white text-xl text-sm font-bold mb-2 py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Your Email"
+          />
 
           <div className="m-2">
-            <label
-              className="block text-white text-xl font-bold mb-2"
-              htmlFor="description"
-            >
-              What is this about?
+            <label className="inline-flex items-center">
+              <input type="checkbox" className="form-checkbox" />
+              <span className="ml-2">
+                I agree with all the statements in{" "}
+                <a href="">Terms of Service</a>
+              </span>
             </label>
-            <textarea
-              id="description"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Hello there,
-
-There is a bug in... How can I apply to be an employee... At what time are your offices open..."
-              rows="5"
-            ></textarea>
-          </div>
-          <div className="m-2">
-            {/* <label className="inline-flex items-center">
-            <input type="checkbox" className="form-checkbox" />
-            <span className="ml-2">
-              By submitting this form, you agree to the Privacy Policy
-            </span>
-          </label> */}
           </div>
           <div className="m-2 flex justify-between">
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
-              Submit
+              Register
             </button>
             <div className="text-center mt-4 text-white flex flex-col justify-center items-center">
               <p>Hate Contact forms?</p>
