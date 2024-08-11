@@ -12,7 +12,6 @@ const Navbar = ({ screen }) => {
           <Link
             to="/"
             className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-            style={{ "--orange": "var(--orange)" }}
           >
             <img src={logo} alt="" />
           </Link>
@@ -24,7 +23,6 @@ const Navbar = ({ screen }) => {
                 <a
                   href="#about"
                   className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
-                  style={{ "--orange": "var(--orange)" }}
                 >
                   About
                 </a>
@@ -33,7 +31,6 @@ const Navbar = ({ screen }) => {
                 <a
                   href="#services"
                   className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-                  style={{ "--orange": "var(--orange)" }}
                 >
                   Services
                 </a>
@@ -43,8 +40,6 @@ const Navbar = ({ screen }) => {
                   to="/blog"
                   className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
                   style={{
-                    "--tw-text-opacity": "1",
-                    "--orange": "var(--orange)",
                     background: "none",
                     border: "none",
                     padding: 0,
@@ -59,7 +54,6 @@ const Navbar = ({ screen }) => {
                   to="/careers"
                   className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
                   style={{
-                    "--orange": "var(--orange)",
                     background: "none",
                     border: "none",
                     padding: 0,
@@ -73,7 +67,6 @@ const Navbar = ({ screen }) => {
                 <a
                   href="#contacts"
                   className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-                  style={{ "--orange": "var(--orange)" }}
                 >
                   Contacts
                 </a>
@@ -132,7 +125,7 @@ const Navbar = ({ screen }) => {
               <li></li>
               <li></li>
               <li>
-                <Link to="/register-login" className="register-login-link">
+                <Link to="/login" className="register-login-link">
                   Register/Login
                 </Link>
               </li>
@@ -170,7 +163,6 @@ const Navbar = ({ screen }) => {
                 <Link
                   to="/"
                   className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-                  style={{ "--orange": "var(--orange)" }}
                 >
                   Back
                 </Link>
