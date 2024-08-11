@@ -2,13 +2,13 @@ import React from "react";
 
 const AttacheeApplicationScreen = () => {
   return (
-    <section className="vh-100" style="background-color: #2779e2;">
+    <section className="vh-100" style={{ backgroundColor: "#2779e2;" }}>
       <div className="container h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-xl-9">
             <h1 className="text-white mb-4">Apply for a job</h1>
 
-            <div className="card" style="border-radius: 15px;">
+            <div className="card" style={{ borderRadius: "15px;" }}>
               <div className="card-body">
                 <div className="row align-items-center pt-4 pb-3">
                   <div className="col-md-3 ps-5">
