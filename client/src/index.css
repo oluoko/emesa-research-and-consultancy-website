@@ -75,7 +75,7 @@ html {
 }
 
 .form button:hover {
-  background-color: #000;
+  background-color: transparent;
   color: var(--orange);
   border: solid 2px var(--orange);
   scale: 0.98;
