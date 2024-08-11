@@ -46,6 +46,7 @@ html {
 .button:hover {
   background-color: #4f4f4f;
   color: var(--orange);
+  border: solid 2px var(--orange);
 }
 
 .screen-container {

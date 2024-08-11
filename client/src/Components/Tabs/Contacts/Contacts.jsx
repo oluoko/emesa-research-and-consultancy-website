@@ -16,21 +16,6 @@ const Contacts = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:3001/send-email", {
-        ...formData,
-        formType: "service",
-      })
-      .then((response) => {
-        alert("Email sent successfully");
-      })
-      .catch((error) => {
-        alert("Failed to send email");
-      });
-  };
-
   return (
     <div className="screen-container">
       <div id="contacts" className="screen">
