@@ -83,94 +83,9 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div mr w-1/5">
+        <div className="right-div mr-4 w-1/5 border bg-slate-300 rounded-3xl">
           <h3>Most Viewed blogs and</h3>
-          <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll">
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
+          <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll ">
             <div className="blog-container">
               <div className="flex  justify-start gap-2  items-center">
                 <img
