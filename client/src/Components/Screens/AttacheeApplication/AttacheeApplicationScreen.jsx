@@ -21,19 +21,6 @@ const AttacheeApplicationScreen = () => {
 
           <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
 
-          <div className="row align-items-center w-full my-2">
-            <label htmlFor="name" className="col-md-3 ps-5">
-              FULL NAME
-            </label>
-            <input
-              type="name"
-              id="name"
-              className="col-md-9 pe-5 shadow appearance-none border rounded font-bold mx-4 mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-              placeholder="John Doe"
-            />
-          </div>
-
-          <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
           <button
             type="submit"
             className=" font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
