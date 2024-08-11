@@ -4,15 +4,19 @@ const AttacheeApplicationScreen = () => {
   return (
     <div className="flex flex-col  items-center justify-center">
       <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col   text-white ">
-        <h className="mb-4 text-2xl text-orange-500">SIGN IN</h>
-        <p className="mb-3 ">Enter your email and password to sign in</p>
+        <h className="mb-6 text-2xl text-orange-500">APPLY FOR ATTACHMENT</h>
         <form className=" flex flex-col items-center ">
-          <input
-            type="email"
-            id="email"
-            className="shadow appearance-none border rounded w-full   font-bold mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Your Email"
-          />
+          <div className="row align-items-center pt-4 pb-3">
+            <label htmlFor="name" className="col-md-3 ps-5">
+              FULL NAME
+            </label>
+            <input
+              type="name"
+              id="name"
+              className="col-md-9 pe-5 shadow appearance-none border rounded w-full   font-bold mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Your Email"
+            />
+          </div>
 
           <input
             type="password"
