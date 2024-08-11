@@ -13,7 +13,7 @@ const RegisterScreen = () => {
           <input
             type="text"
             id="name"
-            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight focus;border-orange-500 focus:outline-none focus:shadow-outline"
+            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline"
             placeholder="Your Name"
           />
 

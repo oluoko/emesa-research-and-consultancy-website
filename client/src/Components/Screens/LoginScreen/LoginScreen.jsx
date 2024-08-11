@@ -13,13 +13,6 @@ const LoginScreen = () => {
         <p>Enter your email and password to sign in</p>
         <form className=" flex flex-col items-center ">
           <input
-            type="text"
-            id="name"
-            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline"
-            placeholder="Your Name"
-          />
-
-          <input
             type="email"
             id="email"
             className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
@@ -27,24 +20,10 @@ const LoginScreen = () => {
           />
 
           <input
-            type="email"
-            id="confirmEmail"
-            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Confirm Your Email"
-          />
-
-          <input
             type="password"
             id="password"
             className="shadow appearance-none border rounded w-full  font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Password"
-          />
-
-          <input
-            type="password"
-            id="confirmPassword"
-            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Confirm Your Password"
           />
 
           <div className="m-2">
