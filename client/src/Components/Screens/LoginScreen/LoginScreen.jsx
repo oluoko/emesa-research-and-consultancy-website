@@ -37,7 +37,7 @@ const LoginScreen = () => {
 
           <button
             type="submit"
-            className=" font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
+            className=" button font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
           >
             Sign In
           </button>

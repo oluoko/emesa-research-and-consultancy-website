@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AttacheeApplicationScreen = () => {
   return (
     <div className=" relative flex flex-col  vh-100  items-center justify-center m-2">
-      <button className="fixed top-4 left-4 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
+      <button className="button fixed top-4 left-4 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
         <Link to="/careers" className="text-2xl ">
           Back
         </Link>
@@ -66,7 +66,7 @@ const AttacheeApplicationScreen = () => {
                 id="formFileLg"
                 type="file"
               />
-              <div className="small text-muted mt-2">
+              <div className="small text-gray-400 mt-2">
                 Upload your CV/Resume or any other relevant file. Max file size
                 10 MB
               </div>
@@ -77,7 +77,7 @@ const AttacheeApplicationScreen = () => {
 
           <button
             type="submit"
-            className=" font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
+            className=" button font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
           >
             SEND APPLICATION
           </button>

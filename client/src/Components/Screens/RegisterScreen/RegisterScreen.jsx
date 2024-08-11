@@ -59,7 +59,7 @@ const RegisterScreen = () => {
 
           <button
             type="submit"
-            className=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-xl"
+            className="button font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-xl"
           >
             Register
           </button>
