@@ -29,169 +29,7 @@ const Blog = () => {
           </h3>
 
           <div className="blog-container flex flex-col justify-center ">
-            <div className="flex items-right gap-3">
-              <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
-              <p>Daisy Okoti</p>
-            </div>
-            <div className="flex">
-              <div className="flex flex-col justify-center">
-                <h2 className="title text-3xl text-black font-700">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Accusa ntium qui dolor doloremque, non aliquid fugiat!
-                </h2>
-                <p className="contet-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, iusto quasi. Perspiciatis sapiente itaque, saepe
-                  minima, voluptates dolor eum rerum dolorum impedit corporis
-                  voluptatem sunt aperiam doloribus numquam aliquam in vel, quam
-                  fugit harum sit quia laboriosam perferendis! Libero debitis
-                  expedita odit exercitationem molestiae odio, doloremque quidem
-                  nulla animi assumenda nostrum vitae nihil quam sed maxime,
-                  soluta minus quasi quis a deserunt, ipsam optio! Officiis
-                  voluptatum amet consequuntur, sit obcaecati tempora possimus
-                  deserunt exercitationem labore quae similique soluta quidem
-                  accusamus aperiam autem doloremque. Consectetur in nobis
-                  molestias esse assumenda! Maiores, esse odit? Culpa ullam
-                  debitis magni esse porro magnam id eveniet minima
-                  reprehenderit dolore accusantium officia, aperiam, pariatur
-                  facere iste sapiente saepe est nesciunt itaque? Ipsum, minus
-                  possimus. Quisquam nisi tempore ducimus, quidem quia tempora
-                  maxime velit laboriosam impedit veritatis deleniti?
-                  Voluptatibus id, ipsa ratione laudantium tenetur sequi animi
-                  quidem fuga culpa voluptatum deserunt. Quasi sunt numquam
-                  fugit, itaque, quo fugiat error quam vel eligendi accusantium
-                  adipisci illo corrupti et. Iste corporis eveniet sequi vero
-                  officia accusantium, dolores soluta!
-                </p>
-              </div>
-              <img src={blogImage} className="radius-2xl h-36 w-40" />
-            </div>
-            <div className="grid grid-cols-4 z-10 w-96">
-              <div className="flex flex-around gap-4">
-                <div className="">Date</div>
-                <div className="">Like</div>
-                <div className="">Share</div>
-              </div>
-              <div className=""></div>
-              <div className=""></div>
-              <div className="flex flex-around gap-4">
-                <div className="">Report</div>
-                <div className="">Save</div>
-                <div className="">About</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="blog-container flex flex-col justify-center ">
-            <div className="flex items-right gap-3">
-              <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
-              <p>Daisy Okoti</p>
-            </div>
-            <div className="flex">
-              <div className="flex flex-col justify-center">
-                <h2 className="title text-3xl text-black font-700">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Accusa ntium qui dolor doloremque, non aliquid fugiat!
-                </h2>
-                <p className="contet-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, iusto quasi. Perspiciatis sapiente itaque, saepe
-                  minima, voluptates dolor eum rerum dolorum impedit corporis
-                  voluptatem sunt aperiam doloribus numquam aliquam in vel, quam
-                  fugit harum sit quia laboriosam perferendis! Libero debitis
-                  expedita odit exercitationem molestiae odio, doloremque quidem
-                  nulla animi assumenda nostrum vitae nihil quam sed maxime,
-                  soluta minus quasi quis a deserunt, ipsam optio! Officiis
-                  voluptatum amet consequuntur, sit obcaecati tempora possimus
-                  deserunt exercitationem labore quae similique soluta quidem
-                  accusamus aperiam autem doloremque. Consectetur in nobis
-                  molestias esse assumenda! Maiores, esse odit? Culpa ullam
-                  debitis magni esse porro magnam id eveniet minima
-                  reprehenderit dolore accusantium officia, aperiam, pariatur
-                  facere iste sapiente saepe est nesciunt itaque? Ipsum, minus
-                  possimus. Quisquam nisi tempore ducimus, quidem quia tempora
-                  maxime velit laboriosam impedit veritatis deleniti?
-                  Voluptatibus id, ipsa ratione laudantium tenetur sequi animi
-                  quidem fuga culpa voluptatum deserunt. Quasi sunt numquam
-                  fugit, itaque, quo fugiat error quam vel eligendi accusantium
-                  adipisci illo corrupti et. Iste corporis eveniet sequi vero
-                  officia accusantium, dolores soluta!
-                </p>
-              </div>
-              <img src={blogImage} className="radius-2xl h-36 w-40" />
-            </div>
-            <div className="grid grid-cols-4 z-10 w-96">
-              <div className="flex flex-around gap-4">
-                <div className="">Date</div>
-                <div className="">Like</div>
-                <div className="">Share</div>
-              </div>
-              <div className=""></div>
-              <div className=""></div>
-              <div className="flex flex-around gap-4">
-                <div className="">Report</div>
-                <div className="">Save</div>
-                <div className="">About</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="blog-container flex flex-col justify-center ">
-            <div className="flex items-right gap-3">
-              <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
-              <p>Daisy Okoti</p>
-            </div>
-            <div className="flex">
-              <div className="flex flex-col justify-center">
-                <h2 className="title text-3xl text-black font-700">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Accusa ntium qui dolor doloremque, non aliquid fugiat!
-                </h2>
-                <p className="contet-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, iusto quasi. Perspiciatis sapiente itaque, saepe
-                  minima, voluptates dolor eum rerum dolorum impedit corporis
-                  voluptatem sunt aperiam doloribus numquam aliquam in vel, quam
-                  fugit harum sit quia laboriosam perferendis! Libero debitis
-                  expedita odit exercitationem molestiae odio, doloremque quidem
-                  nulla animi assumenda nostrum vitae nihil quam sed maxime,
-                  soluta minus quasi quis a deserunt, ipsam optio! Officiis
-                  voluptatum amet consequuntur, sit obcaecati tempora possimus
-                  deserunt exercitationem labore quae similique soluta quidem
-                  accusamus aperiam autem doloremque. Consectetur in nobis
-                  molestias esse assumenda! Maiores, esse odit? Culpa ullam
-                  debitis magni esse porro magnam id eveniet minima
-                  reprehenderit dolore accusantium officia, aperiam, pariatur
-                  facere iste sapiente saepe est nesciunt itaque? Ipsum, minus
-                  possimus. Quisquam nisi tempore ducimus, quidem quia tempora
-                  maxime velit laboriosam impedit veritatis deleniti?
-                  Voluptatibus id, ipsa ratione laudantium tenetur sequi animi
-                  quidem fuga culpa voluptatum deserunt. Quasi sunt numquam
-                  fugit, itaque, quo fugiat error quam vel eligendi accusantium
-                  adipisci illo corrupti et. Iste corporis eveniet sequi vero
-                  officia accusantium, dolores soluta!
-                </p>
-              </div>
-              <img src={blogImage} className="radius-2xl h-36 w-40" />
-            </div>
-            <div className="grid grid-cols-4 z-10 w-96">
-              <div className="flex flex-around gap-4">
-                <div className="">Date</div>
-                <div className="">Like</div>
-                <div className="">Share</div>
-              </div>
-              <div className=""></div>
-              <div className=""></div>
-              <div className="flex flex-around gap-4">
-                <div className="">Report</div>
-                <div className="">Save</div>
-                <div className="">About</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="blog-container flex flex-col justify-center ">
-            <div className="flex items-right gap-3">
+            <div className="flex items-right w-full gap-3">
               <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
               <p>Daisy Okoti</p>
             </div>
@@ -245,9 +83,26 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div w-1/5  rounded-3xl 0">
+        <div className="right-div mr w-1/5 bg-blue-400 rounded-3xl 0">
           <h3>Most Viewed blogs and</h3>
-          <p>lorem70</p>
+          <div className="flex flex-col my-2 bg-fuchsia-300">
+            <div className="">
+              <div className="flex  justify-start gap-2  items-center bg-yellow-200 w-full">
+                <img
+                  src={userProfile}
+                  className="w-4 h-4 rounded-full"
+                  alt=""
+                />
+                <span className=" font-extrabold">Daisy Okoti</span>
+                <span>in</span>
+                <span className="font-extrabold">Mindfulness</span>
+              </div>
+              <div className="text-lg font-bold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
