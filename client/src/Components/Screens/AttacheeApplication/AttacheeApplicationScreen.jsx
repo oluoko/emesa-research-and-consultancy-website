@@ -19,25 +19,6 @@ const AttacheeApplicationScreen = () => {
             />
           </div>
 
-          <input
-            type="password"
-            id="password"
-            className="shadow appearance-none border rounded w-full  font-bold mb-6 py-4  px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Password"
-          />
-
-          <div className="m-2">
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2 text-white">
-                Agree with statments in{" "}
-                <a className="text-blue-500 hover:text-orange-500" href="">
-                  Terms of Service
-                </a>
-              </span>
-            </label>
-          </div>
-
           <button
             type="submit"
             className=" font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
@@ -51,7 +32,7 @@ const AttacheeApplicationScreen = () => {
               className="text-blue-500 hover:text-orange-500"
               to="/register"
             >
-              Sign up
+              SEND APPLICATION
             </Link>
           </p>
         </form>
