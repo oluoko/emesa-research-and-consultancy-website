@@ -21,27 +21,10 @@ const Blog = () => {
 
       <div className="blog flex justify-between ">
         <div className="left-div  w-3/4 rounded-xl flex flex-col justify-center items-left">
-          {/* <div className="categories-bar flex justify-around gap-4 overflow-scroll">
-            <li className="bg-gray-500 radius-xl">Technology</li>
-            <li className="bg-gray-500 radius-xl">History</li>
-            <li className="bg-gray-500 radius-xl">Banking</li>
-            <li className="bg-gray-500 radius-xl">accounting</li>
-            <li className="bg-gray-500 radius-xl">Gaming</li>
-            <li className="bg-gray-500 radius-xl">Sports</li>
-            <li className="bg-gray-500 radius-xl">Religion</li>
-            <li className="bg-gray-500 radius-xl">Fashion</li>
-            <li className="bg-gray-500 radius-xl">Mindfulness</li>
-            <li className="bg-gray-500 radius-xl">Technology</li>
-            <li className="bg-gray-500 radius-xl">History</li>
-            <li className="bg-gray-500 radius-xl">Banking</li>
-            <li className="bg-gray-500 radius-xl">accounting</li>
-            <li className="bg-gray-500 radius-xl">Gaming</li>
-          </div> */}
-
           <div className="relative my-2 w-full flex flex-col justify-center items-center">
             <button
               onClick={scrollLeft}
-              className="absolute left-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
+              className="absolute left-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 h-14 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
             >
               &lt;
             </button>
@@ -67,7 +50,7 @@ const Blog = () => {
             </ul>
             <button
               onClick={scrollRight}
-              className="absolute right-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 rounded-r-2xl bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
+              className="absolute right-0 top-0 bottom-0  h-14 text-2xl text-black font-bold py-2 px-2 rounded-r-2xl bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
             >
               &gt;
             </button>
