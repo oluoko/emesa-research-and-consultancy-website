@@ -46,7 +46,6 @@ html {
 .button:hover {
   background-color: #4f4f4f;
   color: var(--orange);
-  border: solid 2px var(--orange);
 }
 
 .screen-container {
@@ -78,6 +77,8 @@ html {
 .form button:hover {
   background-color: #000;
   color: var(--orange);
+  border: solid 2px var(--orange);
+  scale: 0.98;
 }
 
 .form a:hover {
