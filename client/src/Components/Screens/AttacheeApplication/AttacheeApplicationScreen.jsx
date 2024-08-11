@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AttacheeApplicationScreen = () => {
   return (
     <div className=" relative flex flex-col  vh-100  items-center justify-center m-2">
-      <button className="fixed top-4 left-4">
+      <button className="fixed top-4 left-4 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
         <Link to="/careers" className="text-2xl ">
           Back
         </Link>
