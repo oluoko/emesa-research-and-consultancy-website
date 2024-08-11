@@ -41,7 +41,7 @@ const RegisterScreen = () => {
           <input
             type="password"
             id="confirmPassword"
-            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tightfocus:shadow-outline"
+            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Confirm Your Password"
           />
 
