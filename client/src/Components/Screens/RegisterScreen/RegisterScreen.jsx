@@ -13,35 +13,35 @@ const RegisterScreen = () => {
           <input
             type="text"
             id="name"
-            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline"
+            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Your Name"
           />
 
           <input
             type="email"
             id="email"
-            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Your Email"
           />
 
           <input
             type="email"
             id="confirmEmail"
-            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Confirm Your Email"
           />
 
           <input
             type="password"
             id="password"
-            className="shadow appearance-none border rounded w-full  font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full  font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Password"
           />
 
           <input
             type="password"
             id="confirmPassword"
-            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Confirm Your Password"
           />
 

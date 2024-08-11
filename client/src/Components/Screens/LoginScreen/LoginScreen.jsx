@@ -12,14 +12,14 @@ const LoginScreen = () => {
           <input
             type="email"
             id="email"
-            className="shadow appearance-none border rounded w-full   font-bold mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full   font-bold mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Your Email"
           />
 
           <input
             type="password"
             id="password"
-            className="shadow appearance-none border rounded w-full  font-bold mb-6 py-4  px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full  font-bold mb-6 py-4  px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
             placeholder="Password"
           />
 
