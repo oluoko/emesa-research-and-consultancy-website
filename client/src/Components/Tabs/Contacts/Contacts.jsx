@@ -56,7 +56,7 @@ const Contacts = () => {
                     <input
                       type="text"
                       id="name"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+                      className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="John Doe"
                     />
                   </div>
@@ -70,7 +70,7 @@ const Contacts = () => {
                     <input
                       type="email"
                       id="email"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+                      className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="j.doe@company.com"
                     />
                   </div>
@@ -85,7 +85,7 @@ const Contacts = () => {
                   </label>
                   <textarea
                     id="description"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
+                    className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Hello there,
 
 There is a bug in... How can I apply to be an employee... At what time are your offices open..."

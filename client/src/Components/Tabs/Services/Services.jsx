@@ -105,7 +105,7 @@ const Services = () => {
                       id="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="John Doe"
                     />
                   </div>
@@ -121,7 +121,7 @@ const Services = () => {
                       id="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="j.doe@company.com"
                     />
                   </div>
@@ -140,7 +140,7 @@ const Services = () => {
                       id="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="500.00 Ksh - 1000.00 Ksh"
                     />
                   </div>
@@ -177,7 +177,7 @@ const Services = () => {
                     id="description"
                     value={formData.description}
                     onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Hello there,\n\nI need assistance with... Here are my goals and timeline: ... Additionally, you can find my design link here: ..."
                     rows="5"
                   ></textarea>
