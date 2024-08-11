@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Blog.css";
 import Navbar from "../../Navbar/Navbar";
 import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
 
 const Blog = () => {
+  const categoriesBarRef = useRef(null);
+
+  const scrollLeft = () => {
+    categoriesBarRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    categoriesBarRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
+
   return (
     <div className="screen-container ">
       <Navbar screen="blog" />
 
-      <div className="blog flex items-start ">
-        <div className="left-div  w-4/5 rounded-xl flex flex-col justify-center items-left">
-          <h3 className="categories-bar flex  flex-nowrap gap-4">
+      <div className="blog flex justify-between ">
+        <div className="left-div  w-3/4 rounded-xl flex flex-col justify-center items-left">
+          {/* <div className="categories-bar flex justify-around gap-4 overflow-scroll">
             <li className="bg-gray-500 radius-xl">Technology</li>
             <li className="bg-gray-500 radius-xl">History</li>
             <li className="bg-gray-500 radius-xl">Banking</li>
@@ -26,7 +36,42 @@ const Blog = () => {
             <li className="bg-gray-500 radius-xl">Banking</li>
             <li className="bg-gray-500 radius-xl">accounting</li>
             <li className="bg-gray-500 radius-xl">Gaming</li>
-          </h3>
+          </div> */}
+
+          <div className="relative my-2 w-full flex flex-col justify-center items-center">
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
+            >
+              &lt;
+            </button>
+            <ul
+              ref={categoriesBarRef}
+              className="categories-bar flex justify-around  items-center gap-4 overflow-hidden"
+              style={{ width: "750px" }} // Set the fixed width
+            >
+              <li className="bg-gray-500 radius-xl">Technology</li>
+              <li className="bg-gray-500 radius-xl">History</li>
+              <li className="bg-gray-500 radius-xl">Banking</li>
+              <li className="bg-gray-500 radius-xl">Accounting</li>
+              <li className="bg-gray-500 radius-xl">Gaming</li>
+              <li className="bg-gray-500 radius-xl">Sports</li>
+              <li className="bg-gray-500 radius-xl">Religion</li>
+              <li className="bg-gray-500 radius-xl">Fashion</li>
+              <li className="bg-gray-500 radius-xl">Mindfulness</li>
+              <li className="bg-gray-500 radius-xl">Technology</li>
+              <li className="bg-gray-500 radius-xl">History</li>
+              <li className="bg-gray-500 radius-xl">Banking</li>
+              <li className="bg-gray-500 radius-xl">Accounting</li>
+              <li className="bg-gray-500 radius-xl">Gaming</li>
+            </ul>
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 rounded-r-2xl bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
+            >
+              &gt;
+            </button>
+          </div>
 
           <div className="blog-container flex flex-col justify-center ">
             <div className="flex items-right w-full gap-3">
@@ -83,9 +128,9 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div mr-4 w-1/5 border bg-slate-300 rounded-3xl">
+        <div className="right-div w-1/4 border bg-slate-300 rounded-3xl shadow-md shadow-slate-500 ">
           <h3>Most Viewed blogs and</h3>
-          <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll ">
+          <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll overflow-x-hidden ">
             <div className="blog-container">
               <div className="flex  justify-start gap-2  items-center">
                 <img
