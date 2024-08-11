@@ -85,7 +85,7 @@ const Blog = () => {
 
         <div className="right-div mr w-1/5">
           <h3>Most Viewed blogs and</h3>
-          <div className="flex flex-col my-2  h-80 overflow-y-scroll">
+          <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll">
             <div className="blog-container">
               <div className="flex  justify-start gap-2  items-center">
                 <img
