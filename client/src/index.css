@@ -23,7 +23,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  font-family: var(--oswald);
+  font-family: var(--raleway);
   scroll-behavior: smooth;
 }
 
@@ -101,6 +101,7 @@ html {
 h1,
 h2,
 h3 {
+  font-family: var(--oswald);
   color: var(--orange);
   font-weight: 700;
 }

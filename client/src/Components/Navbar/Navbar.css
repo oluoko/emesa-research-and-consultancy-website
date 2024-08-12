@@ -44,3 +44,60 @@ nav ul li,
   height: 50px;
   width: 100px;
 }
+
+.menuBtn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #logo img {
+    height: 40px;
+    width: 80px;
+  }
+  nav {
+    margin: 0 5%;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menuBtn {
+    position: fixed;
+    top: 20px;
+    right: 35px;
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .menuBtn:hover {
+    color: var(--orange);
+  }
+
+  .menuBtn.active {
+    color: var(--orange);
+  }
+
+  .navbarOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .menuBtn.active ~ nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menuBtn.active ~ nav ul li {
+    margin: 10px 0;
+  }
+}

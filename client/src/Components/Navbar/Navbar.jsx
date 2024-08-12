@@ -3,8 +3,8 @@ import "./Navbar.css";
 import userProfile from "../../Assets/userProfile.png";
 import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
-// import { LiaTimesSolid } from "react-icons/lia";
-// import { IoMenu } from "react-icons/io5";
+import { LiaTimesSolid } from "react-icons/lia";
+import { IoMenu } from "react-icons/io5";
 
 const Navbar = ({ screen }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,7 +12,19 @@ const Navbar = ({ screen }) => {
 
   return (
     <div id="nav-container">
-      <nav>
+      <div onClick={() => setNavbaropen(!navbarOpen)}>
+        {navbarOpen ? (
+          <LiaTimesSolid className="menuBtn closeBtn" />
+        ) : (
+          <IoMenu className="menuBtn openBtn" />
+        )}
+      </div>
+      <nav
+        className={`navbar menuItems ${navbarOpen && "navbarOpen"}`}
+        onClick={() => {
+          setNavbaropen(false);
+        }}
+      >
         <p id="logo">
           <Link
             to="/"

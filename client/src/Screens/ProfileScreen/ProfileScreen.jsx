@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import profileImage from "../../../Assets/userProfile.png";
+import profileImage from "../../Assets/userProfile.png";
 
 const ProfileScreen = () => {
   const navigate = useNavigate();
@@ -113,8 +113,8 @@ const ProfileScreen = () => {
               </div>
             </div>
           </div>
-          <button className="button rounded-xl w-full block  p-3 my-4">
-            Show Full Information
+          <button className="button text-2xl font-extrabold rounded-xl w-full block  p-3 my-4">
+            Edit Profile
           </button>
         </div>
       </div>

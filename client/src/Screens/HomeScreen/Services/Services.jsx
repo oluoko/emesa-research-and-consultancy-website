@@ -141,7 +141,7 @@ const Services = () => {
                       value={formData.budget}
                       onChange={handleChange}
                       className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="500.00 Ksh - 1000.00 Ksh"
+                      placeholder="500.00 Ksh - 1,000.00 Ksh"
                     />
                   </div>
                   <div className="m-2">
@@ -178,7 +178,7 @@ const Services = () => {
                     value={formData.description}
                     onChange={handleChange}
                     className="shadow focus:border-orange-500 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Hello there,\n\nI need assistance with... Here are my goals and timeline: ... Additionally, you can find my design link here: ..."
+                    placeholder="Hello there...I need assistance with... Here are my goals and timeline: ... Additionally, you can find my design link here: ..."
                     rows="5"
                   ></textarea>
                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./Careers.css";
 import CareersHomeScreen from "./CareersScreens/CareersHomeScreen/CareersHomeScreen ";
 
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../../Components/Navbar/Navbar";
 
 const Careers = () => {
   return (

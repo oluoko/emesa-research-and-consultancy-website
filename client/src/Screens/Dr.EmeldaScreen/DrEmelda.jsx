@@ -1,7 +1,7 @@
 import React from "react";
 import DrEmelda1 from "../../Assets/Images/Dr. Emelda Nafula/1.jpeg";
 import "./Dr. Emelda.css";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const DrEmelda = () => {
   return (

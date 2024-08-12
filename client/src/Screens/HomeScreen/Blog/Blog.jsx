@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Blog.css";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../../Components/Navbar/Navbar";
 import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
 
@@ -20,7 +20,7 @@ const Blog = () => {
       <Navbar screen="blog" />
 
       <div className="blog flex justify-between ">
-        <div className="left-div  w-3/4 rounded-xl flex flex-col justify-center items-left">
+        <div className="left-div  w-2/3 rounded-xl flex flex-col justify-center items-left">
           <div className="relative my-2 w-full flex flex-col justify-center items-center">
             <button
               onClick={scrollLeft}
@@ -31,7 +31,7 @@ const Blog = () => {
             <ul
               ref={categoriesBarRef}
               className="categories-bar flex justify-around  items-center gap-4 overflow-hidden"
-              style={{ width: "750px" }} // Set the fixed width
+              style={{ width: "680px" }} // Set the fixed width
             >
               <li className="bg-gray-500 radius-xl">Technology</li>
               <li className="bg-gray-500 radius-xl">History</li>
@@ -111,43 +111,9 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div w-1/4 border bg-slate-300 rounded-3xl shadow-md shadow-slate-500 ">
-          <h3>Most Viewed blogs and</h3>
+        <div className="right-div w-1/3 border rounded-3xl shadow-md shadow-slate-500 ">
+          <h3>Most Viewed Blogs.</h3>
           <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll overflow-x-hidden ">
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
-            <div className="blog-container">
-              <div className="flex  justify-start gap-2  items-center">
-                <img
-                  src={userProfile}
-                  className="w-4 h-4 rounded-full"
-                  alt=""
-                />
-                <span className=" font-bold">Daisy Okoti</span>
-                <span>in</span>
-                <span className="font-bold">Mindfulness</span>
-              </div>
-              <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
-              </div>
-            </div>
-
             <div className="blog-container">
               <div className="flex  justify-start gap-2  items-center">
                 <img

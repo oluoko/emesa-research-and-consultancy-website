@@ -60,7 +60,7 @@ const AttacheeApplicationScreen = () => {
             <label htmlFor="message" className="">
               UPLOAD CV
             </label>
-            <div className="   w-full m-4 mb-2 py-4 px-3">
+            <div className="m-4 mb-2 py-4 px-3">
               <input
                 className="form-control form-control-lg border rounded font-bold  text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
                 id="formFileLg"
