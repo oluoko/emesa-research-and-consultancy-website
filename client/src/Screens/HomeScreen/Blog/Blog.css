@@ -5,18 +5,6 @@
   width: calc(100% - 22%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.screen-container .blog .left-div,
-.screen-container .blog .right-div {
-  height: 100%;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding: 20px 15px;
-  margin: 2%;
-}
-
 .categories-bar {
   list-style: none;
   height: 70px;

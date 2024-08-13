@@ -97,7 +97,7 @@ const Navbar = ({ screen }) => {
                 <div className="relative h-9 max-w-md">
                   <input
                     type="text"
-                    className="w-full h-8 py-2 px-4 bg-gray-100 text-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-36 md:w-full h-8 py-2 px-4 bg-gray-100 text-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Search..."
                   />
                   <button className="absolute right-0 top-0 mt-2 mr-4 text-gray-600 hover:text-orange-500 focus:text-orange-500 transition duration-300">
