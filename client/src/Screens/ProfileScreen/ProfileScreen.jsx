@@ -28,7 +28,7 @@ const ProfileScreen = () => {
 
         <div className=" p-3 w-full md:w-3/4  flex flex-col justify-center items-center  rounded-xl bg-white ">
           <div className="text-gray-400 text-2xl">
-            <div className="grid md:grid-cols-2 text-sm">
+            <div className="grid md:grid-cols-2 text-xs  md:text-xl">
               {[
                 ["NAME", "Jane Doe", "", "", ""],
                 ["EMAIL", "janedoe@gmail.com", "", "", ""],
@@ -36,7 +36,7 @@ const ProfileScreen = () => {
                   "BIO",
                   "Our pragmatic toolkit is designed to unleash the full potential of administrative support personnel, empowering them to execute their work excellently and efficiently. Through our coaching and training programs, we elevate 21st-century essential skills including organization, foresight, and proactiveness, ensuring assistants stay two steps ahead and always on the ball. Our coaching goes beyond the conventional. We harness the power of tested AI hacks and tech tools, incorporating innovative and strategic methods to streamline workflow and boost productivity.",
                   "",
-                  "h-8 overflow-y-hidden",
+                  "h-6 md:h-8 overflow-y-hidden",
                   "",
                 ],
                 ["REGISTERED AT", "11-Aug-2024", "", "", ""],
@@ -44,14 +44,14 @@ const ProfileScreen = () => {
                   "BLOGGER STATUS",
                   "Approved",
                   "",
-                  "bg-green-400 text-slate-800 h-8 flex flex-col justify-center items-center m-2 rounded-3xl",
+                  "bg-green-400 text-slate-800  h-6 md:h-8  flex flex-col justify-center items-center m-2 rounded-3xl",
                   "",
                 ],
                 [
                   "EMPLOYEE STATUS",
                   "Rejected",
                   "",
-                  "bg-red-400 text-slate-800 h-8 flex flex-col justify-center items-center m-2 rounded-3xl",
+                  "bg-red-400 text-slate-800 h-6 md:h-8 flex flex-col justify-center items-center m-2 rounded-3xl",
                   "",
                 ],
                 ["DATE EMPLOYED", "21-May-2024", "", "", ""],
@@ -69,11 +69,15 @@ const ProfileScreen = () => {
                     className={`grid grid-cols-2 ${containerClass}`}
                   >
                     <div
-                      className={`px-4 py-2 font-semibold text-black ${labelClass}`}
+                      className={`px-2 py-1  md:px-1 md:py-0 md:mx-2  md:my-2 font-semibold text-black ${labelClass}`}
                     >
                       {dataLabel}:
                     </div>
-                    <div className={`px-4 py-2 ${valueClass}`}>{dataValue}</div>
+                    <div
+                      className={`px-2 py-1  md:px-1 md:py-0 md:mx-2  md:my-2  ${valueClass}`}
+                    >
+                      {dataValue}
+                    </div>
                   </div>
                 )
               )}

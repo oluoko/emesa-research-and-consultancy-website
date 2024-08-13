@@ -19,8 +19,8 @@ const Blog = () => {
     <div className="screen-container ">
       <Navbar screen="blog" />
 
-      <div className="blog flex justify-between ">
-        <div className="left-div  w-2/3 rounded-xl flex flex-col justify-center items-left">
+      <div className="blog grid md:flex grid-col justify-center md:justify-around items-center">
+        <div className="left-div  w-full md:w-2/3 rounded-xl flex flex-col justify-center items-left">
           <div className="relative my-2 w-full flex flex-col justify-center items-center">
             <button
               onClick={scrollLeft}
@@ -112,7 +112,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div w-1/3 border rounded-3xl shadow-md shadow-slate-500 ">
+        <div className="right-div hidden md:flex w-1/3 border rounded-3xl shadow-md shadow-slate-500 ">
           <h3>Most Viewed Blogs.</h3>
           <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll overflow-x-hidden ">
             <div className="blog-container">
