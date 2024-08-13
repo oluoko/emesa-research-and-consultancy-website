@@ -19,23 +19,23 @@ const Blog = () => {
     <div className="screen-container ">
       <Navbar screen="blog" />
 
-      <div className="blog grid md:flex grid-col justify-center md:justify-around items-center">
-        <div className="left-div  w-screen md:w-2/3 rounded-xl flex flex-col justify-center items-left">
-          <div className="relative my-2  flex flex-col justify-center items-center">
+      <div className="blog grid md:flex grid-col justify-center md:justify-around items-center w-screen">
+        <div className="left-div w-5/6 md:w-2/3 rounded-xl flex flex-col justify-center items-left">
+          <div className="relative w-full  my-2  flex flex-col justify-center items-center">
             <button
               onClick={scrollLeft}
               className="absolute left-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 h-14 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
             >
               &lt;
             </button>
-            <ul
+            <div
               ref={categoriesBarRef}
-              className="categories-bar flex justify-around  items-center gap-4 overflow-hidden"
-              style={{ width: "680px" }} // Set the fixed width
+              className="categories-bar flex justify-around  items-center gap-4 overflow-x-scroll w-48 md:w-full"
+              // Set the fixed width
             >
               {[
                 ["Technology"],
-                ["Hisoty"],
+                ["History"],
                 ["Banking"],
                 ["Accounting"],
                 ["Gaming"],
@@ -44,11 +44,14 @@ const Blog = () => {
                 ["Fashion"],
                 ["Mindfulness"],
               ].map(([title]) => (
-                <li key={title} className="bg-gray-500 radius-xl">
+                <div
+                  key={title}
+                  className="bg-gray-500 h-10 text-sm w-auto radius-xl"
+                >
                   {title}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
             <button
               onClick={scrollRight}
               className="absolute right-0 top-0 bottom-0  h-14 text-2xl text-black font-bold py-2 px-2 rounded-r-2xl bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
@@ -57,14 +60,14 @@ const Blog = () => {
             </button>
           </div>
 
-          <div className="blog-container flex flex-col justify-center ">
+          <div className="blog-container flex flex-col justify-center w-full">
             <div className="flex items-right w-full gap-3">
               <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
               <p>Daisy Okoti</p>
             </div>
-            <div className="flex">
-              <div className="flex flex-col justify-center">
-                <h2 className="title text-3xl text-black font-700">
+            <div className="flex justify-around w-full">
+              <div className="flex flex-col justify-center w-2/3">
+                <h2 className="title text-sm md:text-3xl text-black font-700">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Accusa ntium qui dolor doloremque, non aliquid fugiat!
                 </h2>
@@ -93,16 +96,15 @@ const Blog = () => {
                   officia accusantium, dolores soluta!
                 </p>
               </div>
-              <img src={blogImage} className="radius-2xl h-36 w-40" />
+              <img src={blogImage} className="radius-2xl h-36 w-1/3" />
             </div>
-            <div className="grid grid-cols-4 z-10 w-96">
+            <div className="w-full text-xs flex justify-between">
               <div className="flex flex-around gap-4">
                 <div className="">Date</div>
                 <div className="">Like</div>
                 <div className="">Share</div>
               </div>
-              <div className=""></div>
-              <div className=""></div>
+
               <div className="flex flex-around gap-4">
                 <div className="">Report</div>
                 <div className="">Save</div>
@@ -112,7 +114,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="right-div hidden md:flex w-1/3 border rounded-3xl shadow-md shadow-slate-500 ">
+        <div className="right-div invinsible md:visible md:flex w-1/3 border rounded-3xl shadow-md shadow-slate-500 ">
           <h3>Most Viewed Blogs.</h3>
           <div className="blog-container-container flex flex-col my-2  h-80 overflow-y-scroll overflow-x-hidden ">
             <div className="blog-container">
