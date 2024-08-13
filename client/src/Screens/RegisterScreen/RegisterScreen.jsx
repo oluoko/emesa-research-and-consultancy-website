@@ -10,40 +10,21 @@ const RegisterScreen = () => {
       <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col items-center  text-white ">
         <h className="mb-8 text-2xl text-orange-500">REGISTER AN ACCOUNT</h>
         <form className=" flex flex-col items-center ">
-          <input
-            type="text"
-            id="name"
-            className="  font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Your Name"
-          />
-
-          <input
-            type="email"
-            id="email"
-            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Your Email"
-          />
-
-          <input
-            type="email"
-            id="confirmEmail"
-            className="shadow appearance-none border rounded w-full   font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Confirm Your Email"
-          />
-
-          <input
-            type="password"
-            id="password"
-            className="shadow appearance-none border rounded w-full  font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Password"
-          />
-
-          <input
-            type="password"
-            id="confirmPassword"
-            className="shadow appearance-none border rounded w-full font-bold mb-4 py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
-            placeholder="Confirm Your Password"
-          />
+          {[
+            ["name", "text", "Your Name", ""],
+            ["email", "email", "Your Email", ""],
+            ["confirmEmail", "email", "Confirm Your Email", ""],
+            ["password", "password", "Enter New Password", ""],
+            ["confirmPassword", "password", "Confirm Your New Password", ""],
+          ].map(([id, type, placeholder, className]) => (
+            <input
+              key={id}
+              type={type}
+              id={id}
+              className={`font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline focus:border-orange-500 ${className}`}
+              placeholder={placeholder}
+            />
+          ))}
 
           <div className="m-2">
             <label className="inline-flex items-center">

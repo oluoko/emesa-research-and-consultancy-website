@@ -49,12 +49,12 @@ const AttacheeApplicationScreen = () => {
             <textarea
               type="message"
               id="message"
-              className="col-md-9 pe-5 shadow appearance-none border rounded font-bold m-4 mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500 w-full"
+              className="col-md-9 pe-5 shadow appearance-none border rounded font-bold m-4 mb-6 py-4 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500 w-full overflow-y-hidden                                                         "
               placeholder="Message to the employee telling us about yourself..."
             />
           </div>
 
-          <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
+          <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 w-full" />
 
           <div className="flex justify-between items-center  w-full my-2">
             <label htmlFor="message" className="">
@@ -62,7 +62,7 @@ const AttacheeApplicationScreen = () => {
             </label>
             <div className="m-4 mb-2 py-4 px-3">
               <input
-                className="form-control form-control-lg border rounded font-bold  text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
+                className="col-md-9 shadow appearance-none border rounded font-bold m-4 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500 w-full "
                 id="formFileLg"
                 type="file"
               />

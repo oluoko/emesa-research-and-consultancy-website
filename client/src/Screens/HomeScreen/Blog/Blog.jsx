@@ -33,20 +33,21 @@ const Blog = () => {
               className="categories-bar flex justify-around  items-center gap-4 overflow-hidden"
               style={{ width: "680px" }} // Set the fixed width
             >
-              <li className="bg-gray-500 radius-xl">Technology</li>
-              <li className="bg-gray-500 radius-xl">History</li>
-              <li className="bg-gray-500 radius-xl">Banking</li>
-              <li className="bg-gray-500 radius-xl">Accounting</li>
-              <li className="bg-gray-500 radius-xl">Gaming</li>
-              <li className="bg-gray-500 radius-xl">Sports</li>
-              <li className="bg-gray-500 radius-xl">Religion</li>
-              <li className="bg-gray-500 radius-xl">Fashion</li>
-              <li className="bg-gray-500 radius-xl">Mindfulness</li>
-              <li className="bg-gray-500 radius-xl">Technology</li>
-              <li className="bg-gray-500 radius-xl">History</li>
-              <li className="bg-gray-500 radius-xl">Banking</li>
-              <li className="bg-gray-500 radius-xl">Accounting</li>
-              <li className="bg-gray-500 radius-xl">Gaming</li>
+              {[
+                ["Technology"],
+                ["Hisoty"],
+                ["Banking"],
+                ["Accounting"],
+                ["Gaming"],
+                ["Sports"],
+                ["Religion"],
+                ["Fashion"],
+                ["Mindfulness"],
+              ].map(([title]) => (
+                <li key={title} className="bg-gray-500 radius-xl">
+                  {title}
+                </li>
+              ))}
             </ul>
             <button
               onClick={scrollRight}

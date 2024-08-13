@@ -10,6 +10,13 @@ import LoginScreen from "./Screens/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from "./Screens/RegisterScreen/RegisterScreen.jsx";
 import AttacheeApplicationScreen from "./Screens/AttacheeApplication/AttacheeApplicationScreen.jsx";
 import ProfileScreen from "./Screens/ProfileScreen/ProfileScreen.jsx";
+import Dashboard from "./Screens/Admin/Dashboard.jsx";
+import DashboardHome from "./Screens/Admin/DashboardHome.jsx";
+import UploadPictures from "./Screens/Admin/UploadPictures.jsx";
+import Graphs from "./Screens/Admin/Graphs.jsx";
+import EmployeesList from "./Screens/Admin/EmployeesList.jsx";
+import BlogListScreen from "./Screens/Admin/BlogListScreen.jsx";
+import UserListScreen from "./Screens/Admin/UserListScreen.jsx";
 // import AdminRoute from "./Components/AdminRoute.jsx";
 // import PrivateRoute from "./Components/PrivateRoute.jsx";
 
@@ -31,7 +38,28 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/profile" element={<ProfileScreen />} />
         {/* </Route>
         <Route path="" element={<AdminRoute />}> */}
-
+        <Route path="/admin-dashboard" element={<Dashboard />}>
+          <Route
+            index={true}
+            path="/admin-dashboard"
+            element={<DashboardHome />}
+          />
+          <Route path="/admin-dashboard/graphs" element={<Graphs />} />
+          <Route path="/admin-dashboard/profile" element={<ProfileScreen />} />
+          <Route
+            path="/admin-dashboard/update-pictures"
+            element={<UploadPictures />}
+          />
+          <Route
+            path="/admin-dashboard/employees"
+            element={<EmployeesList />}
+          />
+          <Route path="/admin-dashboard/blogs" element={<BlogListScreen />} />
+          <Route
+            path="/admin-dashboard/user-profiles"
+            element={<UserListScreen />}
+          />
+        </Route>
         {/* </Route> */}
       </Routes>
     </Router>

@@ -85,6 +85,10 @@ html {
   width: 9px;
 }
 
+.dashboard-nav::-webkit-scrollbar {
+  width: 0px;
+}
+
 *::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
   background: var(--orange);
