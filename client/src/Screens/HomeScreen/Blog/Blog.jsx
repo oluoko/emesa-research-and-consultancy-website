@@ -20,8 +20,8 @@ const Blog = () => {
       <Navbar screen="blog" />
 
       <div className="blog grid md:flex grid-col justify-center md:justify-around items-center">
-        <div className="left-div  w-full md:w-2/3 rounded-xl flex flex-col justify-center items-left">
-          <div className="relative my-2 w-full flex flex-col justify-center items-center">
+        <div className="left-div  w-screen md:w-2/3 rounded-xl flex flex-col justify-center items-left">
+          <div className="relative my-2  flex flex-col justify-center items-center">
             <button
               onClick={scrollLeft}
               className="absolute left-0 top-0 bottom-0  text-2xl text-black font-bold py-2 px-2 h-14 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
