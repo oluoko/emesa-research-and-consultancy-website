@@ -18,8 +18,8 @@ const ProfileScreen = () => {
       >
         Back
       </button>
-      <div className="w-full md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-8 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4  shadow-lg border-2 rounded-xl  bg-gray-500 ">
-        <div className="w-10/12 md:w-1/4 p-4 rounded-xl ">
+      <div className="w-5/6 md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-2 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4  shadow-lg border-2 rounded-xl  bg-gray-500 ">
+        <div className="w-2/3 md:w-1/4 p-4 rounded-xl ">
           <img
             src={profileImage}
             className="w-full rounded-full hover:border-2 hover:border-orange-500 "
