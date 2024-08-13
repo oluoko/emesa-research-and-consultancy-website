@@ -64,13 +64,13 @@ const Blog = () => {
             <img src={userProfile} className="w-7 h-6 rounded-full" alt="" />
             <p>Daisy Okoti</p>
           </div>
-          <div className="flex justify-around w-full">
+          <div className="flex justify-around w-full gap-4">
             <div className="flex flex-col justify-center w-2/3">
               <h2 className="title text-sm md:text-3xl text-black font-700">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusa
                 ntium qui dolor doloremque, non aliquid fugiat!
               </h2>
-              <p className="contet-text">
+              <p className="contet-text text-xs md:text-xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Officiis, iusto quasi. Perspiciatis sapiente itaque, saepe
                 minima, voluptates dolor eum rerum dolorum impedit corporis
@@ -95,7 +95,7 @@ const Blog = () => {
                 accusantium, dolores soluta!
               </p>
             </div>
-            <img src={blogImage} className="radius-2xl h-36 w-1/3" />
+            <img src={blogImage} className="radius-2xl w-1/3 h-auto" />
           </div>
           <div className="w-full text-xs flex justify-between">
             <div className="flex flex-around gap-4">
