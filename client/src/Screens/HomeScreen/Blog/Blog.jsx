@@ -28,8 +28,7 @@ const Blog = () => {
           </button>
           <div
             ref={categoriesBarRef}
-            className="categories-bar flex justify-around  items-center gap-4 overflow-x-scroll w-full md:w-10/12"
-            // Set the fixed width
+            className="categories-bar flex justify-around  items-center gap-4 overflow-x-scroll w-10/12 "
           >
             {[
               ["Technology"],
