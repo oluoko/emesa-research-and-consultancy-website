@@ -15,7 +15,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="screen-container blog flex flex-col justify-center items-center md:flex-row lg:justify-around lg:gap-2">
+    <div className="screen-container blog flex flex-col justify-start place-items-start  items-center md:flex-row lg:justify-around lg:gap-2">
       <Navbar screen="blog" />
 
       <div className=" left-div w-full px-6 md:w-2/3 flex flex-col justify-center items-left">
@@ -286,8 +286,8 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="right-div relative hidden md:flex flex-col  justify-start w-1/4 max-h-92 border rounded-3xl shadow-md ">
-        <div className="absolute top-0 right-0">
+      <div className="right-div relative hidden md:flex flex-col  justify-start w-1/4 h-screen  place-items-start">
+        <div className=" w-full bg-white shadow-md rounded-xl">
           <h3 className="px-8  mt-4">Most Viewed Blogs.</h3>
           <div className="blog-container-container flex flex-col justify-start items-center my-2  h-80 overflow-y-scroll overflow-x-hidden ">
             <div className="blog-container  border-t-2 border-slate-500 w-5/6 my-2 pt-2">
