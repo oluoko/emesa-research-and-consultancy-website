@@ -85,8 +85,11 @@ html {
   width: 9px;
 }
 
-.dashboard-nav::-webkit-scrollbar {
+.dashboard-nav::-webkit-scrollbar,
+.blog-container-container::-webkit-scrollbar,
+.categories-bar::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
