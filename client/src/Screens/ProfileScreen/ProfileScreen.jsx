@@ -1,23 +1,10 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
 import profileImage from "../../Assets/userProfile.png";
+import Back from "../../Components/Back";
 
 const ProfileScreen = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    // Save the current location's pathname in localStorage or a state
-    localStorage.setItem("lastPage", location.pathname);
-  }, [location]);
   return (
     <div className="relative flex flex-col justify-center items-center w-full h-full">
-      <button
-        onClick={() => navigate(-1)}
-        className="button absolute top-4 left-4 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline"
-      >
-        Back
-      </button>
+      <Back />
       <div className="w-5/6 md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-2 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4  shadow-lg border-2 rounded-xl  bg-gray-500 ">
         <div className="w-2/3 md:w-1/4 p-4 rounded-xl ">
           <img

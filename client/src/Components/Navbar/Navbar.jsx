@@ -54,7 +54,7 @@ const Navbar = ({ screen }) => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
                   style={{
                     background: "none",

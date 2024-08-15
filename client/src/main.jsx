@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
-import Blog from "./Screens/HomeScreen/Blog/Blog.jsx";
-import Careers from "./Screens/HomeScreen/Careers/Careers.jsx";
+import BlogHomeScreen from "./Screens/HomeScreen/Blog/BlogHomeScreen.jsx";
+import CareersHomeScreen from "./Screens/HomeScreen/Careers/CareersHomeScreen.jsx";
 import DrEmelda from "./Screens/Dr.EmeldaScreen/DrEmelda.jsx";
 import "./index.css";
 import LoginScreen from "./Screens/LoginScreen/LoginScreen.jsx";
@@ -17,6 +17,7 @@ import Graphs from "./Screens/Admin/Graphs.jsx";
 import EmployeesList from "./Screens/Admin/EmployeesList.jsx";
 import BlogListScreen from "./Screens/Admin/BlogListScreen.jsx";
 import UserListScreen from "./Screens/Admin/UserListScreen.jsx";
+import Blog from "./Screens/HomeScreen/Blog/Blog.jsx";
 // import AdminRoute from "./Components/AdminRoute.jsx";
 // import PrivateRoute from "./Components/PrivateRoute.jsx";
 
@@ -25,8 +26,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/blogs" element={<BlogHomeScreen />}></Route>
+        <Route path="/careers" element={<CareersHomeScreen />} />
         <Route path="/Dr-Emelda" element={<DrEmelda />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           path="/attachee-application"
           element={<AttacheeApplicationScreen />}
         />
+        <Route path="/blogs/:id" element={<Blog />} />
         <Route path="/profile" element={<ProfileScreen />} />
         {/* </Route>
         <Route path="" element={<AdminRoute />}> */}
