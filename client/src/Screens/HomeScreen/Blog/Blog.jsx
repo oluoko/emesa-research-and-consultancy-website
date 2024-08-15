@@ -15,14 +15,14 @@ const Blog = () => {
   };
 
   return (
-    <div className="screen-container blog flex flex-col justify-start place-items-start  items-center md:flex-row lg:justify-around lg:gap-2">
+    <div className="screen-container blog relative grid grid-cols-2 place-items-start md:flex-row lg:justify-around lg:gap-2">
       <Navbar screen="blog" />
 
       <div className=" left-div w-full px-6 md:w-2/3 flex flex-col justify-center items-left">
         <div className="categories-bar relative  my-2  flex flex-col justify-center items-center">
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-2/4 -translate-y-1/2 bottom-0   text-black font-bold py-2 px-2 h-10 rounded-l-2xl bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
+            className="absolute left-0 top-2/4 -translate-y-1/2 bottom-0   text-black font-bold py-2 px-2 h-10 rounded-l-2xl text-xl  flex flex-col justify-center items-center bg-gradient-to-r from-gray-300 to-slate-50 hover:bg-gradient-to-r hover:from-gray-400 hover:to-slate-50"
           >
             &lt;
           </button>
@@ -51,7 +51,7 @@ const Blog = () => {
           </div>
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-2/4 -translate-y-1/2  h-10 text-2xl text-black font-bold py-2 px-2 rounded-r-2xl bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
+            className="absolute right-0 top-2/4 -translate-y-1/2  h-10  text-black font-bold py-2 px-2 rounded-r-2xl  text-xl  flex flex-col justify-center items-center  bg-gradient-to-r to-gray-300 from-slate-50 hover:bg-gradient-to-r hover:to-gray-400 hover:from-slate-50"
           >
             &gt;
           </button>
@@ -286,7 +286,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="right-div relative hidden md:flex flex-col  justify-start w-1/4 h-screen  place-items-start">
+      <div className="right-div bg-black  hidden md:flex flex-col  justify-start w-1/4 ">
         <div className=" w-full bg-white shadow-md rounded-xl">
           <h3 className="px-8  mt-4">Most Viewed Blos</h3>
           <div className="blog-container-container flex flex-col justify-start items-center my-2  h-80 overflow-y-scroll overflow-x-hidden ">

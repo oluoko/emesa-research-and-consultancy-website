@@ -87,7 +87,10 @@ html {
 
 .dashboard-nav::-webkit-scrollbar,
 .blog-container-container::-webkit-scrollbar,
-.categories-bar::-webkit-scrollbar {
+.categories-bar::-webkit-scrollbar,
+.employees-list-container::-webkit-scrollbar,
+.user-list-container::-webkit-scrollbar,
+.blog-list-container::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }

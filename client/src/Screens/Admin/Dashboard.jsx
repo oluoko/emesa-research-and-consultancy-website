@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Dashboard = () => {
   return (
-    <div className="dashboard w-full h-screen flex flex-col sm:flex-wrap sm:mt-8 justify-center sm:justify-between  items-center bg-black-200">
-      <div className="dashboard-nav-container fixed bg-white sm:bg-inherit sm:relative w-2/4 sm:w-1/5  h-5/6 shadow-sm rounded-xl m-2">
+    <div className="dashboard screen-container w-full h-screen flex flex-col sm:flex-wrap justify-center sm:justify-between  items-center bg-black-200">
+      <Navbar screen="admin-dashboard" />
+      <div className="dashboard-nav-container invisible md:visible fixed bg-white sm:bg-inherit sm:relative w-2/4 sm:w-1/5  h-5/6 shadow-sm rounded-xl m-2">
         <div className="dashboard-nav flex flex-col justify-start  items-center w-full h-full px-4 overflow-y-scroll">
           <div className="graphs w-full flex flex-col justify-evenly  items-center bg-gradient-to-b to-gray-200 from-slate-50  py-2 rounded">
             {[
