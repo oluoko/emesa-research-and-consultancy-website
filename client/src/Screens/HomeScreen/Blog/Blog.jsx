@@ -288,7 +288,7 @@ const Blog = () => {
 
       <div className="right-div relative hidden md:flex flex-col  justify-start w-1/4 h-screen  place-items-start">
         <div className=" w-full bg-white shadow-md rounded-xl">
-          <h3 className="px-8  mt-4">Most Viewed Blogs.</h3>
+          <h3 className="px-8  mt-4">Most Viewed Blos</h3>
           <div className="blog-container-container flex flex-col justify-start items-center my-2  h-80 overflow-y-scroll overflow-x-hidden ">
             <div className="blog-container  border-t-2 border-slate-500 w-5/6 my-2 pt-2">
               <div className="flex  justify-start gap-2  items-center">
