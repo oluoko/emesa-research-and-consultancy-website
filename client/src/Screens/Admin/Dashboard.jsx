@@ -54,7 +54,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="dashboard-outlet w-full sm:w-4/5  h-5/6 shadow-md rounded-xl mr-4 p-4">
+      <div className="dashboard-outlet w-full sm:w-4/5  h-5/6 rounded-xl mr-4 p-4">
         <Outlet />
       </div>
     </div>

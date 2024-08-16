@@ -107,7 +107,7 @@ const BlogHomeScreen = () => {
                 accusantium, dolores soluta!
               </p>
             </div>
-            <img src={blogImage} className="radius-2xl w-1/3 h-auto" />
+            <img src={blogImage} className="rounded-3xl w-1/3 h-auto" />
           </div>
           <div className="w-full text-xs md:text-sm flex justify-between mt-3">
             <div className="flex justify-between gap-2">
