@@ -1,6 +1,5 @@
 import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
-import Back from "../../../Components/Back";
 import Navbar from "../../../Components/Navbar/Navbar";
 
 const Blog = () => {
@@ -8,17 +7,17 @@ const Blog = () => {
     <div className="screen-containers mt-16 md:mt-20 w-full flex flex-col justify-center items-center">
       <Navbar screen="blog" />
       <div className="flex flex-col justify-center items-center w-3/4 md:w-1/2 gap-2 pt-2 md:pt-0">
-        <h2 className="title text-xl md:text-4xl my-5 text-black font-black">
+        <h2 className="title text-xl md:text-5xl my-5 text-black font-black">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusa ntium
           qui dolor doloremque, non aliquid fugiat!
         </h2>
         <div className="flex items-right w-full gap-2 md:gap-4 py-2">
           <img
             src={userProfile}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-full"
             alt=""
           />
-          <div className="block text-xs">
+          <div className="block text-xs md:text-lg">
             <p>Daisy Okoti</p>
             <p>
               Published in{" "}
