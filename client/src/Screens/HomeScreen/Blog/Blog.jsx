@@ -2,7 +2,6 @@ import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
 import Back from "../../../Components/Back";
 import Navbar from "../../../Components/Navbar/Navbar";
-import { content } from "googleapis/build/src/apis/content";
 
 const Blog = () => {
   return (
@@ -41,7 +40,7 @@ const Blog = () => {
         </div>
 
         <div className="content flex flex-col justify-center items- w-full">
-          {/* {[
+          {[
             [
               `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
             beatae, distinctio quae nemo eaque pariatur omnis magnam molestiae
@@ -94,7 +93,7 @@ const Blog = () => {
             >
               {paragraphContent}
             </p>
-          ))} */}
+          ))}
         </div>
       </div>
       <div className="w-2/3 flex justify-between mt-3">
