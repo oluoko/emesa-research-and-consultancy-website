@@ -69,34 +69,34 @@ const ProfileScreen = () => {
           <div className="text-gray-400 text-2xl">
             <div className="grid md:grid-cols-2 text-xs md:text-xl">
               {[
-                ["NAME", "name"],
-                ["EMAIL", "email"],
-                ["BIO", "bio"],
-              ].map(([label, name]) => (
+                ["NAME", "name", ""],
+                ["EMAIL", "email", ""],
+                ["BIO", "bio", "h-20 md:h-10 overflow-y-hidden"],
+              ].map(([label, fieldName, styling]) => (
                 <div key={label} className="grid grid-cols-2 mb-2">
                   <div className="px-2 py-1 font-semibold text-black">
                     {label}:
                   </div>
-                  <div className="px-2 py-1">
+                  <div className={`px-2 py-1 ${styling}`}>
                     {isEditing ? (
                       name === "bio" ? (
                         <textarea
-                          name={name}
-                          value={profile[name]}
+                          name={fieldName}
+                          value={profile[fieldName]}
                           onChange={handleInputChange}
                           className="w-full border border-gray-300 rounded-md p-2"
                         />
                       ) : (
                         <input
                           type="text"
-                          name={name}
-                          value={profile[name]}
+                          name={fieldName}
+                          value={profile[fieldName]}
                           onChange={handleInputChange}
                           className="w-full border border-gray-300 rounded-md p-2"
                         />
                       )
                     ) : (
-                      <span>{profile[name]}</span>
+                      <span>{profile[fieldName]}</span>
                     )}
                   </div>
                 </div>
