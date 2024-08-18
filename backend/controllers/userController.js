@@ -199,58 +199,6 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Apply for blogger status
-// @route   POST /api/users/:id/apply-blogger
-// @access  Private
-const applyForBloggerStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  if (user.bloggerApplicationStatus.applicationStatus === "pending") {
-    res.status(400);
-    throw new Error("You have already applied for blogger status");
-  }
-
-  user.bloggerApplicationStatus = {
-    applicationStatus: "pending",
-    appliedAt: new Date(),
-  };
-
-  await user.save();
-
-  res.json({ message: "Applied for blogger status" });
-});
-
-// @desc    Apply for employee status
-// @route   POST /api/users/:id/apply-employee
-// @access  Private
-const applyForEmployeeStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  if (user.employeeApplicationStatus.applicationStatus === "pending") {
-    res.status(400);
-    throw new Error("You have already applied for employee status");
-  }
-
-  user.employeeApplicationStatus = {
-    applicationStatus: "pending",
-    appliedAt: new Date(),
-  };
-
-  await user.save();
-
-  res.json({ message: "Applied for employee status" });
-});
-
 // @desc    Apply for attachee status
 // @route   POST /api/users/:id/apply-attachee
 // @access  Private
@@ -275,48 +223,6 @@ const applyForAttacheeStatus = asyncHandler(async (req, res) => {
   await user.save();
 
   res.json({ message: "Applied for attachee status" });
-});
-
-// @desc    Update employee application status
-// @route   PUT /api/users/:id/employee-application
-// @access  Private/Admin
-const updateEmployeeApplicationStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  if (!user.employeeApplicationStatus.appliedAt) {
-    res.status(400);
-    throw new Error("This user has never applied");
-  }
-
-  if (user.employeeApplicationStatus.reviewedAt) {
-    res.status(400);
-    throw new Error(
-      `This user's application has already been reviewed to '${user.employeeApplicationStatus.applicationStatus}'`
-    );
-  }
-
-  if (user.employeeApplicationStatus.applicationStatus !== "pending") {
-    res.status(400);
-    throw new Error("Application must be in pending status to be reviewed");
-  }
-
-  const { status } = req.body;
-
-  user.employeeApplicationStatus = {
-    applicationStatus: status,
-    appliedAt: user.employeeApplicationStatus.appliedAt,
-    reviewedAt: new Date(),
-  };
-  user.isEmployee = status === "approved";
-
-  await user.save();
-
-  res.json({ message: `Employee application status updated to '${status}'` });
 });
 
 // @desc    Update attachee application status
@@ -361,48 +267,6 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
   res.json({ message: `Attachee application status updated to ${status}` });
 });
 
-// @desc    Update blogger application status
-// @route   PUT /api/users/:id/blogger-application
-// @access  Private/Admin
-const updateBloggerApplicationStatus = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  if (!user.bloggerApplicationStatus.appliedAt) {
-    res.status(400);
-    throw new Error("This user has never applied");
-  }
-
-  if (user.bloggerApplicationStatus.reviewedAt) {
-    res.status(400);
-    throw new Error(
-      `This user's application has already been reviewed to '${user.bloggerApplicationStatus.applicationStatus}'`
-    );
-  }
-
-  if (user.bloggerApplicationStatus.applicationStatus !== "pending") {
-    res.status(400);
-    throw new Error("Application must be in pending status to be reviewed");
-  }
-
-  const { status } = req.body;
-
-  user.bloggerApplicationStatus = {
-    applicationStatus: status,
-    appliedAt: user.bloggerApplicationStatus.appliedAt,
-    reviewedAt: new Date(),
-  };
-  user.isBlogger = status === "approved";
-
-  await user.save();
-
-  res.json({ message: `Blogger application status updated to ${status}` });
-});
-
 module.exports = {
   authUser,
   registerUser,
@@ -413,10 +277,6 @@ module.exports = {
   deleteUser,
   getUserById,
   updateUser,
-  updateBloggerApplicationStatus,
-  updateEmployeeApplicationStatus,
   updateAttacheeApplicationStatus,
-  applyForBloggerStatus,
-  applyForEmployeeStatus,
   applyForAttacheeStatus,
 };
