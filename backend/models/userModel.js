@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
 
 const statusSchema = mongoose.Schema({
   applicationStatus: {
@@ -50,14 +51,6 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    bloggerApplicationStatus: {
-      type: statusSchema,
-      default: () => ({}),
-    },
-    employeeApplicationStatus: {
-      type: statusSchema,
-      default: () => ({}),
-    },
     attacheeApplicationStatus: {
       type: statusSchema,
       default: () => ({}),
@@ -73,6 +66,14 @@ const userSchema = mongoose.Schema(
       default:
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: String,
+    verificationTokenExpires: Date,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
   },
   {
     timestamps: true,
@@ -93,6 +94,34 @@ userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+
+// Generate and hash email verification token
+userSchema.methods.generateVerificationToken = function () {
+  const verificationToken = crypto.randomBytes(20).toString("hex");
+
+  this.verificationToken = crypto
+    .createHash("sha256")
+    .update(verificationToken)
+    .digest("hex");
+
+  this.verificationTokenExpires = Date.now() + 30 * 60 * 1000; // 30 minutes
+
+  return verificationToken;
+};
+
+// Generate and hash password reset token
+userSchema.methods.generateResetPasswordToken = function () {
+  const resetToken = crypto.randomBytes(20).toString("hex");
+
+  this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+  this.resetPasswordExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
+
+  return resetToken;
+};
 
 const User = mongoose.model("User", userSchema);
 
