@@ -18,6 +18,7 @@ import EmployeesList from "./Screens/Admin/EmployeesList.jsx";
 import BlogListScreen from "./Screens/Admin/BlogListScreen.jsx";
 import UserListScreen from "./Screens/Admin/UserListScreen.jsx";
 import Blog from "./Screens/HomeScreen/Blog/Blog.jsx";
+import PostBlog from "./Screens/HomeScreen/Blog/PostBlog.jsx";
 // import AdminRoute from "./Components/AdminRoute.jsx";
 // import PrivateRoute from "./Components/PrivateRoute.jsx";
 
@@ -38,6 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         />
         <Route path="/blogs/:id" element={<Blog />} />
         <Route path="/profile" element={<ProfileScreen />} />
+        <Route path="/post-blog" element={<PostBlog />} />
         {/* </Route>
         <Route path="" element={<AdminRoute />}> */}
         <Route path="/admin-dashboard" element={<Dashboard />}>

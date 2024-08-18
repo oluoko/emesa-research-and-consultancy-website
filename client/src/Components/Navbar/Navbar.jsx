@@ -120,11 +120,22 @@ const Navbar = ({ screen }) => {
               </li>
               <li></li>
               <li>
-                <button className="write-button">Write</button>
+                <Link
+                  to="/post-blog"
+                  className="no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                  }}
+                >
+                  Write
+                </Link>
               </li>
               <li>
-                <div>
-                  <span className="notifications-icon  absolute top-1/2 translate-y-1/2 animate-swing">
+                <div className="h-full w-10  bg-black">
+                  <span className="notifications-icon absolute  top-1/2 translate-y-1/2 animate-swing">
                     🔔
                   </span>
                 </div>

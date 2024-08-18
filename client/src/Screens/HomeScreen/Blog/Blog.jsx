@@ -95,19 +95,7 @@ const Blog = () => {
           ))}
         </div>
       </div>
-      <div className="w-2/3 flex justify-between mt-3">
-        <div className="flex justify-between gap-2">
-          <div className="">Date</div>
-          <div className="">Like</div>
-          <div className="">Share</div>
-        </div>
-
-        <div className="flex justify-between gap-2">
-          <div className="">Report</div>
-          <div className="">Save</div>
-          <div className="">About</div>
-        </div>
-      </div>
+      <div className="w-2/3 flex justify-between mt-3"></div>
     </div>
   );
 };

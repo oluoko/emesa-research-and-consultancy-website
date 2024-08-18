@@ -1,0 +1,56 @@
+.ql-container {
+  font-family: "Georgia", serif;
+  line-height: 1.6;
+  border: none;
+  padding-top: 1.5rem;
+}
+
+.ql-editor {
+  padding: 0;
+  font-size: 1.125rem;
+  color: #333;
+}
+
+.ql-editor.ql-blank::before {
+  font-style: italic;
+  font-weight: 400;
+  color: #999;
+}
+
+.ql-toolbar {
+  border: none;
+  padding: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.ql-toolbar .ql-formats {
+  margin-right: 16px;
+}
+
+.ql-toolbar .ql-picker-label {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.ql-toolbar .ql-picker-options {
+  border: 1px solid #e2e8f0;
+}
+
+.ql-toolbar button:hover {
+  background-color: #f3f4f6;
+}
+
+.ql-editor img {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.ql-editor blockquote {
+  border-left: 4px solid #e2e8f0;
+  padding-left: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 20px 0;
+}
