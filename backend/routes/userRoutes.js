@@ -2,6 +2,9 @@ const express = require("express");
 const {
   authUser,
   registerUser,
+  verifyEmail,
+  forgotPassword,
+  resetPassword,
   logoutUser,
   getUserProfile,
   updateUserProfile,
@@ -9,9 +12,7 @@ const {
   deleteUser,
   getUserById,
   updateUser,
-
   updateAttacheeApplicationStatus,
-
   applyForAttacheeStatus,
 } = require("../controllers/userController.js");
 const { protect, admin } = require("../middleware/authMiddleware.js");
@@ -25,6 +26,9 @@ router
   .route("/profile")
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
+router.route("/verify-email/:token").get(verifyEmail);
+router.route("/forgot-password").post(forgotPassword);
+router.route("/reset-password/:token").put(resetPassword);
 router
   .route("/:id")
   .delete(protect, admin, deleteUser)
