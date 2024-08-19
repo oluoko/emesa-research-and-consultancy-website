@@ -18,7 +18,7 @@ const Contacts = () => {
 
   return (
     <div className="screen-container">
-      <div id="contacts" className="screen">
+      <div id="contacts" className="screen flex flex-col justify-center">
         <div className="section-container">
           <section className="left">
             <div className="contacts-text ">

@@ -1,17 +1,21 @@
 import React from "react";
-import "./LoginSCreen.css";
 import { Link } from "react-router-dom";
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   return (
-    <div className="flex flex-col  items-center justify-center h-screen">
-      <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col   text-white ">
-        <h className="mb-4 text-2xl text-orange-500">SIGN IN</h>
-        <p className="mb-3 ">Enter your email and password to sign in</p>
+    <div
+      className="
+"
+    >
+      <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col items-center  text-white ">
+        <h4 className="mb-8 text-2xl text-orange-500">REGISTER AN ACCOUNT</h4>
         <form className=" flex flex-col items-center ">
           {[
+            ["name", "text", "Your Name", ""],
             ["email", "email", "Your Email", ""],
-            ["password", "password", "Your Password", ""],
+            ["confirmEmail", "email", "Confirm Your Email", ""],
+            ["password", "password", "Enter New Password", ""],
+            ["confirmPassword", "password", "Confirm Your New Password", ""],
           ].map(([id, type, placeholder, className]) => (
             <input
               key={id}
@@ -21,6 +25,7 @@ const LoginScreen = () => {
               placeholder={placeholder}
             />
           ))}
+
           <div className="m-2">
             <label className="inline-flex items-center">
               <input type="checkbox" className="form-checkbox" />
@@ -35,18 +40,15 @@ const LoginScreen = () => {
 
           <button
             type="submit"
-            className=" button font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
+            className="button font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-xl"
           >
-            Sign In
+            Register
           </button>
 
-          <p className="mt-5 text-xl">
-            Don&quot;t have an account?{" "}
-            <Link
-              className="text-blue-500 hover:text-orange-500"
-              to="/register"
-            >
-              Sign up
+          <p className="mt-5 text-lg md:text-xl">
+            Already have and account?{" "}
+            <Link className="text-blue-500 hover:text-orange-500 " to="/login">
+              Log in
             </Link>
           </p>
         </form>
@@ -55,4 +57,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default RegisterScreen;

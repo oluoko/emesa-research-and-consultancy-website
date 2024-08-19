@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <div className="screen-container">
-      <div id="about" className="screen section-container">
+      <div id="about" className="screen section-container shadow-md">
         <section className="left">
           <h2>About Emesa Research and Consultancy</h2>
           <br />
@@ -86,10 +86,10 @@ const About = () => {
         </section>
         <section className="right">
           <h4 className="text-xl">Here are some of our staff members.</h4>
-          {/* <div className="gallery-container" ref={galleryRef}>
+          {/* <div className="gallery-container flex flex-wrap w-full h-5/6 overflow-y-scroll overflow-x-hidden" ref={galleryRef}>
             {images.map((image, index) => (
-              <div key={index} className="gallery-item">
-                <img src={image} alt={`Image ${index + 1}`} />
+              <div key={index} className="gallery-item p-5">
+                <img src={image} alt={`Image ${index + 1}`} className="w-full  h-auto block rounded-xl cursor-pointer" />
               </div>
             ))}
           </div> */}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import profileImage from "../../Assets/userProfile.png";
-import Back from "../../Components/Back";
+import profileImage from "../Assets/userProfile.png";
+import Back from "../Components/Back";
 
 const ProfileScreen = () => {
   const [isEditing, setIsEditing] = useState(false);
