@@ -8,7 +8,7 @@ import DrEmelda from "./Screens/Dr.EmeldaScreen/DrEmelda.jsx";
 import "./index.css";
 import LoginScreen from "./Screens/LoginScreen.jsx";
 import RegisterScreen from "./Screens/RegisterScreen.jsx";
-import AttacheeApplicationScreen from "./Screens/AttacheeApplication/AttacheeApplicationScreen.jsx";
+import AttacheeApplicationScreen from "./Screens/AttacheeApplicationScreen.jsx";
 import ProfileScreen from "./Screens/ProfileScreen.jsx";
 import Dashboard from "./Screens/Admin/Dashboard.jsx";
 import DashboardHome from "./Screens/Admin/DashboardHome.jsx";
