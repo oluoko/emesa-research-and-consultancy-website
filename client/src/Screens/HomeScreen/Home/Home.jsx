@@ -33,7 +33,7 @@ const Home = () => {
     <div className="screen-container">
       <div id="home" className="screen section-container">
         <section className="left">
-          <div className="carousel-container">
+          <div className="carousel-container w-full rounded-xl overflow-hidden">
             {/* <ImageGallery items={combinedImages} infinite autoPlay /> */}
           </div>
         </section>

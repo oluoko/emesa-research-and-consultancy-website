@@ -4,12 +4,6 @@
   width: calc(100% - 22%);
 }
 
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
 .image-gallery-slide img {
   width: 100%;
   height: auto;
