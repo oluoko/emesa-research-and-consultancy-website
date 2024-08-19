@@ -199,15 +199,38 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Update user profile
+// @desc    Update user profile (Verify new email)
 // @route   PUT /api/users/profile
 // @access  Private
 const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
+    const newEmail = req.body.email;
+
+    if (newEmail && newEmail !== user.email) {
+      user.email = newEmail;
+      user.isVerified = false; // Require email verification again
+      const verificationToken = user.generateVerificationToken();
+      await user.save();
+
+      const verificationUrl = `${req.protocol}://${req.get(
+        "host"
+      )}/api/users/verify-email/${verificationToken}`;
+
+      const message = `Please click on the following link to verify your new email: ${verificationUrl}`;
+
+      await sendEmail({
+        email: user.email,
+        subject: "Email Verification",
+        message,
+      });
+
+      res.status(200).json({ message: "Email verification sent" });
+      return;
+    }
+
     user.name = req.body.name || user.name;
-    user.email = req.body.email || user.email;
     user.profileUrl = req.body.profileUrl || user.profileUrl;
 
     if (req.body.password) {
@@ -222,6 +245,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       email: updatedUser.email,
       profileUrl: updatedUser.profileUrl,
       isAdmin: updatedUser.isAdmin,
+      isVerified: updatedUser.isVerified,
     });
   } else {
     res.status(404);
