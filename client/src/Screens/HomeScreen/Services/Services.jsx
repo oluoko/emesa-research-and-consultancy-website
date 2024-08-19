@@ -88,14 +88,14 @@ const Services = () => {
         </div>
         <div className="section-container service-div">
           <section className="left">
-            <div className="service-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-white">
+            <div className="service-form form w-full md:w-auto   my-10 p-5 border rounded-lg shadow-lg bg-white">
               <h3>Service Request Form</h3>
               <form onSubmit={handleSubmit}>
                 {/* Form Inputs */}
                 <div className="grid md:flex grid-col justify-center md:justify-around items-center">
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
                       htmlFor="name"
                     >
                       Name
@@ -111,7 +111,7 @@ const Services = () => {
                   </div>
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-gray-700 text-sm md:text-lg  font-bold mb-2"
                       htmlFor="email"
                     >
                       E-Mail
@@ -127,10 +127,10 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-around">
+                <div className="grid md:flex grid-col justify-center md:justify-around items-center">
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
                       htmlFor="budget"
                     >
                       Budget Range in Ksh
@@ -146,7 +146,7 @@ const Services = () => {
                   </div>
                   <div className="m-2">
                     <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
                       htmlFor="services"
                     >
                       Services
@@ -168,7 +168,7 @@ const Services = () => {
 
                 <div className="m-2">
                   <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
+                    className="block text-gray-700 text-sm md:text-lg  font-bold mb-2"
                     htmlFor="description"
                   >
                     Project description
@@ -183,7 +183,7 @@ const Services = () => {
                   ></textarea>
                 </div>
 
-                <div className="m-2 flex justify-between">
+                <div className="m-2 flex items-center  justify-between">
                   <button
                     type="submit"
                     className="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
