@@ -52,7 +52,7 @@ const ProfileScreen = () => {
         <div className="w-2/3 md:w-1/4 p-4 rounded-xl ">
           <img
             src={profile.profileImage}
-            className="w-full rounded-full hover:border-2 hover:border-orange-500"
+            className="w-full h-auto rounded-full hover:border-2 hover:border-orange-500"
             alt="Profile"
           />
           {isEditing && (
