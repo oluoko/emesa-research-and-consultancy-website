@@ -59,7 +59,7 @@ const ProfileScreen = () => {
             <input
               type="file"
               accept="image/*"
-              className="mt-2"
+              className="mt-2 w-full font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline focus:border-orange-500 "
               onChange={handleImageChange}
             />
           )}
