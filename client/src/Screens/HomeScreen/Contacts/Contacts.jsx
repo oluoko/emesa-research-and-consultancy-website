@@ -103,7 +103,7 @@ There is a bug in... How can I apply to be an employee... At what time are your 
             </span>
           </label> */}
                 </div>
-                <div className="m-2 flex justify-between">
+                <div className="m-3 flex justify-between items-center">
                   <button
                     type="submit"
                     className="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

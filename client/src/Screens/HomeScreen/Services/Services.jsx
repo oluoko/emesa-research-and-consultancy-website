@@ -183,7 +183,7 @@ const Services = () => {
                   ></textarea>
                 </div>
 
-                <div className="m-2 flex items-center  justify-between">
+                <div className="m-3 flex items-center  justify-between">
                   <button
                     type="submit"
                     className="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
