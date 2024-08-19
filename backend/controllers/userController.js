@@ -77,6 +77,34 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc    Verify email
+// @route   GET /api/users/verify-email/:token
+// @access  Public
+const verifyEmail = asyncHandler(async (req, res) => {
+  const verificationToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)
+    .digest("hex");
+
+  const user = await User.findOne({
+    verificationToken,
+    verificationTokenExpires: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    res.status(400);
+    throw new Error("Token is invalid or has expired");
+  }
+
+  user.isVerified = true;
+  user.verificationToken = undefined;
+  user.verificationTokenExpires = undefined;
+
+  await user.save();
+
+  res.status(200).json({ message: "Email verified successfully" });
+});
+
 // @desc    Logout user / clear cookie
 // @route   POST /api/users/logout
 // @access  Public
