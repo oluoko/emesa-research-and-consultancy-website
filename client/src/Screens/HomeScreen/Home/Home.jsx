@@ -4,7 +4,7 @@ import { useDropzone } from "react-dropzone";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import "./Home.css";
-import Ads from "../../../Components/Ads/Ads.jsx";
+import Ads from "../../../Components/Ads.jsx";
 import { Link } from "react-router-dom";
 // import importedImages from "../../Utils/imageImports.js"; // Import the images
 
