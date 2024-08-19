@@ -2,6 +2,7 @@
 const asyncHandler = require("../middleware/asyncHandler.js");
 const generateToken = require("../utils/generateToken.js");
 const User = require("../models/userModel.js");
+const cryptop = require("crypto");
 
 // @desc    Auth user & get token
 // @route   POST /api/users/auth
@@ -48,11 +49,27 @@ const registerUser = asyncHandler(async (req, res) => {
   if (user) {
     generateToken(res, user._id);
 
+    const verificationToken = user.generateVerificationToken();
+    await user.save();
+
+    const verificationUrl = `${req.protocol}://${req.get(
+      "host"
+    )}/api/users/verify-email/${verificationToken}`;
+
+    const message = `Please click on the following link to verify your email: ${verificationUrl}`;
+
+    await sendEmail({
+      email: user.email,
+      subject: "Email Verification",
+      message,
+    });
+
     res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
+      message: "Verification email sent",
     });
   } else {
     res.status(400);
