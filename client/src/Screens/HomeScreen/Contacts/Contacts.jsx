@@ -45,13 +45,13 @@ const Contacts = () => {
             </div>
           </section>
           <section className="right">
-            <div className="contacts-form form max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
+            <div className="contacts-form form w-full md:w-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
               <h3>Contacts Form</h3>
               <form>
-                <div className="flex justify-around ">
+                <div className="grid md:flex grid-col justify-center md:justify-around items-center ">
                   <div className="m-2">
                     <label
-                      className="block text-white text-sm font-bold mb-2"
+                      className="block text-white text-sm md:text-lg font-bold mb-2"
                       htmlFor="name"
                     >
                       Name
@@ -59,13 +59,13 @@ const Contacts = () => {
                     <input
                       type="text"
                       id="name"
-                      className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline "
+                      className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline text-xs"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="m-2">
                     <label
-                      className="block text-white text-sm font-bold mb-2"
+                      className="block text-white text-sm md:text-lg font-bold mb-2"
                       htmlFor="email"
                     >
                       E-Mail
@@ -81,7 +81,7 @@ const Contacts = () => {
 
                 <div className="m-2">
                   <label
-                    className="block text-white text-xl font-bold mb-2"
+                    className="block text-white text-sm md:text-lg font-bold mb-2"
                     htmlFor="description"
                   >
                     What is this about?

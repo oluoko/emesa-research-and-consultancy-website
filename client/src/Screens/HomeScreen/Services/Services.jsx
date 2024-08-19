@@ -92,7 +92,7 @@ const Services = () => {
               <h3>Service Request Form</h3>
               <form onSubmit={handleSubmit}>
                 {/* Form Inputs */}
-                <div className="flex justify-around">
+                <div className="grid md:flex grid-col justify-center md:justify-around items-center">
                   <div className="m-2">
                     <label
                       className="block text-gray-700 text-sm font-bold mb-2"
