@@ -1,18 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Back from "../Components/Back";
 
 const AttacheeApplicationScreen = () => {
   return (
     <div className=" relative flex flex-col  vh-100  items-center justify-center m-2">
-      <button className="button fixed top-4 left-4 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
-        <Link to="/careers" className="text-2xl ">
-          Back
-        </Link>
-      </button>
-      <h className="mt-6 text-2xl font-extrabold text-orange-500">
+      <Back />
+
+      <h className="mt-14 md:mt-6 text-2xl font-extrabold text-orange-500">
         APPLY FOR ATTACHMENT
       </h>
-      <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-gray-800 flex flex-col   text-white ">
+      <div className="contacts-form form w-full md:w-2/3 my-1 md:my-5 p-10 border rounded-lg shadow-lg bg-gray-800 flex flex-col   text-white ">
         <form className=" flex flex-col items-center  ">
           <div className="flex justify-between items-center  w-full  my-2">
             <label htmlFor="name" className="">
