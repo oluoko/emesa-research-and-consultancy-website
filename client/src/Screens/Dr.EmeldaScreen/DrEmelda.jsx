@@ -7,10 +7,14 @@ const DrEmelda = () => {
   return (
     <div className="screen-container">
       <Navbar />
-      <div id="emelda-portfolio" className="screen">
+      <div id="emelda-portfolio" className="screen shadow-md">
         <div className="section-container">
-          <section className="left">
-            <img src={DrEmelda1} alt="" />
+          <section className="left ">
+            <img
+              src={DrEmelda1}
+              className="w-3/4 h-auto rounded-full mt-3"
+              alt=""
+            />
           </section>
           <section className="right">
             <h3>About Dr. Emelda Nyongesa</h3>
@@ -28,7 +32,7 @@ const DrEmelda = () => {
               PhD Business ADMINISTRATION UNDERWAY at JKUAT, Treasurer of
               nairobi city water and sewerage staff welfare association ,
               part-time lecturer in the university and Sunday school teacher in
-              addition to being a mother of four
+              addition to being a mother of four.
             </p>
           </section>
         </div>
