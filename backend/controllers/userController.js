@@ -406,6 +406,9 @@ const updateAttacheeApplicationStatus = asyncHandler(async (req, res) => {
 module.exports = {
   authUser,
   registerUser,
+  verifyEmail,
+  forgotPassword,
+  resetPassword,
   logoutUser,
   getUserProfile,
   updateUserProfile,
