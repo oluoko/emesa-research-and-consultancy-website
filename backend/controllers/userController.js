@@ -105,6 +105,45 @@ const verifyEmail = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Email verified successfully" });
 });
 
+// @desc    Forgot password
+// @route   POST /api/users/forgot-password
+// @access  Public
+const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  const resetToken = user.generateResetPasswordToken();
+  await user.save();
+
+  const resetUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/api/users/reset-password/${resetToken}`;
+
+  const message = `Please click on the following link to reset your password: ${resetUrl}`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: "Password Reset",
+      message,
+    });
+
+    res.status(200).json({ message: "Reset email sent" });
+  } catch (error) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+
+    res.status(500);
+    throw new Error("Email could not be sent");
+  }
+});
+
 // @desc    Logout user / clear cookie
 // @route   POST /api/users/logout
 // @access  Public
