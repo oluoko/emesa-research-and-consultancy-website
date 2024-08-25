@@ -9,7 +9,7 @@ const LoginScreen = () => {
         <p className="mb-3 ">Enter your email and password to sign in</p>
         <form className=" flex flex-col items-center ">
           {[
-            ["email", "email", "Your Efffmail", ""],
+            ["email", "email", "Your Email", ""],
             ["password", "password", "Your Password", ""],
           ].map(([id, type, placeholder, className]) => (
             <input
