@@ -40,6 +40,18 @@ if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
+//  Add session middleware and initializa passport:
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use("/api/users", userRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/careers", careerRoutes);
