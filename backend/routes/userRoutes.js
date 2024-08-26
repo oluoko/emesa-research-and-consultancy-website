@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 const {
   authUser,
   registerUser,
@@ -29,6 +30,20 @@ router
 router.route("/verify-email/:token").get(verifyEmail);
 router.route("/forgot-password").post(forgotPassword);
 router.route("/reset-password/:token").put(resetPassword);
+
+// Google OAuth routes
+router.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/profile", // Redirect after successful login
+    failureRedirect: "/login", // Redirect after failed login
+  })
+);
+
 router
   .route("/:id")
   .delete(protect, admin, deleteUser)
