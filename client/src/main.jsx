@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import App from "./App.jsx";
 import BlogHomeScreen from "./Screens/HomeScreen/Blog/BlogHomeScreen.jsx";
 import CareersHomeScreen from "./Screens/HomeScreen/Careers/CareersHomeScreen.jsx";
@@ -24,48 +25,53 @@ import PostBlog from "./Screens/HomeScreen/Blog/PostBlog.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/blogs" element={<BlogHomeScreen />}></Route>
-        <Route path="/careers" element={<CareersHomeScreen />} />
-        <Route path="/Dr-Emelda" element={<DrEmelda />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/register" element={<RegisterScreen />} />
-        {/* <Route path="" element={<PrivateRoute />}> */}
-        <Route
-          path="/attachee-application"
-          element={<AttacheeApplicationScreen />}
-        />
-        <Route path="/blogs/:id" element={<Blog />} />
-        <Route path="/profile" element={<ProfileScreen />} />
-        <Route path="/post-blog" element={<PostBlog />} />
-        {/* </Route>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/blogs" element={<BlogHomeScreen />}></Route>
+          <Route path="/careers" element={<CareersHomeScreen />} />
+          <Route path="/Dr-Emelda" element={<DrEmelda />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          {/* <Route path="" element={<PrivateRoute />}> */}
+          <Route
+            path="/attachee-application"
+            element={<AttacheeApplicationScreen />}
+          />
+          <Route path="/blogs/:id" element={<Blog />} />
+          <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/post-blog" element={<PostBlog />} />
+          {/* </Route>
         <Route path="" element={<AdminRoute />}> */}
-        <Route path="/admin-dashboard" element={<Dashboard />}>
-          <Route
-            index={true}
-            path="/admin-dashboard"
-            element={<DashboardHome />}
-          />
-          <Route path="/admin-dashboard/graphs" element={<Graphs />} />
-          <Route path="/admin-dashboard/profile" element={<ProfileScreen />} />
-          <Route
-            path="/admin-dashboard/update-pictures"
-            element={<UploadPictures />}
-          />
-          <Route
-            path="/admin-dashboard/employees"
-            element={<EmployeesList />}
-          />
-          <Route path="/admin-dashboard/blogs" element={<BlogListScreen />} />
-          <Route
-            path="/admin-dashboard/user-profiles"
-            element={<UserListScreen />}
-          />
-        </Route>
-        {/* </Route> */}
-      </Routes>
-    </Router>
+          <Route path="/admin-dashboard" element={<Dashboard />}>
+            <Route
+              index={true}
+              path="/admin-dashboard"
+              element={<DashboardHome />}
+            />
+            <Route path="/admin-dashboard/graphs" element={<Graphs />} />
+            <Route
+              path="/admin-dashboard/profile"
+              element={<ProfileScreen />}
+            />
+            <Route
+              path="/admin-dashboard/update-pictures"
+              element={<UploadPictures />}
+            />
+            <Route
+              path="/admin-dashboard/employees"
+              element={<EmployeesList />}
+            />
+            <Route path="/admin-dashboard/blogs" element={<BlogListScreen />} />
+            <Route
+              path="/admin-dashboard/user-profiles"
+              element={<UserListScreen />}
+            />
+          </Route>
+          {/* </Route> */}
+        </Routes>
+      </Router>
+    </AuthProvider>
   </React.StrictMode>
 );
