@@ -9,6 +9,10 @@ const connectDB = require("./config/db.js");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const bodyParser = require("body-parser");
+const passport = require("passport");
+const session = require("express-session");
+require("./config/passport"); // Initialize passport
+
 const userRoutes = require("./routes/userRoutes.js");
 const blogRoutes = require("./routes/blogRoutes.js");
 const careerRoutes = require("./routes/careerRoutes.js");
