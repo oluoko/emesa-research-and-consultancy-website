@@ -21,7 +21,7 @@ passport.use(
             name: displayName,
             email,
             password: id, // You can hash this or generate a random password
-            isVerified: true, // Since the user is sigg in via Google, we consider them verified
+            isVerified: true, // Since the user is signing in via Google, we consider them verified
           });
         }
 
