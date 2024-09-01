@@ -48,6 +48,11 @@ const ProfileScreen = () => {
   return (
     <div className="relative flex flex-col justify-center items-center w-full h-full">
       <Back />
+      {window.innerWidth <= 768 && (
+        <button className="button fixed top-2 right-2 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
+          Log out
+        </button>
+      )}
       <div className="w-5/6 md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-2 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4 shadow-lg border-2 rounded-xl bg-gray-500 ">
         <div className="w-2/3 md:w-1/4 p-4 rounded-xl ">
           <img
