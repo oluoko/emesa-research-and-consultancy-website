@@ -5,6 +5,7 @@ import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
 import { LiaTimesSolid } from "react-icons/lia";
 import { IoMenu } from "react-icons/io5";
+import ProfileBtn from "../ProfileBtn";
 
 const Navbar = ({ screen }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -150,32 +151,11 @@ const Navbar = ({ screen }) => {
                   </span>
                 </div>
               </li>
-              <li>
-                <img
-                  src={userProfile}
-                  alt="Profile"
-                  className="profile-pic w-9 h-9"
-                  onClick={() => setShowMenu(!showMenu)}
-                />
-                {showMenu && (
-                  <div className="dropdown-menu flex flex-col justify-center items-center fixed top-20 right-40  text-xl bg-slate-200 w-48 p-4 rounded-2xl shadow shadow-slate-700">
-                    <Link
-                      to="/profile"
-                      className="w-full h-full p-1 hover:rounded-t-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
-                    >
-                      Profile
-                    </Link>
-                    <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full " />
-
-                    <button
-                      className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200
-                    "
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </li>
+              <ProfileBtn
+                userProfile={userProfile}
+                handleEditClick={handleProfileClick}
+                showMenu={showMenu}
+              />
             </>
           )}
 
@@ -204,32 +184,11 @@ const Navbar = ({ screen }) => {
                   Attachee Form
                 </Link>
               </li>
-              <li>
-                <img
-                  src={userProfile}
-                  alt="Profile"
-                  className="profile-pic w-9 h-9"
-                  onClick={() => setShowMenu(!showMenu)}
-                />
-                {showMenu && (
-                  <div className="dropdown-menu flex flex-col justify-center items-center fixed top-20 right-40  text-xl bg-slate-200 w-48 p-4 rounded-2xl shadow shadow-slate-700">
-                    <Link
-                      to="/profile"
-                      className="w-full h-full p-1 hover:rounded-t-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
-                    >
-                      Profile
-                    </Link>
-                    <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full " />
-
-                    <button
-                      className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200
-                    "
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </li>
+              <ProfileBtn
+                userProfile={userProfile}
+                handleEditClick={handleProfileClick}
+                showMenu={showMenu}
+              />
             </>
           )}
 
@@ -240,32 +199,11 @@ const Navbar = ({ screen }) => {
               <li></li>
               <li></li>
               <li></li>
-              <li>
-                <img
-                  src={userProfile}
-                  alt="Profile"
-                  className="profile-pic w-9 h-9"
-                  onClick={() => setShowMenu(!showMenu)}
-                />
-                {showMenu && (
-                  <div className="dropdown-menu flex flex-col justify-center items-center fixed top-20 right-40 text-xs md:text-xl bg-slate-200 w-48 md:p-2 rounded-2xl shadow shadow-slate-700">
-                    <Link
-                      to="/profile"
-                      className="w-full h-full p-1 hover:rounded-t-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
-                    >
-                      Profile
-                    </Link>
-                    <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full " />
-
-                    <button
-                      className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200
-                    "
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </li>
+              <ProfileBtn
+                userProfile={userProfile}
+                handleEditClick={handleProfileClick}
+                showMenu={showMenu}
+              />
             </>
           )}
           {!["home", "blog", "careers", "admin-dashboard"].includes(screen) && (
