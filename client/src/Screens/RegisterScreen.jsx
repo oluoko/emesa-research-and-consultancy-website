@@ -51,6 +51,12 @@ const RegisterScreen = () => {
               Log in
             </Link>
           </p>
+          <button
+            className="button mt-4"
+            onClick={() => (window.location.href = "/api/users/google")}
+          >
+            Sign Up with Google
+          </button>
         </form>
       </div>
     </div>
