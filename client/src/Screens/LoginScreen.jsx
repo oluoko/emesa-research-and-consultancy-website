@@ -41,7 +41,7 @@ const LoginScreen = () => {
           </button>
         </form>
         <p className="mt-5 text-xl">
-          Don't have an account?{" "}
+          Don&quot;t have an account?{" "}
           <Link className="text-blue-500 hover:text-orange-500" to="/register">
             Sign up
           </Link>
