@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import userProfile from "../../Assets/userProfile.png";
+import { navigate } from "react-router-dom";
 import logo from "../../Assets/Logos/logo.png";
 import { Link } from "react-router-dom";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -152,7 +152,6 @@ const Navbar = ({ screen }) => {
                 </div>
               </li>
               <ProfileBtn
-                userProfile={userProfile}
                 handleEditClick={handleProfileClick}
                 showMenu={showMenu}
               />
@@ -185,7 +184,6 @@ const Navbar = ({ screen }) => {
                 </Link>
               </li>
               <ProfileBtn
-                userProfile={userProfile}
                 handleEditClick={handleProfileClick}
                 showMenu={showMenu}
               />
@@ -200,7 +198,6 @@ const Navbar = ({ screen }) => {
               <li></li>
               <li></li>
               <ProfileBtn
-                userProfile={userProfile}
                 handleEditClick={handleProfileClick}
                 showMenu={showMenu}
               />

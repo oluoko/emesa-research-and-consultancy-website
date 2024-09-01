@@ -1,6 +1,7 @@
 import React from "react";
+import userProfile from "../Assets/userProfile.png";
 
-const ProfileBtn = ({ userProfile, handleProfileClick, showMenu }) => {
+const ProfileBtn = ({ handleProfileClick, showMenu }) => {
   return (
     <li>
       <img
