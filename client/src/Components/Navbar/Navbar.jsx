@@ -134,8 +134,8 @@ const Navbar = ({ screen }) => {
                 </Link>
               </li>
               <li>
-                <div className="h-full w-10  bg-black">
-                  <span className="notifications-icon absolute  top-1/2 translate-y-1/2 animate-swing">
+                <div className="h-full ">
+                  <span className="notifications-icon top-1/2 translate-y-1/2 animate-swing">
                     🔔
                   </span>
                 </div>
