@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const RegisterScreen = () => {
+  const { register } = useContext(AuthContext);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    login(email, password);
+  };
+
   return (
     <div
       className="
@@ -16,7 +29,7 @@ const RegisterScreen = () => {
             ["confirmEmail", "email", "Confirm Your Email", ""],
             ["password", "password", "Enter New Password", ""],
             ["confirmPassword", "password", "Confirm Your New Password", ""],
-          ].map(([id, type, placeholder, className]) => (
+          ].map(([id, type, placeholder, className, setInput]) => (
             <input
               key={id}
               type={type}
