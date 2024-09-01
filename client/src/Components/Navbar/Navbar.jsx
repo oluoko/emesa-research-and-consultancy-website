@@ -9,6 +9,16 @@ import { IoMenu } from "react-icons/io5";
 const Navbar = ({ screen }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [navbarOpen, setNavbaropen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    if (window.innerWidth <= 768) {
+      // Adjust this breakpoint as needed
+      navigate("/profile");
+    } else {
+      setShowMenu(!showMenu);
+    }
+  };
 
   return (
     <div id="nav-container">
