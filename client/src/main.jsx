@@ -34,42 +34,45 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/Dr-Emelda" element={<DrEmelda />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
-          {/* <Route path="" element={<PrivateRoute />}> */}
-          <Route
-            path="/attachee-application"
-            element={<AttacheeApplicationScreen />}
-          />
-          <Route path="/blogs/:id" element={<Blog />} />
-          <Route path="/profile" element={<ProfileScreen />} />
-          <Route path="/post-blog" element={<PostBlog />} />
-          {/* </Route>
-          <Route path="" element={<AdminRoute />}> */}
-          <Route path="/admin-dashboard" element={<Dashboard />}>
+          <Route path="" element={<PrivateRoute />}>
             <Route
-              index={true}
-              path="/admin-dashboard"
-              element={<DashboardHome />}
+              path="/attachee-application"
+              element={<AttacheeApplicationScreen />}
             />
-            <Route path="/admin-dashboard/graphs" element={<Graphs />} />
-            <Route
-              path="/admin-dashboard/profile"
-              element={<ProfileScreen />}
-            />
-            <Route
-              path="/admin-dashboard/update-pictures"
-              element={<UploadPictures />}
-            />
-            <Route
-              path="/admin-dashboard/employees"
-              element={<EmployeesList />}
-            />
-            <Route path="/admin-dashboard/blogs" element={<BlogListScreen />} />
-            <Route
-              path="/admin-dashboard/user-profiles"
-              element={<UserListScreen />}
-            />
+            <Route path="/blogs/:id" element={<Blog />} />
+            <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/post-blog" element={<PostBlog />} />
           </Route>
-          {/* </Route> */}
+          <Route path="" element={<AdminRoute />}>
+            <Route path="/admin-dashboard" element={<Dashboard />}>
+              <Route
+                index={true}
+                path="/admin-dashboard"
+                element={<DashboardHome />}
+              />
+              <Route path="/admin-dashboard/graphs" element={<Graphs />} />
+              <Route
+                path="/admin-dashboard/profile"
+                element={<ProfileScreen />}
+              />
+              <Route
+                path="/admin-dashboard/update-pictures"
+                element={<UploadPictures />}
+              />
+              <Route
+                path="/admin-dashboard/employees"
+                element={<EmployeesList />}
+              />
+              <Route
+                path="/admin-dashboard/blogs"
+                element={<BlogListScreen />}
+              />
+              <Route
+                path="/admin-dashboard/user-profiles"
+                element={<UserListScreen />}
+              />
+            </Route>
+          </Route>
         </Routes>{" "}
       </AuthProvider>
     </Router>
