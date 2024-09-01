@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const colors = require("colors");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
@@ -64,5 +65,8 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${port}`.cyan.bold
+      .underline
+  );
 });
