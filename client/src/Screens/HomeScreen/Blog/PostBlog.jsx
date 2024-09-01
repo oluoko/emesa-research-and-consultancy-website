@@ -43,7 +43,7 @@ const PostBlog = () => {
   return (
     <div className="container mx-auto p-4 sm:p-8">
       <Back />
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto mt-16">
         <input
           type="text"
           value={title}
