@@ -25,8 +25,8 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/blogs" element={<BlogHomeScreen />}></Route>
@@ -73,8 +73,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               />
             </Route>
           </Route>
-        </Routes>
-      </Router>
-    </AuthProvider>
+        </Routes>{" "}
+      </AuthProvider>
+    </Router>
   </React.StrictMode>
 );
