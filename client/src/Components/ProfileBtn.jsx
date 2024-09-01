@@ -1,7 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import userProfile from "../Assets/userProfile.png";
+import { Link, useNavigate } from "react-router-dom";
 
-const ProfileBtn = ({ handleProfileClick, showMenu }) => {
+const ProfileBtn = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    if (window.innerWidth <= 768) {
+      // Adjust this breakpoint as needed
+      navigate("/profile");
+    } else {
+      setShowMenu(!showMenu);
+    }
+  };
+
   return (
     <li>
       <img
