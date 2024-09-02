@@ -1,7 +1,17 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const PrivateRoute = () => {
   const userData = localStorage.getItem("userData");
-  return userData ? <Outlet /> : <Navigate to="/login" replace />;
+  const location = useLocation();
+
+  return userData ? (
+    <Outlet />
+  ) : (
+    <Navigate
+      to={`/login?redirect=${location.pathname}${location.search}`}
+      replace
+    />
+  );
 };
+
 export default PrivateRoute;
