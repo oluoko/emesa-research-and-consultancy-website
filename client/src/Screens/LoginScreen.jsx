@@ -21,6 +21,7 @@ const LoginScreen = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
+      <Toast />
       <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col text-white">
         <h4 className="mb-4 text-2xl text-orange-500">SIGN IN</h4>
         <form onSubmit={loginHandler} className="flex flex-col items-center">
