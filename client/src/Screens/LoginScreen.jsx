@@ -1,37 +1,40 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import Toast, { showToast } from "../Components/Toast/Toast";
 
 const LoginScreen = () => {
-  const { login } = useContext(AuthContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    login(email, password);
+  const navigate = useNavigate();
+
+  const changeHandler = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const loginHandler = async (e) => {
+    console.log(data);
   };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col text-white">
         <h4 className="mb-4 text-2xl text-orange-500">SIGN IN</h4>
-        <form onSubmit={submitHandler} className="flex flex-col items-center">
+        <form onSubmit={loginHandler} className="flex flex-col items-center">
           <input
             type="email"
             id="email"
             className="mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 bg-inherit"
             placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={changeHandler}
           />
           <input
             type="password"
             id="password"
             className="mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 bg-inherit"
             placeholder="Your Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={changeHandler}
           />
           <button
             type="submit"
