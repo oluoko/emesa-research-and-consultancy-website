@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import Toast, { showToast } from "../Components/Toast/Toast";
+import axios from "axios";
 
 const LoginScreen = () => {
   const API_URL = "http://localhost:5000/api/users";
@@ -9,6 +10,11 @@ const LoginScreen = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    localStorage.setItem("lastPage", location.pathname);
+  }, [location]);
 
   const changeHandler = (e) => {
     setData({ ...data, [e.target.id]: e.target.value });
@@ -17,6 +23,25 @@ const LoginScreen = () => {
   const loginHandler = async (e) => {
     setLoading(true);
     e.preventDefault();
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const response = await axios.post(API_URL + "/auth", data, config);
+      localStorage.setItem("userData", JSON.stringify(response));
+      showToast("Login Successful!", "success");
+      setTimeout(() => {
+        navigate(-1);
+      }, 1500);
+    } catch (error) {
+      console.log(error?.data?.message || error.message);
+      const errorMessage = error?.response?.data?.message || error.message;
+      showToast(errorMessage, "error");
+    }
+    setLoading(false);
   };
 
   return (
