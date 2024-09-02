@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import Toast, { showToast } from "../Components/Toast/Toast";
 
@@ -10,10 +10,13 @@ const LoginScreen = () => {
   const navigate = useNavigate();
 
   const changeHandler = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setData({ ...data, [e.target.id]: e.target.value });
+    console.log(data);
   };
 
   const loginHandler = async (e) => {
+    setLoading(true);
+    e.preventDefault();
     console.log(data);
   };
 
