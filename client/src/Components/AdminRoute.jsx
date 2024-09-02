@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const AdminRoute = () => {
-  const { userInfo } = useContext(AuthContext);
+  const userData = localStorage.getItem("userData");
 
-  return userInfo && userInfo.isAdmin ? (
+  return userData && userData.isAdmin ? (
     <Outlet />
   ) : (
     <Navigate to="/login" replace />
