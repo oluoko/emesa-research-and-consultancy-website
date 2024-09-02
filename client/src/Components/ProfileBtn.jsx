@@ -40,7 +40,7 @@ const ProfileBtn = () => {
             <>
               <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
               <Link
-                to="/admin"
+                to="/admin-dashboard"
                 className="w-full h-full p-1 hover:rounded-b-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
               >
                 Admin Panel
