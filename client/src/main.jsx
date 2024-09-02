@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/blogs" element={<BlogHomeScreen />}></Route>
-        <Route path="/careers" element={<CareersHomeScreen />} />
+
         <Route path="/Dr-Emelda" element={<DrEmelda />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
@@ -37,6 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/attachee-application"
             element={<AttacheeApplicationScreen />}
           />
+          <Route path="/careers" element={<CareersHomeScreen />} />
           <Route path="/blogs/:id" element={<Blog />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/post-blog" element={<PostBlog />} />
