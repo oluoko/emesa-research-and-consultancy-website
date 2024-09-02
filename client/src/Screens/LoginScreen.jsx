@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import Toast, { showToast } from "../Components/Toast/Toast";
 import axios from "axios";
 
@@ -11,7 +10,6 @@ const LoginScreen = () => {
   const userData = localStorage.getItem("userData");
 
   const navigate = useNavigate();
-
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
   const redirect = sp.get("redirect") || "/";
@@ -27,8 +25,8 @@ const LoginScreen = () => {
   };
 
   const loginHandler = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     try {
       const config = {
         headers: {
@@ -36,14 +34,15 @@ const LoginScreen = () => {
         },
       };
 
-      const response = await axios.post(API_URL + "/auth", data, config);
-      localStorage.setItem("userData", JSON.stringify(response));
+      const response = await axios.post(`${API_URL}/auth`, data, config);
+      localStorage.setItem("userData", JSON.stringify(response.data));
       showToast("Login Successful!", "success");
+
       setTimeout(() => {
-        navigate(-1);
+        navigate(redirect); // Redirect to the original URL
       }, 1500);
     } catch (error) {
-      console.log(error?.data?.message || error.message);
+      console.error(error?.response?.data?.message || error.message);
       const errorMessage = error?.response?.data?.message || error.message;
       showToast(errorMessage, "error");
     }
@@ -73,13 +72,17 @@ const LoginScreen = () => {
           <button
             type="submit"
             className="button font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline w-full"
+            disabled={loading}
           >
-            Sign In
+            {loading ? "Signing In..." : "Sign In"}
           </button>
         </form>
         <p className="mt-5 text-xl">
           Don&quot;t have an account?{" "}
-          <Link className="text-blue-500 hover:text-orange-500" to="/register">
+          <Link
+            className="text-blue-500 hover:text-orange-500"
+            to={`/register?redirect=${redirect}`}
+          >
             Sign up
           </Link>
         </p>
