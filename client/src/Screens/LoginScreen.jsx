@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import Toast, { showToast } from "../Components/Toast/Toast";
 
 const LoginScreen = () => {
+  const API_URL = "http://localhost:5000/api/users";
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
 
@@ -11,13 +12,11 @@ const LoginScreen = () => {
 
   const changeHandler = (e) => {
     setData({ ...data, [e.target.id]: e.target.value });
-    console.log(data);
   };
 
   const loginHandler = async (e) => {
     setLoading(true);
     e.preventDefault();
-    console.log(data);
   };
 
   return (
