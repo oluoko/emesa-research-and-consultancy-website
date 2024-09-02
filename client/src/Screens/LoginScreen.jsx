@@ -8,13 +8,19 @@ const LoginScreen = () => {
   const API_URL = "http://localhost:5000/api/users";
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const userData = localStorage.getItem("userData");
 
   const navigate = useNavigate();
-  const location = useLocation();
+
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get("redirect") || "/";
 
   useEffect(() => {
-    localStorage.setItem("lastPage", location.pathname);
-  }, [location]);
+    if (userData) {
+      navigate(redirect);
+    }
+  }, [navigate, redirect, userData]);
 
   const changeHandler = (e) => {
     setData({ ...data, [e.target.id]: e.target.value });
