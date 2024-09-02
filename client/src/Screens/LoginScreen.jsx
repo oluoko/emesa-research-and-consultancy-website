@@ -10,13 +10,13 @@ const LoginScreen = () => {
   const userData = localStorage.getItem("userData");
 
   const navigate = useNavigate();
-  const { search } = useLocation();
-  const sp = new URLSearchParams(search);
+  const location = useLocation();
+  const sp = new URLSearchParams(location.search);
   const redirect = sp.get("redirect") || "/";
 
   useEffect(() => {
     if (userData) {
-      navigate(redirect);
+      navigate(redirect); // Redirect to the originally intended URL after login
     }
   }, [navigate, redirect, userData]);
 
