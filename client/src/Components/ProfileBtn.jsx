@@ -1,10 +1,19 @@
 import { useState } from "react";
 import userProfile from "../Assets/userProfile.png";
 import { Link, useNavigate } from "react-router-dom";
+import Toast, { showToast } from "./Toast/Toast";
 
 const ProfileBtn = () => {
   const [showMenu, setShowMenu] = useState(false);
   const userData = JSON.parse(localStorage.getItem("userData"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("userData");
+    showToast("Log Out Successful!", "success");
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  };
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
@@ -17,6 +26,7 @@ const ProfileBtn = () => {
 
   return (
     <li>
+      <Toast />
       <img
         src={userProfile}
         alt="Profile"
@@ -32,7 +42,10 @@ const ProfileBtn = () => {
             Profile
           </Link>
           <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
-          <button className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200">
+          <button
+            className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200"
+            onClick={handleLogout}
+          >
             Logout
           </button>
 
