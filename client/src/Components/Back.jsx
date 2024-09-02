@@ -4,22 +4,28 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Back = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const userData = localStorage.getItem("userData");
+  const userData = JSON.parse(localStorage.getItem("userData"));
 
   useEffect(() => {
-    localStorage.setItem("lastPage", location.pathname);
-  }, [location]);
-
-  const handleBack = () => {
-    // Check if the lastPage is not login or register and user is logged in
+    // Store the current path before redirecting to login or register
     if (
-      userData &&
+      !userData &&
       location.pathname !== "/login" &&
       location.pathname !== "/register"
     ) {
-      navigate(-1);
+      localStorage.setItem("lastPage", location.pathname);
+    }
+  }, [location, userData]);
+
+  const handleBack = () => {
+    const lastPage = localStorage.getItem("lastPage");
+
+    // Navigate to the last page or home if lastPage is not available
+    if (userData && lastPage) {
+      navigate(lastPage);
+      localStorage.removeItem("lastPage"); // Clear lastPage after navigating
     } else {
-      navigate("/"); // Redirect to home if user is not logged in
+      navigate("/"); // Redirect to home if no user is logged in
     }
   };
 
