@@ -4,12 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ProfileBtn = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const userData = localStorage.getItem("userData");
+  const userData = JSON.parse(localStorage.getItem("userData"));
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
     if (window.innerWidth <= 768) {
-      // Adjust this breakpoint as needed
       navigate("/profile");
     } else {
       setShowMenu(!showMenu);
@@ -32,20 +31,21 @@ const ProfileBtn = () => {
           >
             Profile
           </Link>
-          <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full " />
+          <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
           <button className="logout-btn p-1 w-full h-full hover:rounded-b-xl hover:bg-slate-500 hover:text-slate-200">
             Logout
           </button>
 
-          {userData && userData.isAdmin ? (
-            <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full " />
-             <Link
-            to="/profile"
-            className="w-full h-full p-1 hover:rounded-t-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
-          >
-            Profile
-          </Link>
-            
+          {userData && userData.isAdmin && (
+            <>
+              <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-full" />
+              <Link
+                to="/admin"
+                className="w-full h-full p-1 hover:rounded-b-xl hover:bg-slate-500 flex flex-col justify-center items-center hover:text-slate-200"
+              >
+                Admin Panel
+              </Link>
+            </>
           )}
         </div>
       )}
