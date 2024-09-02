@@ -88,6 +88,7 @@ const Navbar = ({ screen }) => {
                   Contacts
                 </a>
               </li>
+              <ProfileBtn />
             </>
           )}
 

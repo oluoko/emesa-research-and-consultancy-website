@@ -1,14 +1,16 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const AdminRoute = () => {
-  const userData = localStorage.getItem("userData");
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const location = useLocation();
 
   return userData && userData.isAdmin ? (
     <Outlet />
   ) : (
-    <Navigate to="/login" replace />
+    <Navigate
+      to={`/login?redirect=${location.pathname}${location.search}`}
+      replace
+    />
   );
 };
 
