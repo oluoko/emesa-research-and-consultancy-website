@@ -66,7 +66,7 @@ app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${port}`.cyan.bold
-      .underline
+    `\nServer running in ${process.env.NODE_ENV} mode on port ${port}\n`.cyan
+      .bold.underline
   );
 });
