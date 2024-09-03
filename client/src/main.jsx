@@ -21,6 +21,7 @@ import Blog from "./Screens/HomeScreen/Blog/Blog.jsx";
 import PostBlog from "./Screens/HomeScreen/Blog/PostBlog.jsx";
 import AdminRoute from "./Components/AdminRoute.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
+import EmailVerificationScreen from "./Screens/EmailVerificationScreen.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -32,6 +33,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Dr-Emelda" element={<DrEmelda />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
+        <Route
+          path="/verify-email/:token"
+          element={<EmailVerificationScreen />}
+        />
         <Route path="" element={<PrivateRoute />}>
           <Route
             path="/attachee-application"
