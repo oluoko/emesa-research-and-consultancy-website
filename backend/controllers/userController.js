@@ -3,6 +3,7 @@ const asyncHandler = require("../middleware/asyncHandler.js");
 const generateToken = require("../utils/generateToken.js");
 const User = require("../models/userModel.js");
 const cryptop = require("crypto");
+const sendEmail = require("../utils/sendEmail");
 
 // @desc    Auth user & get token
 // @route   POST /api/users/auth
@@ -58,6 +59,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const message = `Please click on the following link to verify your email: ${verificationUrl}`;
 
+    // Use the sendEmail function to send the verification email
     await sendEmail({
       email: user.email,
       subject: "Email Verification",
