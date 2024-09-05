@@ -28,55 +28,52 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Register a new user
+// @desc    Register a new user (send verification email)
 // @route   POST /api/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
-
   if (userExists) {
     res.status(400);
     throw new Error("User already exists");
   }
 
-  const user = await User.create({
+  // Create a token for email verification
+  const verificationToken = crypto.randomBytes(32).toString("hex");
+
+  // Store token and user details temporarily (could be in Redis or as part of a temp collection)
+  const verificationTokenHash = crypto
+    .createHash("sha256")
+    .update(verificationToken)
+    .digest("hex");
+
+  // Send verification email
+  const verificationUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/api/users/verify-email/${verificationToken}`;
+
+  const message = `Please click on the following link to verify your email: ${verificationUrl}`;
+
+  await sendEmail({
+    email,
+    subject: "Email Verification",
+    message,
+  });
+
+  // Store user data temporarily
+  await TempUser.create({
     name,
     email,
     password,
+    verificationToken: verificationTokenHash,
+    verificationTokenExpires: Date.now() + 10 * 60 * 1000, // Expires in 10 minutes
   });
 
-  if (user) {
-    generateToken(res, user._id);
-
-    const verificationToken = user.generateVerificationToken();
-    await user.save();
-
-    const verificationUrl = `${req.protocol}://${req.get(
-      "host"
-    )}/api/users/verify-email/${verificationToken}`;
-
-    const message = `Please click on the following link to verify your email: ${verificationUrl}`;
-
-    // Use the sendEmail function to send the verification email
-    await sendEmail({
-      email: user.email,
-      subject: "Email Verification",
-      message,
-    });
-
-    res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-      message: "Verification email sent",
-    });
-  } else {
-    res.status(400);
-    throw new Error("Invalid user data");
-  }
+  res.status(200).json({
+    message: "Verification email sent",
+  });
 });
 
 // @desc    Verify email
