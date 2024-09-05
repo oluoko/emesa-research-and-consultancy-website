@@ -10,9 +10,7 @@ const connectDB = require("./config/db.js");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const bodyParser = require("body-parser");
-const passport = require("passport");
 const session = require("express-session");
-require("./config/passport"); // Initialize passport
 
 const userRoutes = require("./routes/userRoutes.js");
 const blogRoutes = require("./routes/blogRoutes.js");
@@ -40,18 +38,6 @@ const uploadsDir = path.join(__dirname, "/uploads");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }
-
-//  Add session middleware and initializa passport:
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "secret",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use("/api/users", userRoutes);
 app.use("/api/blogs", blogRoutes);
