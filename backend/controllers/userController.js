@@ -3,7 +3,7 @@ const asyncHandler = require("../middleware/asyncHandler.js");
 const generateToken = require("../utils/generateToken.js");
 const User = require("../models/userModel.js");
 const TempUser = require("../models/tempUserModel");
-const cryptop = require("crypto");
+const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 
 // @desc    Auth user & get token
