@@ -55,7 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
     "host"
   )}/api/users/verify-email/${verificationToken}`;
 
-  const message = `Please click on the following link to verify your email: ${verificationUrl}`;
+  const message = `This verification expires in 10 MINUTES. Please click on the following link to verify your email: ${verificationUrl}`;
 
   await sendEmail({
     email,
