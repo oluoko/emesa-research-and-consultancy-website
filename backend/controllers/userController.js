@@ -2,6 +2,7 @@
 const asyncHandler = require("../middleware/asyncHandler.js");
 const generateToken = require("../utils/generateToken.js");
 const User = require("../models/userModel.js");
+const TempUser = require("../models/tempUserModel");
 const cryptop = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 
@@ -76,7 +77,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 });
 
-// @desc    Verify email
+// @desc    Verify email and register user
 // @route   GET /api/users/verify-email/:token
 // @access  Public
 const verifyEmail = asyncHandler(async (req, res) => {
@@ -85,23 +86,33 @@ const verifyEmail = asyncHandler(async (req, res) => {
     .update(req.params.token)
     .digest("hex");
 
-  const user = await User.findOne({
+  // Find temp user with matching verification token and that hasn't expired
+  const tempUser = await TempUser.findOne({
     verificationToken,
     verificationTokenExpires: { $gt: Date.now() },
   });
 
-  if (!user) {
+  if (!tempUser) {
     res.status(400);
     throw new Error("Token is invalid or has expired");
   }
 
-  user.isVerified = true;
-  user.verificationToken = undefined;
-  user.verificationTokenExpires = undefined;
+  // Create the user in the actual User collection
+  const user = await User.create({
+    name: tempUser.name,
+    email: tempUser.email,
+    password: tempUser.password,
+  });
 
-  await user.save();
+  // Optionally: Automatically sign in the user after verification
+  generateToken(res, user._id);
 
-  res.status(200).json({ message: "Email verified successfully" });
+  // Remove the temporary user
+  await TempUser.deleteOne({ _id: tempUser._id });
+
+  res
+    .status(200)
+    .json({ message: "Email verified and user registered successfully" });
 });
 
 // @desc    Forgot password
