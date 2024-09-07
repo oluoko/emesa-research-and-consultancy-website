@@ -1,6 +1,6 @@
 # Emesa Research and Consultancy.
 
-The Official website for Emesa Research and Consultancy. It contains a blog and a careers section.
+The Official website for <a href="https://emesa-research.vercel.app">Emesa Research and Consultancy</a>. It contains a blog and a careers section.
 
 ## Table of Contents
 
@@ -62,7 +62,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Authors
 
-- [@emesa](https://www.github.com/emesa)
+- [Brian Otieno Oluoko - @oluoko](https://www.github.com/oluoko)
 
 ## Acknowledgements
 
