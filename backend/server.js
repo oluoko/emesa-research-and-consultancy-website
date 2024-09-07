@@ -1,8 +1,8 @@
 const express = require("express");
-const dontenv = require("dotenv");
+const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
-dontenv.config();
+const cors = require("cors"); // Add this
+dotenv.config();
 const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
@@ -16,6 +16,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Enable CORS for frontend
+app.use(
+  cors({
+    origin: "*", // Allow requests from your frontend
+    credentials: true, // Enable credentials if you're using cookies or authorization headers
+  })
+);
 
 app.use("/api/users", userRoutes);
 
