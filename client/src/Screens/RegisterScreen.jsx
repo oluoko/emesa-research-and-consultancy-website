@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import Toast, { showToast } from "../Components/Toast/Toast";
@@ -81,9 +81,14 @@ const RegisterScreen = () => {
             <input type="checkbox" className="form-checkbox" required />
             <span className="ml-2 text-white">
               Agree with statements in{" "}
-              <a className="text-blue-500 hover:text-orange-500" href="">
+              <Link
+                Link
+                to="/terms-of-servie"
+                className="text-blue-500 hover:text-orange-500"
+                href=""
+              >
                 Terms of Service
-              </a>
+              </Link>
             </span>
           </label>
         </div>
