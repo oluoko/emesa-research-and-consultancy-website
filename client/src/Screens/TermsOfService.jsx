@@ -1,8 +1,10 @@
 import React from "react";
+import Back from "../Components/Back";
 
 const TermsOfService = () => {
   return (
     <div className="container mx-auto px-4 py-8">
+      <Back />
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
       <p className="mb-4">
         Welcome to <span className="font-semibold">[Your Company Name]</span>{" "}

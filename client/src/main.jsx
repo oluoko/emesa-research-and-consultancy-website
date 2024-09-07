@@ -22,6 +22,8 @@ import PostBlog from "./Screens/HomeScreen/Blog/PostBlog.jsx";
 import AdminRoute from "./Components/AdminRoute.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
 import EmailVerificationScreen from "./Screens/EmailVerificationScreen.jsx";
+import TermsOfService from "./Screens/TermsOfService.jsx";
+import PrivacyPolicy from "./Screens/PrivacyPolicy.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -37,6 +39,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           path="/verify-email/:token"
           element={<EmailVerificationScreen />}
         />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="" element={<PrivateRoute />}>
           <Route
             path="/attachee-application"
