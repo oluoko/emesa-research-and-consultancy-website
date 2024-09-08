@@ -35,6 +35,7 @@ const ContactUsForm = () => {
       <Toast />
       <h3>Contacts Form</h3>
       <form ref={form} onSubmit={sendEmail}>
+        <input type="hidden" name="request_type" value="Contact" />
         <div className="grid md:flex grid-col justify-center md:justify-around items-center ">
           <div className="m-2">
             <label
