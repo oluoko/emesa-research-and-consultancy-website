@@ -67,7 +67,16 @@ router.get("/", async function (req, res, nest) {
       process.env.CLIENT_SECRET,
       redirectURL
     );
-  } catch (error) {}
+    const res = await oAuth2Client.getToken(code);
+    await oAuth2Client.setCredentials(res.tokens);
+    console.log("Tokens acquired");
+
+    const user = oAuth2Client.credentials;
+    console.log("User's Credentials:", user);
+    await getUserData(user.access_token);
+  } catch (error) {
+    console.log("Error with signing in with Google:", error);
+  }
 });
 
 app.use("/api/users", userRoutes);
