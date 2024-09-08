@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { showToast } from "../Components/Toast/Toast";
 
 const GoogleOAuthCallback = () => {
   const navigate = useNavigate();
@@ -18,13 +19,26 @@ const GoogleOAuthCallback = () => {
           );
 
           if (response.data) {
-            // Handle successful login/signup
-            console.log("User Data:", response.data);
-            // Redirect to home or dashboard after successful login
-            navigate("/");
+            // Save user data to local storage
+            localStorage.setItem("userData", JSON.stringify(response.data));
+            showToast("Google Sign-In Successful!", "success");
+
+            // Get the original redirect URL
+            const redirectAfterLogin =
+              localStorage.getItem("redirectAfterLogin") || "/";
+
+            // Clear the stored redirect URL
+            localStorage.removeItem("redirectAfterLogin");
+
+            // Redirect to the original URL after successful login
+            navigate(redirectAfterLogin);
           }
         } catch (error) {
           console.error("Error during Google OAuth:", error);
+          const errorMessage =
+            error?.response?.data?.message ||
+            "Error during Google OAuth, please try again.";
+          showToast(errorMessage, "error");
           // Handle error, maybe redirect to error page
           navigate("/error");
         }

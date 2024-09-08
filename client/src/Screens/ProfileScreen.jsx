@@ -1,18 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import profileImage from "../Assets/userProfile.png";
 import Back from "../Components/Back";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { showToast } from "../Components/Toast/Toast";
 
 const ProfileScreen = () => {
+  const USERS_API_URL = "http://localhost:5000/api";
+
   const [isEditing, setIsEditing] = useState(false);
-  const userData = localStorage.getItem("userData");
-  console.log(userData);
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
-    name: "Jane Doe",
-    email: "janedoe@gmail.com",
-    bio: "Our pragmatic toolkit is designed to unleash the full potential of administrative support personnel, empowering them to execute their work excellently and efficiently. Through our coaching and training programs, we elevate 21st-century essential skills including organization, foresight, and proactiveness, ensuring assistants stay two steps ahead and always on the ball. Our coaching goes beyond the conventional. We harness the power of tested AI hacks and tech tools, incorporating innovative and strategic methods to streamline workflow and boost productivity.",
+    name: "",
+    email: "",
+    bio: "",
     profileImage: profileImage,
   });
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        // Assuming bio and profileImage are part of the response, otherwise handle defaults
+        setProfile({
+          ...data,
+          bio: data.bio || "No bio available",
+          profileImage: data.profileImage || profileImage,
+        });
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+        showToast("Error fetching profile data, please log in again.", "error");
+        navigate("/login");
+      }
+    };
+
+    fetchUserProfile();
+  }, [navigate]);
 
   const handleEditClick = () => {
     setIsEditing(!isEditing);
@@ -37,15 +62,31 @@ const ProfileScreen = () => {
     }
   };
 
-  const handleSave = () => {
-    // Call the updateUser controller here
-    // Example:
-    // updateUser(profile).then(() => {
-    //   setIsEditing(false);
-    // });
-
-    // After saving, toggle back to view mode
-    setIsEditing(false);
+  const handleSave = async () => {
+    try {
+      const { data } = await axios.put(
+        `${USERS_API_URL}/users/profile`,
+        {
+          name: profile.name,
+          email: profile.email,
+          // Include bio and profileImage if they are editable and supported in backend
+        },
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      );
+      // Update profile state with updated data from backend
+      setProfile({
+        ...data,
+        bio: data.bio || profile.bio,
+        profileImage: data.profileImage || profileImage,
+      });
+      setIsEditing(false);
+      showToast("Profile updated successfully!", "success");
+    } catch (error) {
+      console.error("Error updating profile:", error);
+      showToast("Error updating profile, please try again.", "error");
+    }
   };
 
   return (
@@ -53,7 +94,7 @@ const ProfileScreen = () => {
       <Back />
       {window.innerWidth <= 768 && (
         <>
-          {userData && userData.isAdmin && (
+          {profile.isAdmin && (
             <Link
               to="/admin-dashboard"
               className="button fixed top-2 right-1/2 -translate-x-1/2 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline"
@@ -61,7 +102,14 @@ const ProfileScreen = () => {
               Admin Panel
             </Link>
           )}
-          <button className="button fixed top-2 right-2 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline">
+          <button
+            className="button fixed top-2 right-2 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline"
+            onClick={() => {
+              localStorage.removeItem("userData");
+              localStorage.removeItem("token");
+              navigate("/login");
+            }}
+          >
             Log out
           </button>
         </>
@@ -97,7 +145,7 @@ const ProfileScreen = () => {
                   </div>
                   <div className={`px-2 py-1 ${styling}`}>
                     {isEditing ? (
-                      name === "bio" ? (
+                      fieldName === "bio" ? (
                         <textarea
                           name={fieldName}
                           value={profile[fieldName]}

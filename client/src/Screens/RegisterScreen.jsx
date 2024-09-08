@@ -55,6 +55,28 @@ const RegisterScreen = () => {
     setLoading(false);
   };
 
+  function navigateToGoogleAuth(url) {
+    const currentPath = window.location.pathname;
+    localStorage.setItem("redirectAfterLogin", currentPath);
+
+    window.location.href = url;
+  }
+
+  async function googleAuthHandler() {
+    try {
+      const response = await fetch(`http://localhost:5000/api/auth/google`, {
+        method: "POST",
+      });
+      const data = await response.json();
+      console.log(data);
+      navigateToGoogleAuth(data.url);
+    } catch (error) {
+      console.error(error?.response?.data?.message || error.message);
+      const errorMessage = error?.response?.data?.message || error.message;
+      showToast(errorMessage, "error");
+    }
+  }
+
   return (
     <div className="contacts-form form max-w-md mx-auto my-5 p-10 border rounded-lg shadow-lg bg-black flex flex-col items-center text-white">
       <Toast />
@@ -92,7 +114,6 @@ const RegisterScreen = () => {
                 to="/privacy-policy"
                 className="text-blue-500 hover:text-orange-500"
               >
-                {" "}
                 Privacy Policy.
               </Link>
             </span>
@@ -114,7 +135,7 @@ const RegisterScreen = () => {
         <button
           type="button"
           className="button mt-4 w-full"
-          onClick={() => (window.location.href = "/api/users/google")}
+          onClick={googleAuthHandler}
         >
           Sign Up with Google
         </button>
