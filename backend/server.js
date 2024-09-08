@@ -57,6 +57,7 @@ async function getUserData(access_token) {
   console.log("data", data);
 }
 
+/* GET home page.*/
 router.get("/", async function (req, res, nest) {
   const code = req.query.code;
   try {
