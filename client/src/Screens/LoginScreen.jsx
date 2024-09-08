@@ -4,7 +4,7 @@ import Toast, { showToast } from "../Components/Toast/Toast";
 import axios from "axios";
 
 const LoginScreen = () => {
-  const USERS_API_URL = "http://localhost:5000/api/";
+  const USERS_API_URL = "http://localhost:5000/api";
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const userData = localStorage.getItem("userData");
@@ -53,8 +53,23 @@ const LoginScreen = () => {
     setLoading(false);
   };
 
-  function navigateToGoogleAuth() {
-    window.location.href = `${USERS_API_URL}/google`;
+  function navigateToGoogleAuth(url) {
+    window.location.href = url;
+  }
+
+  async function googleAuthHandler() {
+    try {
+      const response = await fetch(`${USERS_API_URL}/auth/google`, {
+        method: "POST",
+      });
+      const data = await response.json();
+      console.log(data);
+      navigateToGoogleAuth(data.url);
+    } catch (error) {
+      console.error(error?.response?.data?.message || error.message);
+      const errorMessage = error?.response?.data?.message || error.message;
+      showToast(errorMessage, "error");
+    }
   }
 
   return (
@@ -94,10 +109,7 @@ const LoginScreen = () => {
             Sign up
           </Link>
         </p>
-        <button
-          className="button mt-4"
-          onClick={() => (window.location.href = "/api/users/google")}
-        >
+        <button className="button mt-4" onClick={() => googleAuthHandler()}>
           Sign In with Google
         </button>
       </div>
