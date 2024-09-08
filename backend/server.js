@@ -28,7 +28,23 @@ app.use(
 );
 
 /* GET users listing. */
-router.post;
+router.post("/", async function (req, res, next) {
+  res.header("Access-Controll-Allow-Origin", "http:localhost:5173");
+  res.header("Referrer-Policy", "no-referrer-when-downgrade");
+
+  const redirectURL = "http://127.0.0.1.3000/oauth";
+
+  const oAuth2Client = new OAuth2Cient(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    redirectURL
+  );
+
+  const authorizeUrl = oAuth2Client.generateAuthUrl({
+    access_type: "offline",
+    scope: "https://www.googleapis.com/auth/userinfo.profile openid",
+  });
+});
 
 app.use("/api/users", userRoutes);
 
