@@ -1,8 +1,5 @@
 const { OAuth2Client } = require("google-auth-library");
 const asyncHandler = require("../middleware/asyncHandler.js");
-const User = require("../models/userModel.js");
-const googleClientID = process.env.CLIENT_ID;
-const googleClientSecret = process.env.CLIENT_SECRET;
 const redirectURL = process.env.REDIRECT_URI;
 const {
   CLIENT_ID,
