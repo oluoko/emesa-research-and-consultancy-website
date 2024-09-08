@@ -1,6 +1,6 @@
-import Back from "../Components/Back";
+import React from "react";
 
-const PrivacyPolicy = () => {
+const PPolicy = () => {
   return (
     <div className="container mx-auto px-4 py-8 mt-10">
       <Back />
@@ -90,4 +90,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default PPolicy;

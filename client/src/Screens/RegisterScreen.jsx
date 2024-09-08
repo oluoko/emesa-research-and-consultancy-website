@@ -83,7 +83,7 @@ const RegisterScreen = () => {
               Agree with statements in{" "}
               <Link
                 Link
-                to="/terms-of-servie"
+                to="/terms-of-service"
                 className="text-blue-500 hover:text-orange-500"
                 href=""
               >

@@ -23,7 +23,7 @@ import AdminRoute from "./Components/AdminRoute.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
 import EmailVerificationScreen from "./Screens/EmailVerificationScreen.jsx";
 import TermsOfService from "./Screens/TermsOfService.jsx";
-import PrivacyPolicy from "./Screens/PrivacyPolicy.jsx";
+import PPolicy from "./Screens/PPolicy.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           element={<EmailVerificationScreen />}
         />
         <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy" element={<PPolicy />} />
         <Route path="" element={<PrivateRoute />}>
           <Route
             path="/attachee-application"
