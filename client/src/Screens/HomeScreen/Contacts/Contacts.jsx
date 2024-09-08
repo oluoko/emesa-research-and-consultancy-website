@@ -34,7 +34,7 @@ const Contacts = () => {
               </div>
               <br />
               <br />
-              <p className="text-xl">
+              <p className="text-lg md:text-xl mb-10">
                 Embark on a journey of discovery and growth with Emesa Research
                 &amp; Consultancy. Let&#39;s build a future of possibilities
                 together.
@@ -127,9 +127,9 @@ There is a bug in... How can I apply to be an employee... At what time are your 
           id="map-container "
           className="w-full h-1/2  relative flex flex-col justify-center items-center"
         >
-          <h2>Visit us today</h2>
+          <h2 className="mb-8">Visit us today</h2>
           <iframe
-            className="w-full md:w-11/12 h-screen rounded-lg"
+            className="w-full  h-96 rounded-lg"
             title="Location Map"
             src={mapUrl}
           ></iframe>
