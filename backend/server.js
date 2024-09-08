@@ -57,6 +57,19 @@ async function getUserData(access_token) {
   console.log("data", data);
 }
 
+router.get("/", async function (req, res, nest) {
+  const code = req.query.code;
+  try {
+    const redirectURL = "http://127.0.0.1.3000/oauth";
+
+    const oAuth2Client = new OAuth2Cient(
+      process.env.CLIENT_ID,
+      process.env.CLIENT_SECRET,
+      redirectURL
+    );
+  } catch (error) {}
+});
+
 app.use("/api/users", userRoutes);
 
 app.use(notFound);
