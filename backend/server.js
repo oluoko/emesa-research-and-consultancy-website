@@ -43,8 +43,19 @@ router.post("/", async function (req, res, next) {
   const authorizeUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
     scope: "https://www.googleapis.com/auth/userinfo.profile openid",
+    prompt: "consent",
   });
+
+  res.json({ url: authorizeUrl });
 });
+
+async function getUserData(access_token) {
+  const response = await fetch(
+    `https://www.googleapis.com/oauth2/v3/userinfo?access_token${access_token}`
+  );
+  const data = await response.json();
+  console.log("data", data);
+}
 
 app.use("/api/users", userRoutes);
 
