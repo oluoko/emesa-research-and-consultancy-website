@@ -82,12 +82,18 @@ const RegisterScreen = () => {
             <span className="ml-2 text-white">
               Agree with statements in{" "}
               <Link
-                Link
                 to="/terms-of-service"
                 className="text-blue-500 hover:text-orange-500"
-                href=""
               >
                 Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/privacy-policy"
+                className="text-blue-500 hover:text-orange-500"
+              >
+                {" "}
+                Privacy Policy.
               </Link>
             </span>
           </label>

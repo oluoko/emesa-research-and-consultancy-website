@@ -1,4 +1,5 @@
 import React from "react";
+import Back from "../Components/Back";
 
 const PPolicy = () => {
   return (
