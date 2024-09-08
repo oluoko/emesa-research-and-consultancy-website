@@ -6,6 +6,8 @@ dotenv.config();
 const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
+const { OAuth2Cient } = require("google-auth-library");
+const router = express.Router();
 
 const port = process.env.PORT || 5000;
 
@@ -24,6 +26,9 @@ app.use(
     credentials: true, // Enable credentials if you're using cookies or authorization headers
   })
 );
+
+/* GET users listing. */
+router.post;
 
 app.use("/api/users", userRoutes);
 
