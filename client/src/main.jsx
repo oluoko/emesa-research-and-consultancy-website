@@ -24,6 +24,7 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 import EmailVerificationScreen from "./Screens/EmailVerificationScreen.jsx";
 import TermsOfService from "./Screens/TermsOfService.jsx";
 import PPolicy from "./Screens/PPolicy.jsx";
+import GoogleOAuthCallback from "./Screens/GoogleOAuthCallback.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PPolicy />} />
+        <Route path="/oauth" element={<GoogleOAuthCallback />} />
         <Route path="" element={<PrivateRoute />}>
           <Route
             path="/attachee-application"

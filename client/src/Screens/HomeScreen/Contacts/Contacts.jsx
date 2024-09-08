@@ -1,4 +1,3 @@
-import "./Contacts.css";
 import React, { useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
@@ -18,11 +17,8 @@ const Contacts = () => {
   };
 
   return (
-    <div className="screen-container">
-      <div
-        id="contacts"
-        className="screen flex flex-col justify-center shadow-md"
-      >
+    <div id="contacts " className="screen-container">
+      <div className="screen flex flex-col justify-center shadow-md mx-4 w-11/12 mb-10">
         <div className="section-container">
           <section className="left">
             <div className="contacts-text ">
@@ -127,9 +123,16 @@ There is a bug in... How can I apply to be an employee... At what time are your 
             </div>
           </section>
         </div>
-        <div id="map-container">
+        <div
+          id="map-container "
+          className="w-full h-1/2  relative flex flex-col justify-center items-center"
+        >
           <h2>Visit us today</h2>
-          <iframe title="Location Map" src={mapUrl}></iframe>
+          <iframe
+            className="w-full md:w-11/12 h-screen rounded-lg"
+            title="Location Map"
+            src={mapUrl}
+          ></iframe>
         </div>
       </div>
 
