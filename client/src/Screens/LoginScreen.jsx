@@ -4,7 +4,7 @@ import Toast, { showToast } from "../Components/Toast/Toast";
 import axios from "axios";
 
 const LoginScreen = () => {
-  const USERS_API_URL = "http://localhost:5000/api/users";
+  const USERS_API_URL = "http://localhost:5000/api/";
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const userData = localStorage.getItem("userData");
@@ -34,7 +34,11 @@ const LoginScreen = () => {
         },
       };
 
-      const response = await axios.post(`${USERS_API_URL}/auth`, data, config);
+      const response = await axios.post(
+        `${USERS_API_URL}/users/auth`,
+        data,
+        config
+      );
       localStorage.setItem("userData", JSON.stringify(response.data));
       showToast("Login Successful!", "success");
 
@@ -48,6 +52,10 @@ const LoginScreen = () => {
     }
     setLoading(false);
   };
+
+  function navigateToGoogleAuth() {
+    window.location.href = `${USERS_API_URL}/google`;
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
