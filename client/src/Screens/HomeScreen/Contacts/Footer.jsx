@@ -29,7 +29,7 @@ const Footer = () => {
             [
               ["FaceBook", "a", "#about"],
               ["LinkedIn", "Link", "/blogs"],
-              ["GitHub", "LInk", "https://github.com/"],
+              ["GitHub", "LInk", "https://github.com/emesaresearch"],
             ],
           ],
           [
