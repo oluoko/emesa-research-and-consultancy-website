@@ -1,4 +1,3 @@
-// controllers/googleAuthController.js
 const { OAuth2Client } = require("google-auth-library");
 const asyncHandler = require("../middleware/asyncHandler.js");
 const googleClientID = process.env.CLIENT_ID;
@@ -57,16 +56,38 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     const { tokens } = await oAuth2Client.getToken(code);
     oAuth2Client.setCredentials(tokens);
 
-    const userData = await getUserData(tokens.access_token);
+    const googleUserData = await getUserData(tokens.access_token);
 
-    if (!userData) {
+    if (!googleUserData) {
       res.status(400);
       throw new Error("Failed to retrieve user data from Google");
     }
 
-    // Here, you can handle user login/signup with your database
-    console.log("Google User Data:", userData);
-    res.json(userData);
+    // Check if the user already exists
+    let user = await User.findOne({ email: googleUserData.email });
+
+    if (!user) {
+      // If the user doesn't exist, create a new user with a default password
+      user = new User({
+        name: googleUserData.name,
+        email: googleUserData.email,
+        password: "googleoauth", // You can handle this case with more logic if needed
+      });
+
+      // Save the new user to the database
+      await user.save();
+    }
+
+    // Generate a JWT token
+    generateToken(res, user._id);
+
+    // Return user info to the frontend (optional, you can redirect to your frontend here)
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
   } catch (error) {
     res.status(500);
     throw new Error("Error with Google OAuth callback");
