@@ -4,15 +4,17 @@ const asyncHandler = require("../middleware/asyncHandler.js");
 const googleClientID = process.env.CLIENT_ID;
 const googleClientSecret = process.env.CLIENT_SECRET;
 const redirectURL = process.env.REDIRECT_URI;
+const {
+  CLIENT_ID,
+  CLIENT_SECRET,
+  REDIRECT_URI,
+} = require("../envFolder/envFolder.js");
 
 const oAuth2Client = new OAuth2Client(
-  googleClientID,
-  googleClientSecret,
-  redirectURL
+  googleClientID || CLIENT_ID,
+  googleClientSecret || CLIENT_SECRET,
+  redirectURL || REDIRECT_URI
 );
-
-console.log("Google Client ID:", process.env.CLIENT_ID);
-console.log("Google Client Secret:", process.env.CLIENT_SECRET);
 
 // @desc    Generate Google OAuth URL
 // @route   POST /api/auth/google
