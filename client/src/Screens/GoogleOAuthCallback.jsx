@@ -48,7 +48,11 @@ const GoogleOAuthCallback = () => {
     handleGoogleOAuth();
   }, [navigate]);
 
-  return <div>Signing in with Google...</div>;
+  return (
+    <div className="w-screen h-screen bg-slate-400 flex flex-col justify-center items-center text-4xl md:text-6xl font-black">
+      Signing in with Google...
+    </div>
+  );
 };
 
 export default GoogleOAuthCallback;
