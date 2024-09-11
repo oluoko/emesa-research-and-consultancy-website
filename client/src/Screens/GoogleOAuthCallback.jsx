@@ -49,7 +49,7 @@ const GoogleOAuthCallback = () => {
   }, [navigate]);
 
   return (
-    <div className="w-screen h-screen bg-slate-400 flex flex-col justify-center items-center text-4xl md:text-6xl font-black">
+    <div className="w-screen h-screen bg-slate-300 flex flex-col justify-center items-center text-3xl md:text-7xl font-black">
       Signing in with Google...
     </div>
   );
