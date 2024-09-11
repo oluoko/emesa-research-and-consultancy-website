@@ -10,7 +10,7 @@ const Footer = () => {
             "Dr. Emelda Nafula",
             [
               ["FaceBook", "a", ""],
-              ["&copy; 2024 Emesa Research and Consultancy", "Link", "/"],
+              ["© 2024 Emesa Research and Consultancy", "Link", "/"],
             ],
           ],
           [
@@ -28,7 +28,11 @@ const Footer = () => {
             "Social",
             [
               ["FaceBook", "a", "#about"],
-              ["LinkedIn", "Link", "/blogs"],
+              [
+                "LinkedIn",
+                "Link",
+                "https://www.linkedin.com/in/emesa-research-ba040a29b",
+              ],
               ["GitHub", "LInk", "https://github.com/emesaresearch"],
             ],
           ],
@@ -62,6 +66,7 @@ const Footer = () => {
                   key={itemTitle}
                   href={itemUrl}
                   className={`rounded-lg text-slate-700 font-medium  hover:text-orange-500`}
+                  target="_blank"
                 >
                   {itemTitle}
                 </a>
