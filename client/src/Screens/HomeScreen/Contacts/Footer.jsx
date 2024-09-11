@@ -57,11 +57,11 @@ const Footer = () => {
           >
             <div className="font-bold text-white my-5">{title}</div>
             <div className="w-full grid place-content-start gap-2">
-              {items.map(([itemTitle, itemUrl, itemStyle]) => (
+              {items.map(([itemTitle, elementType, itemUrl]) => (
                 <a
                   key={itemTitle}
                   href={itemUrl}
-                  className={`rounded-lg text-slate-700 font-medium  hover:text-orange-500 ${itemStyle}`}
+                  className={`rounded-lg text-slate-700 font-medium  hover:text-orange-500`}
                 >
                   {itemTitle}
                 </a>

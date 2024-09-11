@@ -36,4 +36,5 @@ app.listen(port, () => {
     `\nServer is running in ${process.env.NODE_ENV} mode on port ${port}\n`.blue
       .bold.underline.inverse
   );
+  console.log("Redirect URI:", process.env.REDIRECT_URI);
 });
