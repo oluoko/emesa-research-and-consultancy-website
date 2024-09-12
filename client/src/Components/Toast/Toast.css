@@ -3,28 +3,28 @@
   height: 70px;
   font-family: "Arial", sans-serif;
   margin: 20px;
-  margin-bottom: 50px;
 }
 
 .Toastify__toast {
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   padding: 16px;
 }
 
 .Toastify__toast--success,
 .Toastify__toast--error {
-  border: 5px solid var(--orange);
-  color: rgba(0, 0, 0, 1);
+  border-bottom: 5px solid var(--orange);
+  background-color: rgb(232, 232, 232);
 
   font-weight: 900;
 }
 
 .Toastify__toast--success {
-  background-color: rgba(40, 167, 69, 0.8);
+  color: rgba(40, 167, 69, 1);
 }
 
 .Toastify__toast--error {
-  background-color: rgba(220, 53, 69, 0.8);
+  color: rgba(220, 53, 69, 1);
 }
 
 .Toastify__progress-bar {
