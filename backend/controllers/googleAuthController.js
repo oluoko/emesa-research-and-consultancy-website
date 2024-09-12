@@ -10,10 +10,6 @@ const {
   REDIRECT_URI,
 } = require("../envFolder/envFolder.js");
 
-<<<<<<< HEAD
-=======
-const redirectURL = "http://localhost:5173/oauth";
->>>>>>> ef374e6 (Emesa Research and Consultancy)
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
   googleClientSecret || CLIENT_SECRET,
@@ -68,21 +64,21 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       throw new Error("Failed to retrieve user data from Google");
     }
 
-    let user = await User.findOne({ email: googleUserData.email });
+    const userExists = await User.findOne({ email: googleUserData.email });
 
-    if (user) {
-      generateToken(res, user._id);
+    if (userExists) {
+      generateToken(res, userExists._id);
 
       return res.status(201).json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
-        profilePic: user.profilePic,
+        _id: userExists._id,
+        name: userExists.name,
+        email: userExists.email,
+        isAdmin: userExists.isAdmin,
+        profilePic: userExists.profilePic,
       });
     }
 
-    user = await User.create({
+    const user = await User.create({
       name: googleUserData.name,
       email: googleUserData.email,
       password: "googleoauth",
