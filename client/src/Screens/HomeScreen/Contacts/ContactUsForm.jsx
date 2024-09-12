@@ -1,6 +1,12 @@
 import { useRef } from "react";
+import Toast, { showToast } from "../../../Components/Toast/Toast";
 import emailjs from "@emailjs/browser";
 // npm install --save @emailjs/browser --legacy-peer-deps
+import {
+  CONTACTS_FORM_TEMPLATE_ID,
+  PUBLIC_KEY,
+  SERVICE_ID,
+} from "../../../config";
 
 const ContactUsForm = () => {
   const form = useRef();
@@ -9,20 +15,23 @@ const ContactUsForm = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
+      .sendForm(SERVICE_ID, CONTACTS_FORM_TEMPLATE_ID, form.current, {
+        publicKey: PUBLIC_KEY,
       })
       .then(
         () => {
           console.log("SUCCESS!");
+          showToast("Message Sent Successfully", "success");
         },
         (error) => {
           console.log("FAILED...", error.text);
+          showToast(error.text, "error");
         }
       );
   };
   return (
     <div className="contacts-form form w-full md:w-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
+      <Toast />
       <h3>Contacts Form</h3>
       <form ref={form} onSubmit={sendEmail}>
         <div className="grid md:flex grid-col justify-center md:justify-around items-center ">
@@ -62,7 +71,6 @@ const ContactUsForm = () => {
           <label
             className="block text-white text-sm md:text-lg font-bold mb-2"
             htmlFor="description"
-            name="description"
           >
             What is this about?
           </label>
@@ -73,6 +81,7 @@ const ContactUsForm = () => {
 
 There is a bug in... How can I apply to be an employee... At what time are your offices open..."
             rows="5"
+            name="description"
           ></textarea>
         </div>
         <div className="m-2">
