@@ -10,6 +10,10 @@ const {
   REDIRECT_URI,
 } = require("../envFolder/envFolder.js");
 
+<<<<<<< HEAD
+=======
+const redirectURL = "http://localhost:5173/oauth";
+>>>>>>> ef374e6 (Emesa Research and Consultancy)
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
   googleClientSecret || CLIENT_SECRET,
