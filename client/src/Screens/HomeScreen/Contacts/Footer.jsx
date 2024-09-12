@@ -9,48 +9,51 @@ const Footer = () => {
           [
             "Dr. Emelda Nafula",
             [
-              ["FaceBook", "a", ""],
-              ["© 2024 Emesa Research and Consultancy", "Link", "/"],
+              ["FaceBook", "https://facebook.com/", "_blank"],
+              ["© 2024 Emesa Research and Consultancy", "/", "_self"],
             ],
           ],
           [
             "Company",
             [
-              ["About", "a", "#about"],
-              ["Blog", "Link", "/blogs"],
-              ["Careers", "LInk", "/careers"],
-              ["Contact Us", "a", "#contacts"],
-              ["Privacy Policy", "Link", "/privacy-policy"],
-              ["Terms of Service", "Link", "/terms-of-service"],
+              ["About", "#about", "_self"],
+              ["Blog", "/blogs", "_blank"],
+              ["Careers", "/careers", "_blank"],
+              ["Contact Us", "#contacts", "_self"],
+              ["Privacy Policy", "/privacy-policy", "_self"],
+              ["Terms of Service", "/terms-of-service", "_self"],
             ],
           ],
           [
             "Social",
             [
-              ["FaceBook", "a", "#about"],
+              ["FaceBook", "#about", "_blank"],
               [
                 "LinkedIn",
-                "Link",
+
                 "https://www.linkedin.com/in/emesa-research-ba040a29b",
+                "_blank",
               ],
-              ["GitHub", "LInk", "https://github.com/emesaresearch"],
+              ["GitHub", "https://github.com/emesaresearch", "_blank"],
             ],
           ],
           [
             "Created by: Brian Otieno",
             [
-              ["Instagram", "a", "https://instagram.com/that_guy.brian"],
-              ["Twitter", "a", "https://x.com/oluoko_"],
-              ["GitHub", "a", "https://github.com/oluoko"],
+              ["Instagram", "https://instagram.com/that_guy.brian", "_blank"],
+              ["Twitter", "https://x.com/oluoko_", "_blank"],
+              ["GitHub", "https://github.com/oluoko", "_blank"],
               [
                 "LinkedIn",
-                "a",
+
                 "https://www.linkedin.com/in/brian-otieno-64a902213/",
+                "_blank",
               ],
               [
                 "FaceBook",
-                "a",
+
                 "https://www.facebook.com/profile.php?id=100070284942061",
+                "_blank",
               ],
             ],
           ],
@@ -61,12 +64,12 @@ const Footer = () => {
           >
             <div className="font-bold text-white my-5">{title}</div>
             <div className="w-full grid place-content-start gap-2">
-              {items.map(([itemTitle, elementType, itemUrl]) => (
+              {items.map(([itemTitle, itemUrl, target]) => (
                 <a
                   key={itemTitle}
                   href={itemUrl}
                   className={`rounded-lg text-slate-700 font-medium  hover:text-orange-500`}
-                  target="_blank"
+                  target={target}
                 >
                   {itemTitle}
                 </a>
