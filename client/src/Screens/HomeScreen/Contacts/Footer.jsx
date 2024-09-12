@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="relative w-full bg-black text-gray-500 flex flex-col justify-center items-center ">
-      <div className="footer-content relative w-10/12 mx-2 grid grid-cols-2 md:grid-cols-4 my-14 md:my-20 ">
+      <div className="footer-content relative w-10/12 mx-2 grid grid-cols-2 md:grid-cols-4 my-14 md:my-16 ">
         {[
           [
             "Dr. Emelda Nafula",
             [
-              ["FaceBook", "https://facebook.com/", "_blank"],
+              [
+                "LinkedIn",
+                "https://www.linkedin.com/in/emelda-nafula-n-nyongesa-42180835",
+                "_blank",
+              ],
+              ["Email", "mailto:emeldasichangi123@gmail.com", "_blank"],
               ["© 2024 Emesa Research and Consultancy", "/", "_self"],
             ],
           ],
@@ -27,10 +32,13 @@ const Footer = () => {
           [
             "Social",
             [
-              ["FaceBook", "#about", "_blank"],
+              [
+                "FaceBook",
+                "https://www.facebook.com/profile.php?id=61559877964082t",
+                "_blank",
+              ],
               [
                 "LinkedIn",
-
                 "https://www.linkedin.com/in/emesa-research-ba040a29b",
                 "_blank",
               ],
