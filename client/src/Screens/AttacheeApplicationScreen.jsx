@@ -7,9 +7,9 @@ const AttacheeApplicationScreen = () => {
     <div className=" relative flex flex-col  vh-100  items-center justify-center m-2">
       <Back />
 
-      <h className="mt-14 md:mt-6 text-2xl font-extrabold text-orange-500">
+      <h2 className="mt-14 md:mt-6 text-2xl font-extrabold text-orange-500">
         APPLY FOR ATTACHMENT
-      </h>
+      </h2>
       <div className="contacts-form form w-full md:w-2/3 my-1 md:my-5 p-4 md:p-10 border rounded-lg shadow-lg bg-gray-800 flex flex-col   text-white ">
         <form className=" flex flex-col items-center  ">
           <div className="grid md:flex grid-col justify-center md:justify-between items-center w-full my-1 md:my-2">

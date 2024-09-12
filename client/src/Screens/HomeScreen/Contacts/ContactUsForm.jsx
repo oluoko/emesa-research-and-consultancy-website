@@ -3,7 +3,7 @@ import Toast, { showToast } from "../../../Components/Toast/Toast";
 import emailjs from "@emailjs/browser";
 // npm install --save @emailjs/browser --legacy-peer-deps
 import {
-  CONTACTS_FORM_TEMPLATE_ID,
+  CONTACTS_SERVICES_TEMPLATE_ID,
   PUBLIC_KEY,
   SERVICE_ID,
 } from "../../../config";
@@ -15,7 +15,7 @@ const ContactUsForm = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(SERVICE_ID, CONTACTS_FORM_TEMPLATE_ID, form.current, {
+      .sendForm(SERVICE_ID, CONTACTS_SERVICES_TEMPLATE_ID, form.current, {
         publicKey: PUBLIC_KEY,
       })
       .then(
