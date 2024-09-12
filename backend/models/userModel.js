@@ -3,36 +3,28 @@ const bcrypt = require("bcryptjs");
 
 const userSchema = mongoose.Schema(
   {
-    name: {
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    isAdmin: { type: Boolean, required: true, default: false },
+    isVerified: { type: Boolean, required: true, default: false },
+    bio: { type: String, default: "..." },
+    profilePic: {
       type: String,
-      required: true,
+      default: "/uploads/default-profile.jpg", // Default profile picture
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    isAdmin: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-// Match user entered password to hashed password in database
+// Password match method
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-// Encrypt password using bcrypt
+// Password encryption pre-save
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
