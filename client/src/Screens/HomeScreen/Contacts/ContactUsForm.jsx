@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+// npm install --save @emailjs/browser --legacy-peer-deps
 
 const ContactUsForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    budget: "",
-    services: "",
-    description: "",
-  });
+  const form = useRef();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
+        publicKey: "YOUR_PUBLIC_KEY",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
   return (
     <div className="contacts-form form w-full md:w-auto my-10 p-5 border rounded-lg shadow-lg bg-black ">
       <h3>Contacts Form</h3>
-      <form>
+      <form ref={form} onSubmit={sendEmail}>
         <div className="grid md:flex grid-col justify-center md:justify-around items-center ">
           <div className="m-2">
             <label
