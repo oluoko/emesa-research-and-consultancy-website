@@ -67,28 +67,36 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     // Check if the user already exists
     let user = await User.findOne({ email: googleUserData.email });
 
-    if (!user) {
-      // If the user doesn't exist, create a new user with a default password
-      user = new User({
-        name: googleUserData.name,
-        email: googleUserData.email,
-        password: "googleoauth", // You can handle this case with more logic if needed
-      });
+    if (user) {
+      generateToken(res, user._id);
 
-      // Save the new user to the database
-      await user.save();
+      res.status(201).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
     }
 
-    // Generate a JWT token
-    generateToken(res, user._id);
-
-    // Return user info to the frontend (optional, you can redirect to your frontend here)
-    res.json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
+    user = await User.create({
+      name: googleUserData.name,
+      email: googleUserData.email,
+      password: "googleoauth",
     });
+
+    if (user) {
+      generateToken(res, user._id);
+
+      res.status(201).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
+    } else {
+      res.status(400);
+      throw new Error("Invalid user data");
+    }
   } catch (error) {
     res.status(500);
     throw new Error("Error with Google OAuth callback");
