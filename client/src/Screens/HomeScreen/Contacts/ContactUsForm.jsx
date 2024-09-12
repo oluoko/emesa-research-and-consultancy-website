@@ -22,6 +22,7 @@ const ContactUsForm = () => {
         () => {
           console.log("SUCCESS!");
           showToast("Message Sent Successfully", "success");
+          form.current.reset();
         },
         (error) => {
           console.log("FAILED...", error.text);
