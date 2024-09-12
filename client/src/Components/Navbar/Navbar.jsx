@@ -36,58 +36,33 @@ const Navbar = ({ screen }) => {
         <ul>
           {screen === "home" && (
             <>
-              <li>
-                <a
-                  href="#about"
-                  className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="/blogs"
-                  className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                  }}
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/careers"
-                  className="text-gray-500 no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-110"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                  }}
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="#contacts"
-                  className="text-black no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300"
-                >
-                  Contacts
-                </a>
-              </li>
+              {[
+                ["About", "#about", ""],
+                ["Services", "#services", ""],
+                [
+                  "Blog",
+                  "/blogs",
+                  "text-gray-500 transition duration-300 transform hover:scale-110",
+                ],
+                [
+                  "Careers",
+                  "/careers",
+                  "text-gray-500 transition duration-300 transform hover:scale-110",
+                ],
+                ["Contacts", "#contacts", ""],
+              ].map(([name, link, style]) => (
+                <li key={name}>
+                  <a
+                    href={link}
+                    className={`${
+                      style ? style : "text-black"
+                    }no-underline hover:text-orange-500 focus:text-orange-500 transition duration-300 transform hover:scale-90`}
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+
               <ProfileBtn />
             </>
           )}
@@ -154,14 +129,7 @@ const Navbar = ({ screen }) => {
                   Register/Login
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/careers"
-                  className="employee-application-link text-gray-500 no-underline"
-                >
-                  Employee Form
-                </Link>
-              </li>
+              <li></li>
               <li>
                 <Link
                   to="/attachee-application"
