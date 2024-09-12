@@ -20,7 +20,6 @@ export const showToast = (message, type) => {
 const Toast = () => {
   return (
     <ToastContainer
-      position="bottom-center"
       autoClose={5000}
       hideProgressBar={false}
       closeOnClick
