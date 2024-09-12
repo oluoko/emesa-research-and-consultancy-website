@@ -35,6 +35,7 @@ const ContactUsForm = () => {
             </label>
             <input
               type="text"
+              name="name"
               id="name"
               className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline text-xs"
               placeholder="John Doe"
@@ -50,6 +51,7 @@ const ContactUsForm = () => {
             <input
               type="email"
               id="email"
+              name="email"
               className="focus:border-orange-500 shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline"
               placeholder="j.doe@company.com"
             />
@@ -60,6 +62,7 @@ const ContactUsForm = () => {
           <label
             className="block text-white text-sm md:text-lg font-bold mb-2"
             htmlFor="description"
+            name="description"
           >
             What is this about?
           </label>
