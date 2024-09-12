@@ -64,25 +64,25 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       throw new Error("Failed to retrieve user data from Google");
     }
 
-    // Check if the user already exists and if they do log them in
     let user = await User.findOne({ email: googleUserData.email });
 
     if (user) {
       generateToken(res, user._id);
 
-      res.status(201).json({
+      return res.status(201).json({
         _id: user._id,
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
+        profilePic: user.profilePic,
       });
     }
 
-    // If they don't create a new user
     user = await User.create({
       name: googleUserData.name,
       email: googleUserData.email,
       password: "googleoauth",
+      profilePic: googleUserData.picture, // Set profile picture from Google
     });
 
     if (user) {
@@ -93,6 +93,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
+        profilePic: user.profilePic,
       });
     } else {
       res.status(400);
