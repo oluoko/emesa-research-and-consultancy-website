@@ -6,6 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const googleAuthRoutes = require("./routes/googleAuthRoutes.js");
+const imagesRoutes = require("./routes/imagesRoutes.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", googleAuthRoutes);
+app.use("/images", imagesRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
