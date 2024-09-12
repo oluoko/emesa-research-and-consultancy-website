@@ -8,6 +8,7 @@ const LoginScreen = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const userData = localStorage.getItem("userData");
+  console.log("userData: ", userData);
 
   const navigate = useNavigate();
   const location = useLocation();
