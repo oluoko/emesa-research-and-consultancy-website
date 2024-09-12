@@ -80,6 +80,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
+      bio: user.bio,
+      profilePic: user.profilePic,
     });
   } else {
     res.status(404);
@@ -96,6 +98,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
+    user.bio = req.body.bio || user.bio; // Allow updating bio
+    user.profilePic = req.body.profilePic || user.profilePic; // Allow updating profile picture
 
     if (req.body.password) {
       user.password = req.body.password;
@@ -108,6 +112,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       name: updatedUser.name,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
+      bio: updatedUser.bio,
+      profilePic: updatedUser.profilePic,
     });
   } else {
     res.status(404);
