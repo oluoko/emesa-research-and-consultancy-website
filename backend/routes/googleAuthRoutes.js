@@ -11,6 +11,6 @@ const router = express.Router();
 router.post("/google", getGoogleAuthUrl);
 
 // Route for Google OAuth callback
-router.get("/google/callback", googleOAuthCallback);
+router.post("/google/callback", googleOAuthCallback);
 
 module.exports = router;

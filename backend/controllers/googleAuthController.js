@@ -49,10 +49,10 @@ const getUserData = async (access_token) => {
 };
 
 // @desc    Handle Google OAuth callback
-// @route   GET /api/auth/google/callback
+// @route   POST /api/auth/google/callback
 // @access  Public
 const googleOAuthCallback = asyncHandler(async (req, res) => {
-  const code = req.query.code;
+  const { code } = req.body;
 
   if (!code) {
     res.status(400);
