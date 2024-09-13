@@ -9,6 +9,7 @@ const {
   CLIENT_SECRET,
   REDIRECT_URI,
 } = require("../envFolder/envFolder.js");
+const generateToken = require("../utils/generateToken.js");
 
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
@@ -79,6 +80,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         name: userExists.name,
         email: userExists.email,
         isAdmin: userExists.isAdmin,
+        isVerified: userExists.isVerified,
         profilePic: userExists.profilePic,
       });
     }
@@ -87,6 +89,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       name: googleUserData.name,
       email: googleUserData.email,
       password: "googleoauth",
+      isVerified: true,
       profilePic: googleUserData.picture, // Set profile picture from Google
     });
 
@@ -98,6 +101,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
+        isVerified: user.isVerified,
         profilePic: user.profilePic,
       });
     } else {

@@ -4,7 +4,7 @@ import axios from "axios";
 import Toast, { showToast } from "../Components/Toast/Toast";
 
 const RegisterScreen = () => {
-  const USERS_API_URL = "http://localhost:5000/api/users";
+  const API_URL = "http://localhost:5000/api";
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -41,7 +41,7 @@ const RegisterScreen = () => {
         },
       };
 
-      const response = await axios.post(`${USERS_API_URL}`, data, config);
+      const response = await axios.post(`${API_URL}/users`, data, config);
       showToast("Registration Successful! Verification email sent.", "success");
 
       setTimeout(() => {
@@ -64,7 +64,7 @@ const RegisterScreen = () => {
 
   async function googleAuthHandler() {
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/google`, {
+      const response = await fetch(`${API_URL}/auth/google`, {
         method: "POST",
       });
       const data = await response.json();

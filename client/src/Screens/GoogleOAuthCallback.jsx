@@ -2,14 +2,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Toast, { showToast } from "../Components/Toast/Toast";
+import { set } from "mongoose";
 
 const GoogleOAuthCallback = () => {
+  const API_URL = "http://localhost:5000/api";
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleGoogleOAuth = async () => {
       const query = new URLSearchParams(window.location.search);
       const code = query.get("code");
+      console.log("Google OAuth code:", code);
 
       setTimeout(() => {
         if (!code) {
@@ -22,13 +25,18 @@ const GoogleOAuthCallback = () => {
         try {
           // Send the authorization code to the backend
           const response = await axios.get(
-            `/api/auth/google/callback?code=${code}`
+            `${API_URL}/auth/google/callback?code=${code}`
           );
 
           if (response.data) {
             // Save user data to local storage
             localStorage.setItem("userData", JSON.stringify(response.data));
-            showToast("Google Sign-In Successful!", "success");
+
+            console.log("Google OAuth response:", response.data);
+
+            setTimeout(() => {
+              showToast("Google Sign-In Successful!", "success");
+            }, 1500);
 
             // Get the original redirect URL
             const redirectAfterLogin =
