@@ -8,7 +8,6 @@ const LoginScreen = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const userData = localStorage.getItem("userData");
-  console.log("userData: ", userData);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -41,11 +40,11 @@ const LoginScreen = () => {
         config
       );
       localStorage.setItem("userData", JSON.stringify(response.data));
-      showToast("Login Successful!", "success");
 
       setTimeout(() => {
+        showToast("Login Successful!", "success");
         navigate(redirect); // Redirect to the original URL
-      }, 1500);
+      }, 500);
     } catch (error) {
       console.error(error?.response?.data?.message || error.message);
       const errorMessage = error?.response?.data?.message || error.message;
@@ -64,7 +63,6 @@ const LoginScreen = () => {
         method: "POST",
       });
       const data = await response.json();
-      console.log(data);
       navigateToGoogleAuth(data.url);
     } catch (error) {
       console.error(error?.response?.data?.message || error.message);

@@ -63,6 +63,11 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     const { tokens } = await oAuth2Client.getToken(code);
     oAuth2Client.setCredentials(tokens);
 
+    if (!tokens.access_token) {
+      res.status(400);
+      throw new Error("Failed to retrieve access token from Google");
+    }
+
     const googleUserData = await getUserData(tokens.access_token);
 
     if (!googleUserData) {
@@ -101,7 +106,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
-        isVerified: user.isVerified,
+        isVerified: true,
         profilePic: user.profilePic,
       });
     } else {
@@ -109,8 +114,8 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       throw new Error("Invalid user data");
     }
   } catch (error) {
-    res.status(500);
-    throw new Error("Error with Google OAuth callback");
+    console.error("Error with Google OAuth callback:", error.message);
+    res.status(500).json({ message: error.message || "Server error" });
   }
 });
 

@@ -12,14 +12,13 @@ const GoogleOAuthCallback = () => {
     const handleGoogleOAuth = async () => {
       const query = new URLSearchParams(window.location.search);
       const code = query.get("code");
-      console.log("Google OAuth code:", code);
 
       setTimeout(() => {
         if (!code) {
           showToast("Google Sign-In Failed!", "error");
           navigate("/login");
         }
-      }, 5000);
+      }, 1500);
 
       if (code) {
         try {
@@ -31,8 +30,6 @@ const GoogleOAuthCallback = () => {
           if (response.data) {
             // Save user data to local storage
             localStorage.setItem("userData", JSON.stringify(response.data));
-
-            console.log("Google OAuth response:", response.data);
 
             setTimeout(() => {
               showToast("Google Sign-In Successful!", "success");
