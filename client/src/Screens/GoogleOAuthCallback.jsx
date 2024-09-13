@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { showToast } from "../Components/Toast/Toast";
+import Toast, { showToast } from "../Components/Toast/Toast";
 
 const GoogleOAuthCallback = () => {
   const navigate = useNavigate();
@@ -10,6 +10,13 @@ const GoogleOAuthCallback = () => {
     const handleGoogleOAuth = async () => {
       const query = new URLSearchParams(window.location.search);
       const code = query.get("code");
+
+      setTimeout(() => {
+        if (!code) {
+          showToast("Google Sign-In Failed!", "error");
+          navigate("/login");
+        }
+      }, 5000);
 
       if (code) {
         try {
@@ -50,6 +57,7 @@ const GoogleOAuthCallback = () => {
 
   return (
     <div className="w-screen h-screen bg-slate-300 flex flex-col justify-center items-center text-3xl md:text-7xl font-black">
+      <Toast />
       Signing in with Google...
     </div>
   );
