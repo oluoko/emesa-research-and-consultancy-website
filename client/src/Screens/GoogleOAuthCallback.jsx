@@ -49,9 +49,9 @@ const GoogleOAuthCallback = () => {
           const errorMessage =
             error?.response?.data?.message ||
             "Error during Google OAuth, please try again.";
-          showToast(errorMessage, "error");
-          // Handle error, maybe redirect to error page
-          navigate("/error");
+          setTimeout(() => {
+            showToast(errorMessage, "error");
+          }, 1500);
         }
       }
     };
