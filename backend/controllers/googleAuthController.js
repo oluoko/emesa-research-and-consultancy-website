@@ -53,6 +53,11 @@ const getUserData = async (access_token) => {
 const googleOAuthCallback = asyncHandler(async (req, res) => {
   const code = req.query.code;
 
+  if (!code) {
+    res.status(400);
+    throw new Error("Invalid authorization code");
+  }
+
   try {
     const { tokens } = await oAuth2Client.getToken(code);
     oAuth2Client.setCredentials(tokens);
