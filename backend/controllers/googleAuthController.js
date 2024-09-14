@@ -98,12 +98,9 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       password: "googleoauth",
       isVerified: true,
       profilePic: googleUserData.picture, // Set profile picture from Google
-      token: generateToken(user._id),
     });
 
     if (user) {
-      generateToken(res, user._id);
-
       res.status(201).json({
         _id: user._id,
         name: user.name,
@@ -111,7 +108,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: user.isAdmin,
         isVerified: true,
         profilePic: user.profilePic,
-        token: user.token,
+        token: generateToken(res, user._id),
       });
     } else {
       res.status(400);
