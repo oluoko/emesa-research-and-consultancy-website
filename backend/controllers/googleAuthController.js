@@ -10,6 +10,7 @@ const {
   REDIRECT_URI,
 } = require("../envFolder/envFolder.js");
 const generateToken = require("../utils/generateToken.js");
+const { use } = require("passport");
 
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
@@ -87,6 +88,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: userExists.isAdmin,
         isVerified: userExists.isVerified,
         profilePic: userExists.profilePic,
+        token: generateToken(userExists._id),
       });
     }
 
@@ -96,6 +98,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
       password: "googleoauth",
       isVerified: true,
       profilePic: googleUserData.picture, // Set profile picture from Google
+      token: generateToken(user._id),
     });
 
     if (user) {
@@ -108,6 +111,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: user.isAdmin,
         isVerified: true,
         profilePic: user.profilePic,
+        token: user.token,
       });
     } else {
       res.status(400);

@@ -7,6 +7,7 @@ import { showToast } from "../Components/Toast/Toast";
 
 const ProfileScreen = () => {
   const USERS_API_URL = "http://localhost:5000/api";
+  const userData = localStorage.getItem("userData");
 
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const ProfileScreen = () => {
     const fetchUserProfile = async () => {
       try {
         const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: { Authorization: `Bearer ${userData.token}` },
         });
         // Assuming bio and profileImage are part of the response, otherwise handle defaults
         setProfile({
