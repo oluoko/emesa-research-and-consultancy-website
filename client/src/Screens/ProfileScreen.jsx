@@ -7,7 +7,6 @@ import { showToast } from "../Components/Toast/Toast";
 
 const ProfileScreen = () => {
   const USERS_API_URL = "http://localhost:5000/api";
-  const userData = localStorage.getItem("userData");
 
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
@@ -15,16 +14,26 @@ const ProfileScreen = () => {
     name: "",
     email: "",
     bio: "",
-    profileImage: profileImage,
+    profileImage: "",
   });
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
+        const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+        if (!token) {
+          setTimeout(() => {
+            showToast("You are not logged in. Please log in again.", "error");
+            navigate("/login");
+          }, 1500);
+          return;
+        }
+
         const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
-          headers: { Authorization: `Bearer ${userData.token}` },
+          headers: { Authorization: `Bearer ${token}` }, // Include token in request header
         });
-        // Assuming bio and profileImage are part of the response, otherwise handle defaults
+
         setProfile({
           ...data,
           bio: data.bio || "No bio available",
@@ -32,8 +41,14 @@ const ProfileScreen = () => {
         });
       } catch (error) {
         console.error("Error fetching profile:", error);
-        showToast("Error fetching profile data, please log in again.", "error");
-        navigate("/login");
+        if (error.response && error.response.status === 401) {
+          // Handle unauthorized access (e.g., token expired)
+          showToast("Session expired. Please log in again.", "error");
+          localStorage.removeItem("token"); // Clear the token
+          navigate("/login");
+        } else {
+          showToast("Error fetching profile data, please try again.", "error");
+        }
       }
     };
 
@@ -70,13 +85,13 @@ const ProfileScreen = () => {
         {
           name: profile.name,
           email: profile.email,
-          // Include bio and profileImage if they are editable and supported in backend
+          bio: profile.bio,
+          profileImage: profile.profileImage,
         },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      // Update profile state with updated data from backend
       setProfile({
         ...data,
         bio: data.bio || profile.bio,
@@ -88,6 +103,12 @@ const ProfileScreen = () => {
       console.error("Error updating profile:", error);
       showToast("Error updating profile, please try again.", "error");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userData");
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   return (
@@ -105,18 +126,14 @@ const ProfileScreen = () => {
           )}
           <button
             className="button fixed top-2 right-2 font-bold py-2 px-4 rounded text-xl focus:outline-none focus:shadow-outline"
-            onClick={() => {
-              localStorage.removeItem("userData");
-              localStorage.removeItem("token");
-              navigate("/login");
-            }}
+            onClick={handleLogout}
           >
             Log out
           </button>
         </>
       )}
-      <div className="w-5/6 md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-2 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4 shadow-lg border-2 rounded-xl bg-gray-500 ">
-        <div className="w-2/3 md:w-1/4 p-4 rounded-xl ">
+      <div className="w-5/6 md:w-11/12 grid md:flex grid-col justify-center md:justify-around items-center p-2 md:p-4 m-16 md:m-4  mx-8 mt-28 gap-4 shadow-lg border-2 rounded-xl bg-gray-500">
+        <div className="w-2/3 md:w-1/4 p-4 rounded-xl">
           <img
             src={profile.profileImage}
             className="w-full h-auto rounded-full hover:border-2 hover:border-orange-500"
@@ -126,7 +143,7 @@ const ProfileScreen = () => {
             <input
               type="file"
               accept="image/*"
-              className="mt-2 w-full font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight  focus:outline-none focus:shadow-outline focus:border-orange-500 "
+              className="mt-2 w-full font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
               onChange={handleImageChange}
             />
           )}
@@ -168,6 +185,7 @@ const ProfileScreen = () => {
                   </div>
                 </div>
               ))}
+
               {!isEditing && (
                 <>
                   <div className="grid grid-cols-2 mb-2">
@@ -208,6 +226,7 @@ const ProfileScreen = () => {
               )}
             </div>
           </div>
+
           <button
             onClick={isEditing ? handleSave : handleEditClick}
             className="button text-2xl font-extrabold rounded-xl w-full block p-3 my-4"

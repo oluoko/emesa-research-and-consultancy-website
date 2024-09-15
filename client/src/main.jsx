@@ -32,8 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/blogs" element={<BlogHomeScreen />}></Route>
-
+        <Route path="/blogs" element={<BlogHomeScreen />} />
         <Route path="/Dr-Emelda" element={<DrEmelda />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
@@ -45,7 +44,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PPolicy />} />
         <Route path="/oauth" element={<GoogleOAuthCallback />} />
-        <Route path="" element={<PrivateRoute />}>
+
+        {/* Private Routes */}
+        <Route element={<PrivateRoute />}>
           <Route
             path="/attachee-application"
             element={<AttacheeApplicationScreen />}
@@ -55,34 +56,20 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/post-blog" element={<PostBlog />} />
         </Route>
-        <Route path="" element={<AdminRoute />}>
+
+        {/* Admin Routes */}
+        <Route element={<AdminRoute />}>
           <Route path="/admin-dashboard" element={<Dashboard />}>
-            <Route
-              index={true}
-              path="/admin-dashboard"
-              element={<DashboardHome />}
-            />
-            <Route path="/admin-dashboard/graphs" element={<Graphs />} />
-            <Route
-              path="/admin-dashboard/profile"
-              element={<ProfileScreen />}
-            />
-            <Route
-              path="/admin-dashboard/update-pictures"
-              element={<UploadPictures />}
-            />
-            <Route
-              path="/admin-dashboard/employees"
-              element={<EmployeesList />}
-            />
-            <Route path="/admin-dashboard/blogs" element={<BlogListScreen />} />
-            <Route
-              path="/admin-dashboard/user-profiles"
-              element={<UserListScreen />}
-            />
+            <Route index={true} element={<DashboardHome />} />
+            <Route path="graphs" element={<Graphs />} />
+            <Route path="profile" element={<ProfileScreen />} />
+            <Route path="update-pictures" element={<UploadPictures />} />
+            <Route path="employees" element={<EmployeesList />} />
+            <Route path="blogs" element={<BlogListScreen />} />
+            <Route path="user-profiles" element={<UserListScreen />} />
           </Route>
         </Route>
-      </Routes>{" "}
+      </Routes>
     </Router>
   </React.StrictMode>
 );
