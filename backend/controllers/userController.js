@@ -21,7 +21,7 @@ const authUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       bio: user.bio,
       profilePic: user.profilePic,
-      token,
+      token: token,
     });
   } else {
     res.status(401);
@@ -58,7 +58,7 @@ const registerUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       bio: user.bio,
       profilePic: user.profilePic,
-      token,
+      token: token,
     });
   } else {
     res.status(400);

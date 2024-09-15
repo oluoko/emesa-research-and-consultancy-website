@@ -40,6 +40,7 @@ const LoginScreen = () => {
         config
       );
       localStorage.setItem("userData", JSON.stringify(response.data));
+      localStorage.setItem("token", response.data.token);
 
       setTimeout(() => {
         showToast("Login Successful!", "success");

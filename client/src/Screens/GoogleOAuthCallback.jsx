@@ -33,6 +33,7 @@ const GoogleOAuthCallback = () => {
           if (response.data) {
             // Save user data to local storage
             localStorage.setItem("userData", JSON.stringify(response.data));
+            localStorage.setItem("token", response.data.token);
 
             setTimeout(() => {
               showToast("Google Sign-In Successful!", "success");
