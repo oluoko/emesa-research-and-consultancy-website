@@ -79,7 +79,8 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     const userExists = await User.findOne({ email: googleUserData.email });
 
     if (userExists) {
-      generateToken(res, userExists._id);
+      const token = generateToken(res, user._id);
+      enerateToken(res, userExists._id);
 
       return res.status(201).json({
         _id: userExists._id,
@@ -88,6 +89,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: userExists.isAdmin,
         isVerified: userExists.isVerified,
         profilePic: userExists.profilePic,
+        token,
       });
     }
 
@@ -100,7 +102,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     });
 
     if (user) {
-      generateToken(res, user._id);
+      const token = generateToken(res, user._id);
 
       res.status(201).json({
         _id: user._id,
@@ -109,6 +111,7 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: user.isAdmin,
         isVerified: true,
         profilePic: user.profilePic,
+        token,
       });
     } else {
       res.status(400);
