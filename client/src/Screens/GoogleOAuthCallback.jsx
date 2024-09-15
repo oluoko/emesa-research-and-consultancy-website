@@ -22,9 +22,13 @@ const GoogleOAuthCallback = () => {
       if (code) {
         try {
           // Send the authorization code to the backend
-          const response = await axios.post(`${API_URL}/auth/google/callback`, {
-            code: code,
-          });
+          const response = await axios.post(
+            `${API_URL}/auth/google/callback`,
+            {
+              code: code,
+            },
+            { timeout: 5000 }
+          );
 
           if (response.data) {
             // Save user data to local storage
