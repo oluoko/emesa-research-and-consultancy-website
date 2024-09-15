@@ -88,7 +88,6 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: userExists.isAdmin,
         isVerified: userExists.isVerified,
         profilePic: userExists.profilePic,
-        token: generateToken(userExists._id),
       });
     }
 
@@ -101,6 +100,8 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
     });
 
     if (user) {
+      generateToken(res, user._id);
+
       res.status(201).json({
         _id: user._id,
         name: user.name,
@@ -108,7 +109,6 @@ const googleOAuthCallback = asyncHandler(async (req, res) => {
         isAdmin: user.isAdmin,
         isVerified: true,
         profilePic: user.profilePic,
-        token: generateToken(res, user._id),
       });
     } else {
       res.status(400);
