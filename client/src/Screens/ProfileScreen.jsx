@@ -3,7 +3,7 @@ import axios from "axios";
 import profileImage from "../Assets/userProfile.png";
 import Back from "../Components/Back";
 import { Link, useNavigate } from "react-router-dom";
-import { showToast } from "../Components/Toast/Toast";
+import Toast, { showToast } from "../Components/Toast/Toast";
 
 const ProfileScreen = () => {
   const USERS_API_URL = "http://localhost:5000/api";
@@ -25,8 +25,8 @@ const ProfileScreen = () => {
         if (!token) {
           setTimeout(() => {
             showToast("You are not logged in. Please log in again.", "error");
-            navigate("/login");
-          }, 1500);
+          }, 500);
+          navigate("/error");
           return;
         }
 
@@ -114,6 +114,7 @@ const ProfileScreen = () => {
   return (
     <div className="relative flex flex-col justify-center items-center w-full h-full">
       <Back />
+      <Toast />
       {window.innerWidth <= 768 && (
         <>
           {profile.isAdmin && (
