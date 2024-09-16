@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
 import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
+import LadyInOffice from "../../../Assets/uploads/lady in office.jpeg";
 
 const BlogHomeScreen = () => {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ const BlogHomeScreen = () => {
 
         <div
           onClick={() => openBlog()}
-          className="blog-container flex flex-col justify-center w-full mt-3 md:mt-6 pt-2  border-t-2 border-slate-500"
+          className="blog-container flex flex-col justify-center w-full mt-3 md:mt-6 pt-2  border-t-2 border-slate-500 h-1/5 md:h-1/3"
         >
           <div className="flex items-right w-full gap-2 py-2">
             <img
@@ -74,40 +75,65 @@ const BlogHomeScreen = () => {
               className="w-4 h-4 md:w-7 md:h-7 rounded-full"
               alt=""
             />
-            <p>Daisy Okoti</p>
+            <p>Eni Zanu</p>
           </div>
-          <div className="flex justify-around w-full gap-2 pt-2 md:pt-0">
-            <div className="flex flex-col justify-center w-2/3">
+          <div className="flex justify-around w-full gap-2 h-pt-2 md:pt-0 h-11/12 bg-slate-500">
+            <div className="flex flex-col justify-center w-2/3 ">
               <h2 className="title text-sm md:text-4xl text-black font-extrabold">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusa
-                ntium qui dolor doloremque, non aliquid fugiat!
+                Key Aspects of a Growth Mindset for a Virtual Assistant
               </h2>
-              <p className="contet-text text-xs md:text-xl overflow-y-hidden h-4 md:h-7 mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Officiis, iusto quasi. Perspiciatis sapiente itaque, saepe
-                minima, voluptates dolor eum rerum dolorum impedit corporis
-                voluptatem sunt aperiam doloribus numquam aliquam in vel, quam
-                fugit harum sit quia laboriosam perferendis! Libero debitis
-                expedita odit exercitationem molestiae odio, doloremque quidem
-                nulla animi assumenda nostrum vitae nihil quam sed maxime,
-                soluta minus quasi quis a deserunt, ipsam optio! Officiis
-                voluptatum amet consequuntur, sit obcaecati tempora possimus
-                deserunt exercitationem labore quae similique soluta quidem
-                accusamus aperiam autem doloremque. Consectetur in nobis
-                molestias esse assumenda! Maiores, esse odit? Culpa ullam
-                debitis magni esse porro magnam id eveniet minima reprehenderit
-                dolore accusantium officia, aperiam, pariatur facere iste
-                sapiente saepe est nesciunt itaque? Ipsum, minus possimus.
-                Quisquam nisi tempore ducimus, quidem quia tempora maxime velit
-                laboriosam impedit veritatis deleniti? Voluptatibus id, ipsa
-                ratione laudantium tenetur sequi animi quidem fuga culpa
-                voluptatum deserunt. Quasi sunt numquam fugit, itaque, quo
-                fugiat error quam vel eligendi accusantium adipisci illo
-                corrupti et. Iste corporis eveniet sequi vero officia
-                accusantium, dolores soluta!
+              <p className="contet-text text-xs md:text-xl overflow-y-hidden mt-2">
+                Problem-Solving: View challenges as opportunities to develop
+                problem-solving skills. For instance, if a client needs a
+                complex project managed or a new tool used, approach it with
+                enthusiasm rather than hesitation. Adaptability: Be willing to
+                step out of your comfort zone and tackle tasks or technologies
+                you&apos;re not familiar with. Skill Development: Regularly seek
+                to upgrade your skills. This could involve taking courses on new
+                software, improving communication techniques, or learning about
+                the latest trends in virtual assistance. Feedback Utilization:
+                Actively seek feedback from clients and peers, and use it
+                constructively to enhance your performance and capabilities.
+                Handling Setbacks: When faced with setbacks or mistakes, instead
+                of viewing them as failures, see them as learning experiences.
+                Analyze what went wrong, and apply that knowledge to improve
+                future performance. Persistence: Keep striving towards your
+                goals despite difficulties or obstacles. Persistence is key to
+                overcoming challenges and achieving long-term success.
+                Initiative: Take the initiative to suggest improvements,
+                streamline processes, or offer solutions before being asked.
+                This shows a willingness to contribute to the client&apos;s
+                success beyond basic responsibilities. Innovation: Look for
+                innovative ways to perform tasks more efficiently and
+                effectively. Embrace new technologies and methods that can
+                enhance productivity. Learning from Others: Be curious about
+                industry best practices and how other successful virtual
+                assistants operate. This curiosity can lead to discovering new
+                strategies and techniques. Asking Questions: Don&apos;t be
+                afraid to ask questions if you&apos;re unsure about a task or
+                need clarification. This demonstrates a commitment to delivering
+                high-quality work. Personal Growth: Set personal and
+                professional goals to strive towards. This could include
+                mastering a new software tool, improving time management skills,
+                or expanding your service offerings. Client Goals: Understand
+                and align with your client&apos;s objectives. By focusing on
+                their goals, you can better tailor your services to meet their
+                needs and exceed their expectations. Flexibility: Be open to
+                different ways of doing things and receptive to new ideas. This
+                flexibility can help you adapt to varying client preferences and
+                work styles. Collaborative Spirit: Work collaboratively with
+                clients and team members, valuing diverse perspectives and
+                contributions. Recognizing Strengths and Weaknesses: Regularly
+                assess your strengths and areas for improvement. Understanding
+                where you excel and where you need development can help you
+                focus your learning efforts effectively. By embodying a growth
+                mindset, a virtual assistant not only enhances their own
+                professional development but also adds significant value to
+                their clients through improved performance, adaptability, and
+                innovative solutions. hashtag#alxvirtualassistant hashtag#growth
               </p>
             </div>
-            <img src={blogImage} className="rounded-3xl w-1/3 h-auto" />
+            <img src={LadyInOffice} className="rounded-3xl w-1/3 h-auto" />
           </div>
           <div className="w-full text-xs md:text-sm flex justify-between mt-3">
             <div className="flex justify-between gap-2">
