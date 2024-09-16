@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import React, { useState } from "react";
+import axios from "axios";
+>>>>>>> 7d9628a (Emesa Research and Consultancy)
 import Footer from "./Footer";
 import ContactUsForm from "./ContactUsForm";
 
@@ -37,9 +42,15 @@ const Contacts = () => {
           id="map-container "
           className="w-full h-1/2  relative flex flex-col justify-center items-center"
         >
+<<<<<<< HEAD
           <h2 className="mb-8">Visit us today</h2>
           <iframe
             className="w-full  h-96 rounded-lg"
+=======
+          <h2>Visit us today</h2>
+          <iframe
+            className="w-full md:w-11/12 h-screen rounded-lg"
+>>>>>>> 7d9628a (Emesa Research and Consultancy)
             title="Location Map"
             src={mapUrl}
           ></iframe>

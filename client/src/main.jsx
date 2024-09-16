@@ -25,7 +25,10 @@ import EmailVerificationScreen from "./Screens/EmailVerificationScreen.jsx";
 import TermsOfService from "./Screens/TermsOfService.jsx";
 import PPolicy from "./Screens/PPolicy.jsx";
 import GoogleOAuthCallback from "./Screens/GoogleOAuthCallback.jsx";
+<<<<<<< HEAD
 import Error from "./Components/Error.jsx";
+=======
+>>>>>>> 7d9628a (Emesa Research and Consultancy)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -44,9 +47,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PPolicy />} />
         <Route path="/oauth" element={<GoogleOAuthCallback />} />
+<<<<<<< HEAD
 
         {/* Private Routes */}
         <Route element={<PrivateRoute />}>
+=======
+        <Route path="" element={<PrivateRoute />}>
+>>>>>>> 7d9628a (Emesa Research and Consultancy)
           <Route
             path="/attachee-application"
             element={<AttacheeApplicationScreen />}

@@ -55,6 +55,9 @@ const LoginScreen = () => {
   };
 
   function navigateToGoogleAuth(url) {
+    const currentPath = window.location.pathname;
+    localStorage.setItem("redirectAfterLogin", currentPath);
+
     window.location.href = url;
   }
 
