@@ -9,6 +9,8 @@ const {
 const generateToken = require("../utils/generateToken.js");
 const { use } = require("passport");
 
+const googleClientID = process.env.CLIENT_ID;
+const googleClientSecret = process.env.CLIENT_SECRET;
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
   googleClientSecret || CLIENT_SECRET,
