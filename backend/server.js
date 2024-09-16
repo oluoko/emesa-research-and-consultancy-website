@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require("path");
 const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const googleAuthRoutes = require("./routes/googleAuthRoutes.js");

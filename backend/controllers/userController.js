@@ -88,6 +88,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       bio: user.bio,
       profilePic: user.profilePic,
+      createdAt: user.createdAt,
     });
   } else {
     res.status(404);
