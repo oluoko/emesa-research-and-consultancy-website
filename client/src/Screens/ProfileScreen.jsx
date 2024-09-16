@@ -16,7 +16,17 @@ const ProfileScreen = () => {
     email: "",
     bio: "",
     profileImage: "",
+    createdAt: "",
   });
+
+  // function to convert createdAt date to a readable format (dd-mm-yyyy)
+  const formatDate = (date) => {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = `0${d.getMonth() + 1}`.slice(-2);
+    const day = `0${d.getDate()}`.slice(-2);
+    return `${day}-${month}-${year}`;
+  };
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -32,6 +42,7 @@ const ProfileScreen = () => {
           ...data,
           bio: data.bio || "No bio available",
           profileImage: data.profileImage || profileImage,
+          createdAt: formatDate(data.createdAt),
         });
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -170,36 +181,36 @@ const ProfileScreen = () => {
                     <div className="px-2 py-1 font-semibold text-black">
                       REGISTERED AT:
                     </div>
-                    <div className="px-2 py-1">11-Aug-2024</div>
+                    <div className="px-2 py-1">{profile.createdAt}</div>
                   </div>
-                  <div className="grid grid-cols-2 mb-2">
-                    <div className="px-2 py-1 font-semibold text-black">
-                      BLOGGER STATUS:
-                    </div>
-                    <div className="px-2 py-1 bg-green-400 text-slate-800 flex justify-center items-center rounded-3xl">
-                      Approved
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 mb-2">
-                    <div className="px-2 py-1 font-semibold text-black">
-                      EMPLOYEE STATUS:
-                    </div>
-                    <div className="px-2 py-1 bg-red-400 text-slate-800 flex justify-center items-center rounded-3xl">
-                      Rejected
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 mb-2">
-                    <div className="px-2 py-1 font-semibold text-black">
-                      DATE EMPLOYED:
-                    </div>
-                    <div className="px-2 py-1">21-May-2024</div>
-                  </div>
-                  <div className="grid grid-cols-2 mb-2">
-                    <div className="px-2 py-1 font-semibold text-black">
-                      DATE RETRENCHED:
-                    </div>
-                    <div className="px-2 py-1">08-Aug-2024</div>
-                  </div>
+                  {profile.isAttache && (
+                    <>
+                      <div className="grid grid-cols-2 mb-2">
+                        <div className="px-2 py-1 font-semibold text-black">
+                          ATTACHE STATUS:
+                        </div>
+                        <div className="px-2 py-1 bg-green-400 text-slate-800 flex justify-center items-center rounded-3xl">
+                          Active
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 mb-2">
+                        <div className="px-2 py-1 font-semibold text-black">
+                          DATE EMPLOYED:
+                        </div>
+                        <div className="px-2 py-1">
+                          {profile.isAttache.createdAt}
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 mb-2">
+                        <div className="px-2 py-1 font-semibold text-black">
+                          DATE RETRENCHED:
+                        </div>
+                        <div className="px-2 py-1">
+                          {profile.isAttache.doneAt}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </>
               )}
             </div>
