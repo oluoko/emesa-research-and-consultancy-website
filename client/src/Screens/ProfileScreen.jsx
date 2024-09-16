@@ -7,6 +7,8 @@ import Toast, { showToast } from "../Components/Toast/Toast";
 
 const ProfileScreen = () => {
   const USERS_API_URL = "http://localhost:5000/api";
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  console.log("userData toke: ", userData.token);
 
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
@@ -20,18 +22,11 @@ const ProfileScreen = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const token = localStorage.getItem("token"); // Retrieve the token from localStorage
-
-        if (!token) {
-          setTimeout(() => {
-            showToast("You are not logged in. Please log in again.", "error");
-          }, 500);
-          navigate("/error");
-          return;
+        if (!userData.token) {
+          navigate("/login");
         }
-
         const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
-          headers: { Authorization: `Bearer ${token}` }, // Include token in request header
+          headers: { Authorization: `Bearer ${userData.token}` },
         });
 
         setProfile({
@@ -41,14 +36,6 @@ const ProfileScreen = () => {
         });
       } catch (error) {
         console.error("Error fetching profile:", error);
-        if (error.response && error.response.status === 401) {
-          // Handle unauthorized access (e.g., token expired)
-          showToast("Session expired. Please log in again.", "error");
-          localStorage.removeItem("token"); // Clear the token
-          navigate("/login");
-        } else {
-          showToast("Error fetching profile data, please try again.", "error");
-        }
       }
     };
 
@@ -89,7 +76,7 @@ const ProfileScreen = () => {
           profileImage: profile.profileImage,
         },
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: { Authorization: `Bearer ${userData.token}` },
         }
       );
       setProfile({
