@@ -33,11 +33,8 @@ const GoogleOAuthCallback = () => {
           if (response.data) {
             // Save user data to local storage
             localStorage.setItem("userData", JSON.stringify(response.data));
-            localStorage.setItem("token", response.data.token);
 
-            setTimeout(() => {
-              showToast("Google Sign-In Successful!", "success");
-            }, 1500);
+            showToast("Google Sign-In Successful!", "success");
 
             // Get the original redirect URL
             const redirectAfterLogin =

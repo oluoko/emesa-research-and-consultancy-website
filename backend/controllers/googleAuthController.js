@@ -6,11 +6,13 @@ const {
   CLIENT_SECRET,
   REDIRECT_URI,
 } = require("../envFolder/envFolder.js");
-const generateToken = require("../utils/generateToken.js");
 const { use } = require("passport");
 
 const googleClientID = process.env.CLIENT_ID;
 const googleClientSecret = process.env.CLIENT_SECRET;
+const User = require("../models/userModel.js");
+const generateToken = require("../utils/generateToken.js");
+
 const oAuth2Client = new OAuth2Client(
   googleClientID || CLIENT_ID,
   googleClientSecret || CLIENT_SECRET,

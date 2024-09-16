@@ -37,7 +37,6 @@ const ProfileScreen = () => {
         const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
           headers: { Authorization: `Bearer ${userData.token}` },
         });
-
         setProfile({
           ...data,
           bio: data.bio || "No bio available",
