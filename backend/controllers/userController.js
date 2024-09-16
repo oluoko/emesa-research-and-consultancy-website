@@ -104,8 +104,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    user.bio = req.body.bio || user.bio; // Allow updating bio
-    user.profilePic = req.body.profilePic || user.profilePic; // Allow updating profile picture
+    user.bio = req.body.bio || user.bio;
+
+    // Check if a file is uploaded
+    if (req.file) {
+      user.profilePic = `/uploads/userProfilePics/${req.file.filename}`;
+    }
 
     if (req.body.password) {
       user.password = req.body.password;
