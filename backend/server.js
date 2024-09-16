@@ -30,6 +30,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", googleAuthRoutes);
 app.use("/images", imagesRoutes);
 
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+
 app.use(notFound);
 app.use(errorHandler);
 
