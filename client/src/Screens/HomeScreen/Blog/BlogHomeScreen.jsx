@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
 import userProfile from "../../../Assets/userProfile.png";
 import blogImage from "../../../Assets/blogImage.png";
-import LadyInOffice from "../../../Assets/uploads/lady in office.jpeg";
+import ladyInOffice from "../../../Assets/uploads/lady in office.jpeg";
 
 const BlogHomeScreen = () => {
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ const BlogHomeScreen = () => {
 
         <div
           onClick={() => openBlog()}
-          className="blog-container flex flex-col justify-center w-full mt-3 md:mt-6 pt-2  border-t-2 border-slate-500 h-1/5 md:h-1/3"
+          className="blog-container flex flex-col justify-center w-full mt-3 md:mt-6 pt-2  border-t-2 border-slate-500"
         >
           <div className="flex items-right w-full gap-2 py-2">
             <img
@@ -75,14 +75,14 @@ const BlogHomeScreen = () => {
               className="w-4 h-4 md:w-7 md:h-7 rounded-full"
               alt=""
             />
-            <p>Eni Zanu</p>
+            <p>Cashphine Owunza</p>
           </div>
-          <div className="flex justify-around w-full gap-2 h-pt-2 md:pt-0 h-11/12 bg-slate-500">
-            <div className="flex flex-col justify-center w-2/3 ">
+          <div className="flex justify-around w-full gap-2 pt-2 md:pt-0">
+            <div className="flex flex-col justify-center w-2/3">
               <h2 className="title text-sm md:text-4xl text-black font-extrabold">
                 Key Aspects of a Growth Mindset for a Virtual Assistant
               </h2>
-              <p className="contet-text text-xs md:text-xl overflow-y-hidden mt-2">
+              <p className="contet-text text-xs md:text-xl overflow-y-hidden h-16 md:h-28 mt-2">
                 Problem-Solving: View challenges as opportunities to develop
                 problem-solving skills. For instance, if a client needs a
                 complex project managed or a new tool used, approach it with
@@ -133,7 +133,10 @@ const BlogHomeScreen = () => {
                 innovative solutions. hashtag#alxvirtualassistant hashtag#growth
               </p>
             </div>
-            <img src={LadyInOffice} className="rounded-3xl w-1/3 h-auto" />
+            <img
+              src={ladyInOffice}
+              className="rounded-3xl w-1/3 md:w-1/4 h-auto"
+            />
           </div>
           <div className="w-full text-xs md:text-sm flex justify-between mt-3">
             <div className="flex justify-between gap-2">
@@ -165,13 +168,12 @@ const BlogHomeScreen = () => {
                   className="w-4 h-4 rounded-full"
                   alt=""
                 />
-                <span className=" font-bold">Daisy Okoti</span>
+                <span className=" font-bold">Cashphine Owunza</span>
                 <span>in</span>
                 <span className="font-bold">Mindfulness</span>
               </div>
               <div className="text-xl my-2 font-black">
-                Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                Voluptatibus
+                Key Aspects of a Growth Mindset for a Virtual Assistant
               </div>
             </div>
           </div>
