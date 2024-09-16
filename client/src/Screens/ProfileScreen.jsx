@@ -52,16 +52,7 @@ const ProfileScreen = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfile((prevProfile) => ({
-          ...prevProfile,
-          profileImage: reader.result,
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
+    setProfile((prevProfile) => ({ ...prevProfile, profileImage: file }));
   };
 
   const handleSave = async () => {
