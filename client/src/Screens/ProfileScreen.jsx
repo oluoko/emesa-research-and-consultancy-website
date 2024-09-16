@@ -8,7 +8,6 @@ import Toast, { showToast } from "../Components/Toast/Toast";
 const ProfileScreen = () => {
   const USERS_API_URL = "http://localhost:5000/api";
   const userData = JSON.parse(localStorage.getItem("userData"));
-  console.log("userData toke: ", userData.token);
 
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();

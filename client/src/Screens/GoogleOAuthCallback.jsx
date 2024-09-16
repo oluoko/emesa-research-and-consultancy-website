@@ -1,15 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
 import Toast, { showToast } from "../Components/Toast/Toast";
 
 const GoogleOAuthCallback = () => {
   const API_URL = "http://localhost:5000/api";
-=======
-
-const GoogleOAuthCallback = () => {
->>>>>>> 7d9628a (Emesa Research and Consultancy)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +12,6 @@ const GoogleOAuthCallback = () => {
       const query = new URLSearchParams(window.location.search);
       const code = query.get("code");
 
-<<<<<<< HEAD
       setTimeout(() => {
         if (!code) {
           showToast("Google Sign-In Failed!", "error");
@@ -61,25 +55,6 @@ const GoogleOAuthCallback = () => {
             error?.response?.data?.message ||
             "Error during Google OAuth, please try again.";
           console.log(errorMessage);
-=======
-      if (code) {
-        try {
-          // Send the authorization code to the backend
-          const response = await axios.get(
-            `/api/auth/google/callback?code=${code}`
-          );
-
-          if (response.data) {
-            // Handle successful login/signup
-            console.log("User Data:", response.data);
-            // Redirect to home or dashboard after successful login
-            navigate("/");
-          }
-        } catch (error) {
-          console.error("Error during Google OAuth:", error);
-          // Handle error, maybe redirect to error page
-          navigate("/error");
->>>>>>> 7d9628a (Emesa Research and Consultancy)
         }
       }
     };
@@ -87,16 +62,12 @@ const GoogleOAuthCallback = () => {
     handleGoogleOAuth();
   }, [navigate]);
 
-<<<<<<< HEAD
   return (
     <div className="w-screen h-screen bg-slate-300 flex flex-col justify-center items-center text-3xl md:text-7xl font-black">
       <Toast />
       Signing in with Google...
     </div>
   );
-=======
-  return <div>Signing in with Google...</div>;
->>>>>>> 7d9628a (Emesa Research and Consultancy)
 };
 
 export default GoogleOAuthCallback;
