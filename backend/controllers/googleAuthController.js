@@ -1,11 +1,7 @@
 const { OAuth2Client } = require("google-auth-library");
 const asyncHandler = require("../middleware/asyncHandler.js");
 const redirectURL = process.env.REDIRECT_URI;
-const {
-  CLIENT_ID,
-  CLIENT_SECRET,
-  REDIRECT_URI,
-} = require("../envFolder/envFolder.js");
+const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI } = require("../env.js");
 const { use } = require("passport");
 
 const googleClientID = process.env.CLIENT_ID;
