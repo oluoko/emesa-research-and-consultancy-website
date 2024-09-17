@@ -19,13 +19,10 @@ const ProfileScreen = () => {
     createdAt: "",
   });
 
-  // function to convert createdAt date to a readable format (dd-mm-yyyy)
-  const formatDate = (date) => {
-    const d = new Date(date);
-    const year = d.getFullYear();
-    const month = `0${d.getMonth() + 1}`.slice(-2);
-    const day = `0${d.getDate()}`.slice(-2);
-    return `${day}-${month}-${year}`;
+  // function to convert createdAt date to a readable format (dd-mm-yyyy) the months should be in initial caps and not in numbers
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
   };
 
   useEffect(() => {
