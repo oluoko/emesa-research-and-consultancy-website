@@ -38,8 +38,6 @@ const ProfileScreen = () => {
           headers: { Authorization: `Bearer ${userData.token}` },
         });
 
-        console.log("user data", data);
-
         setProfile({
           ...data,
           bio: data.bio || "No bio available",
