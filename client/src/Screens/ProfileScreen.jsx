@@ -37,6 +37,9 @@ const ProfileScreen = () => {
         const { data } = await axios.get(`${USERS_API_URL}/users/profile`, {
           headers: { Authorization: `Bearer ${userData.token}` },
         });
+
+        console.log("user data", data);
+
         setProfile({
           ...data,
           bio: data.bio || "No bio available",
@@ -45,6 +48,10 @@ const ProfileScreen = () => {
         });
       } catch (error) {
         console.error("Error fetching profile:", error);
+        const errorMessage =
+          error?.response?.data?.message ||
+          "Error during Google OAuth, please try again.";
+        console.log(errorMessage);
       }
     };
 
@@ -131,7 +138,7 @@ const ProfileScreen = () => {
             <input
               type="file"
               accept="image/*"
-              className="mt-2 w-full font-bold mb-4 text-xl shadow appearance-none border rounded w-full py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
+              className="mt-2 w-full font-bold mb-4 text-xl shadow appearance-none border rounded py-3 px-3 text-gray-600 bg-inherit leading-tight focus:outline-none focus:shadow-outline focus:border-orange-500"
               onChange={handleImageChange}
             />
           )}
