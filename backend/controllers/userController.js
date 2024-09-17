@@ -108,9 +108,15 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     user.email = req.body.email || user.email;
     user.bio = req.body.bio || user.bio;
 
-    // Check if a file is uploaded
-    if (req.file) {
-      user.profilePic = `/uploads/userProfilePics/${req.file.filename}`;
+    if (req.body.profilePic) {
+      const uploadedResponse = await cloudinary.uploader.upload(
+        req.body.profilePic,
+        {
+          folder: "userProfilePics",
+          width: 500,
+          crop: "scale",
+        }
+      );
     }
 
     if (req.body.password) {
@@ -125,7 +131,11 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
       bio: updatedUser.bio,
-      profilePic: updatedUser.profilePic,
+      profilePic:
+        {
+          public_id: uploadedResponse.public_id,
+          url: uploadedResponse.secure_url,
+        } || updatedUser.profilePic,
     });
   } else {
     res.status(404);

@@ -10,8 +10,8 @@ const userSchema = mongoose.Schema(
     isVerified: { type: Boolean, required: true, default: false },
     bio: { type: String, default: "..." },
     profilePic: {
-      type: String,
-      default: "../uploads/userProfilePics/default.png",
+      public_id: { type: String },
+      url: { type: String },
     },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
