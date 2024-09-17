@@ -1,0 +1,41 @@
+# Read the Docs configuration file for Sphinx projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the OS, Python version, and other tools you might need
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.12"
+    nodejs: "20"  # Specify the Node.js version for your MERN project
+
+# If you are using Sphinx for documentation, configure it here
+sphinx:
+  configuration: docs/conf.py
+
+# Optionally build your docs in additional formats such as PDF and ePub
+# formats:
+#   - pdf
+#   - epub
+
+# Specify how to install project dependencies
+python:
+  install:
+    - requirements: docs/requirements.txt
+
+# Node.js package installation for the client-side (React)
+nodejs:
+  install:
+    - path: ./client  # Specify the client folder where package.json is located
+    - package_json: package.json  # Point to package.json for frontend dependencies
+  install:
+    - path: ./backend  # Specify the backend folder where package.json is located
+    - package_json: package.json  # Point to package.json for backend dependencies
+
+# Build commands
+commands:
+  - npm run build --prefix client  # Build frontend (React) app
+  - npm run build --prefix backend  # Build backend (Node.js) if needed
+
