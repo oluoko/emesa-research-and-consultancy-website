@@ -2,6 +2,7 @@
 const asyncHandler = require("../middleware/asyncHandler.js");
 const generateToken = require("../utils/generateToken.js");
 const User = require("../models/userModel.js");
+const cloudinary = require("../utils/cloudinary.js");
 
 // @desc    Auth user & get token
 // @route   POST /api/users/auth
