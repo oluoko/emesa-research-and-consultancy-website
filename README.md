@@ -1,6 +1,6 @@
 # Emesa Research and Consultancy.
 
-The Official website for <a href="https://emesa-research.vercel.app">Emesa Research and Consultancy</a>. It contains a blog and a careers section.
+The Official website for <a href="https://emesa-research.vercel.app">Emesa Research and Consultancy</a>. It contains a blog and a careers section. It is partially completed. Contract ended before completion.
 
 ## Table of Contents
 
